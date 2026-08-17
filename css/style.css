@@ -6,3 +6,11 @@ a[data-noclick], a[aria-disabled="true"] {
   pointer-events: none !important;
   text-decoration: none !important;
 }
+
+.preloader {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
