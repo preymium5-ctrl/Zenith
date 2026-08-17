@@ -1,0 +1,198 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="color-scheme" content="dark"/><title>Gladia</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"/><link rel="alternate icon" type="image/png" href="/favicons/android-chrome-192x192.png"/><link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png"/><link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="modulepreload" href="/assets/entry.client-CK0s9wPI.js" nonce="47ed933db91124d8bfbfbd9c1a5a6bd6"/><link rel="modulepreload" href="/assets/jsx-runtime-D_zvdyIk.js" nonce="47ed933db91124d8bfbfbd9c1a5a6bd6"/><link rel="modulepreload" href="/assets/chunk-6CSD65Y2-BP5VS2hN.js" nonce="47ed933db91124d8bfbfbd9c1a5a6bd6"/><link rel="modulepreload" href="/assets/en-0kbVE12Z.js" nonce="47ed933db91124d8bfbfbd9c1a5a6bd6"/><link rel="modulepreload" href="/assets/index-CBoJQWs5.js" nonce="47ed933db91124d8bfbfbd9c1a5a6bd6"/><link rel="modulepreload" href="/assets/index-lx6n1eAY.js" nonce="47ed933db91124d8bfbfbd9c1a5a6bd6"/><link rel="modulepreload" href="/assets/i18n-Dq2ZpoW2.js" nonce="47ed933db91124d8bfbfbd9c1a5a6bd6"/><link rel="modulepreload" href="/assets/util-BNY74UUW.js" nonce="47ed933db91124d8bfbfbd9c1a5a6bd6"/><link rel="modulepreload" href="/assets/preload-helper-BlTxHScW.js" nonce="47ed933db91124d8bfbfbd9c1a5a6bd6"/><link rel="modulepreload" href="/assets/root-CvXUMSzJ.js" nonce="47ed933db91124d8bfbfbd9c1a5a6bd6"/><link rel="modulepreload" href="/assets/root-BJ4fRVpo.js" nonce="47ed933db91124d8bfbfbd9c1a5a6bd6"/><link rel="modulepreload" href="/assets/schemas-CAB7-SrO.js" nonce="47ed933db91124d8bfbfbd9c1a5a6bd6"/><link rel="modulepreload" href="/assets/gtm-AO0bnF3t.js" nonce="47ed933db91124d8bfbfbd9c1a5a6bd6"/><link rel="modulepreload" href="/assets/Alert-t37xpnr8.js" nonce="47ed933db91124d8bfbfbd9c1a5a6bd6"/><link rel="modulepreload" href="/assets/GeneralErrorBoundary-8ZTBTL0Y.js" nonce="47ed933db91124d8bfbfbd9c1a5a6bd6"/><link rel="modulepreload" href="/assets/catchall-M-gOT8AO.js" nonce="47ed933db91124d8bfbfbd9c1a5a6bd6"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&amp;display=swap"/><link rel="stylesheet" href="/assets/tailwind-CE-C-FWe.css"/><script nonce="47ed933db91124d8bfbfbd9c1a5a6bd6">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N7XJQJG');</script></head><body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7XJQJG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div class="flex flex-col items-center justify-center h-screen"><h1 class="text-4xl font-bold mb-4">404 - Page Not Found</h1><p class="text-lg">The page you are looking for does not exist.</p></div><script nonce="47ed933db91124d8bfbfbd9c1a5a6bd6">window.ENV = {"MODE":"production","APP_BASE_URL":"https://app.gladia.io","GA_USER_ID":null,"GOOGLE_TAG_MANAGER_ID":"GTM-N7XJQJG"}</script><script nonce="47ed933db91124d8bfbfbd9c1a5a6bd6">((storageKey2, restoreKey) => {
+    if (!window.history.state || !window.history.state.key) {
+      let key = Math.random().toString(32).slice(2);
+      window.history.replaceState({ key }, "");
+    }
+    try {
+      let positions = JSON.parse(sessionStorage.getItem(storageKey2) || "{}");
+      let storedY = positions[restoreKey || window.history.state.key];
+      if (typeof storedY === "number") {
+        window.scrollTo(0, storedY);
+      }
+    } catch (error) {
+      console.error(error);
+      sessionStorage.removeItem(storageKey2);
+    }
+  })("react-router-scroll-positions", null)</script><script nonce="47ed933db91124d8bfbfbd9c1a5a6bd6">window.__reactRouterContext = {"basename":"/","future":{"unstable_optimizeDeps":false,"v8_passThroughRequests":false,"v8_trailingSlashAwareDataRequests":false,"unstable_previewServerPrerendering":false,"v8_middleware":true,"v8_splitRouteModules":false,"v8_viteEnvironmentApi":false},"routeDiscovery":{"mode":"lazy","manifestPath":"/__manifest"},"ssr":true,"isSpaMode":false};window.__reactRouterContext.stream = new ReadableStream({start(controller){window.__reactRouterContext.streamController = controller;}}).pipeThrough(new TextEncoderStream());</script><script nonce="47ed933db91124d8bfbfbd9c1a5a6bd6" type="module" async="">;
+import * as route0 from "/assets/root-CvXUMSzJ.js";
+import * as route1 from "/assets/catchall-M-gOT8AO.js";
+  window.__reactRouterManifest = {
+  "entry": {
+    "module": "/assets/entry.client-CK0s9wPI.js",
+    "imports": [
+      "/assets/jsx-runtime-D_zvdyIk.js",
+      "/assets/chunk-6CSD65Y2-BP5VS2hN.js",
+      "/assets/en-0kbVE12Z.js",
+      "/assets/index-CBoJQWs5.js",
+      "/assets/index-lx6n1eAY.js",
+      "/assets/i18n-Dq2ZpoW2.js",
+      "/assets/util-BNY74UUW.js",
+      "/assets/preload-helper-BlTxHScW.js"
+    ],
+    "css": []
+  },
+  "routes": {
+    "root": {
+      "id": "root",
+      "path": "",
+      "hasAction": true,
+      "hasLoader": true,
+      "hasClientAction": false,
+      "hasClientLoader": false,
+      "hasClientMiddleware": false,
+      "hasDefaultExport": true,
+      "hasErrorBoundary": true,
+      "module": "/assets/root-CvXUMSzJ.js",
+      "imports": [
+        "/assets/jsx-runtime-D_zvdyIk.js",
+        "/assets/chunk-6CSD65Y2-BP5VS2hN.js",
+        "/assets/en-0kbVE12Z.js",
+        "/assets/index-CBoJQWs5.js",
+        "/assets/index-lx6n1eAY.js",
+        "/assets/i18n-Dq2ZpoW2.js",
+        "/assets/util-BNY74UUW.js",
+        "/assets/preload-helper-BlTxHScW.js",
+        "/assets/root-BJ4fRVpo.js",
+        "/assets/schemas-CAB7-SrO.js",
+        "/assets/gtm-AO0bnF3t.js",
+        "/assets/Alert-t37xpnr8.js",
+        "/assets/GeneralErrorBoundary-8ZTBTL0Y.js"
+      ],
+      "css": []
+    },
+    "catchall": {
+      "id": "catchall",
+      "parentId": "root",
+      "path": "*",
+      "hasAction": false,
+      "hasLoader": true,
+      "hasClientAction": false,
+      "hasClientLoader": false,
+      "hasClientMiddleware": false,
+      "hasDefaultExport": true,
+      "hasErrorBoundary": false,
+      "module": "/assets/catchall-M-gOT8AO.js",
+      "imports": [
+        "/assets/chunk-6CSD65Y2-BP5VS2hN.js",
+        "/assets/jsx-runtime-D_zvdyIk.js"
+      ],
+      "css": []
+    },
+    "routes/app/layout": {
+      "id": "routes/app/layout",
+      "parentId": "root",
+      "hasAction": false,
+      "hasLoader": true,
+      "hasClientAction": false,
+      "hasClientLoader": false,
+      "hasClientMiddleware": false,
+      "hasDefaultExport": true,
+      "hasErrorBoundary": true,
+      "module": "/assets/layout-CtBqOOQ-.js",
+      "imports": [
+        "/assets/layout-BohzfaeU.js",
+        "/assets/en-0kbVE12Z.js",
+        "/assets/chunk-6CSD65Y2-BP5VS2hN.js",
+        "/assets/util-BNY74UUW.js",
+        "/assets/jsx-runtime-D_zvdyIk.js",
+        "/assets/Alert-t37xpnr8.js",
+        "/assets/schemas-CAB7-SrO.js",
+        "/assets/ZeroDataRetentionBanner-BED2eZ0U.js",
+        "/assets/index-lx6n1eAY.js",
+        "/assets/Modal-Dvosmbtw.js",
+        "/assets/Dialog-btPUQGGf.js",
+        "/assets/RSPContexts-CqNUl-mp.js",
+        "/assets/Field-I9RfpRwi.js",
+        "/assets/Badge-02BLOydH.js",
+        "/assets/SelectionIndicator-pQulbfDu.js",
+        "/assets/useEvent-CLLXEX_Y.js",
+        "/assets/VisuallyHidden-A05JJ-rU.js",
+        "/assets/index-CBoJQWs5.js",
+        "/assets/Brand-CD3SMA1B.js",
+        "/assets/Menu-BOT7fuk3.js",
+        "/assets/Popover-DakJMnCZ.js",
+        "/assets/Checkbox-BrZVjIGh.js",
+        "/assets/useToggle-wiQB3syj.js",
+        "/assets/useToggleState-BzP5xsxS.js",
+        "/assets/Layout-CyKHOF4d.js",
+        "/assets/root-BJ4fRVpo.js",
+        "/assets/i18n-Dq2ZpoW2.js",
+        "/assets/preload-helper-BlTxHScW.js",
+        "/assets/gtm-AO0bnF3t.js",
+        "/assets/GeneralErrorBoundary-8ZTBTL0Y.js"
+      ],
+      "css": []
+    },
+    "routes/app/home": {
+      "id": "routes/app/home",
+      "parentId": "routes/app/layout",
+      "index": true,
+      "hasAction": false,
+      "hasLoader": true,
+      "hasClientAction": false,
+      "hasClientLoader": false,
+      "hasClientMiddleware": false,
+      "hasDefaultExport": true,
+      "hasErrorBoundary": true,
+      "module": "/assets/home-oFtZlAZb.js",
+      "imports": [
+        "/assets/en-0kbVE12Z.js",
+        "/assets/chunk-6CSD65Y2-BP5VS2hN.js",
+        "/assets/jsx-runtime-D_zvdyIk.js",
+        "/assets/index-lx6n1eAY.js",
+        "/assets/Layout-CyKHOF4d.js",
+        "/assets/Card-DT5qD1Q_.js",
+        "/assets/Alert-t37xpnr8.js",
+        "/assets/apikeys-Vc_9WJFZ.js",
+        "/assets/GeneralErrorBoundary-8ZTBTL0Y.js",
+        "/assets/FormError-BBj6meYa.js",
+        "/assets/index-CBoJQWs5.js",
+        "/assets/layout-BohzfaeU.js",
+        "/assets/helpers-Cjr1m1Rj.js",
+        "/assets/util-BNY74UUW.js",
+        "/assets/schemas-CAB7-SrO.js",
+        "/assets/Header-B8uraHfI.js",
+        "/assets/Table-DVYfT5_A.js",
+        "/assets/RSPContexts-CqNUl-mp.js",
+        "/assets/Dialog-btPUQGGf.js",
+        "/assets/Field-I9RfpRwi.js",
+        "/assets/Badge-02BLOydH.js",
+        "/assets/SelectionIndicator-pQulbfDu.js",
+        "/assets/useEvent-CLLXEX_Y.js",
+        "/assets/VisuallyHidden-A05JJ-rU.js",
+        "/assets/DragAndDrop-Cg8dAn_1.js",
+        "/assets/useUpdateEffect-DO3Q1HAt.js",
+        "/assets/useHasTabbableChild-CVsOsMGt.js",
+        "/assets/Modal-Dvosmbtw.js",
+        "/assets/Dialog-rIHmBoaM.js",
+        "/assets/Heading-DgJPswHP.js",
+        "/assets/TextField-DwLOh0eP.js",
+        "/assets/useTextField-C9DsYxlx.js",
+        "/assets/useField-CzDsFFCO.js",
+        "/assets/parse-ppnhLmCB.js",
+        "/assets/ZeroDataRetentionBanner-BED2eZ0U.js",
+        "/assets/Brand-CD3SMA1B.js",
+        "/assets/Menu-BOT7fuk3.js",
+        "/assets/Popover-DakJMnCZ.js",
+        "/assets/Checkbox-BrZVjIGh.js",
+        "/assets/useToggle-wiQB3syj.js",
+        "/assets/useToggleState-BzP5xsxS.js",
+        "/assets/root-BJ4fRVpo.js",
+        "/assets/i18n-Dq2ZpoW2.js",
+        "/assets/preload-helper-BlTxHScW.js",
+        "/assets/gtm-AO0bnF3t.js"
+      ],
+      "css": []
+    }
+  },
+  "url": "/assets/manifest-16a52448.js",
+  "version": "16a52448"
+};
+  window.__reactRouterRouteModules = {"root":route0,"catchall":route1};
+
+import("/assets/entry.client-CK0s9wPI.js");</script><!--$?--><template id="B:0"></template><!--/$--><script nonce="47ed933db91124d8bfbfbd9c1a5a6bd6" id="_R_">requestAnimationFrame(function(){$RT=performance.now()});</script><div hidden id="S:0"><script nonce="47ed933db91124d8bfbfbd9c1a5a6bd6">window.__reactRouterContext.streamController.enqueue("[{\"_1\":2,\"_3\":-5,\"_4\":-5},\"loaderData\",{\"_5\":6,\"_7\":-5},\"actionData\",\"errors\",\"root\",{\"_8\":9,\"_10\":11,\"_12\":-7},\"catchall\",\"userPrefs\",{\"_20\":21,\"_22\":23,\"_24\":25},\"ENV\",{\"_13\":14,\"_15\":16,\"_17\":-5,\"_18\":19},\"signupSteps\",\"MODE\",\"production\",\"APP_BASE_URL\",\"https://app.gladia.io\",\"GA_USER_ID\",\"GOOGLE_TAG_MANAGER_ID\",\"GTM-N7XJQJG\",\"theme\",\"dark\",\"locale\",\"en\",\"sidebar\",\"expanded\"]\n");</script><!--$?--><template id="B:1"></template><!--/$--></div><script nonce="47ed933db91124d8bfbfbd9c1a5a6bd6">$RB=[];$RV=function(a){$RT=performance.now();for(var b=0;b<a.length;b+=2){var c=a[b],e=a[b+1];null!==e.parentNode&&e.parentNode.removeChild(e);var f=c.parentNode;if(f){var g=c.previousSibling,h=0;do{if(c&&8===c.nodeType){var d=c.data;if("/$"===d||"/&"===d)if(0===h)break;else h--;else"$"!==d&&"$?"!==d&&"$~"!==d&&"$!"!==d&&"&"!==d||h++}d=c.nextSibling;f.removeChild(c);c=d}while(c);for(;e.firstChild;)f.insertBefore(e.firstChild,c);g.data="$";g._reactRetry&&requestAnimationFrame(g._reactRetry)}}a.length=0};
+$RC=function(a,b){if(b=document.getElementById(b))(a=document.getElementById(a))?(a.previousSibling.data="$~",$RB.push(a,b),2===$RB.length&&("number"!==typeof $RT?requestAnimationFrame($RV.bind(null,$RB)):(a=performance.now(),setTimeout($RV.bind(null,$RB),2300>a&&2E3<a?2300-a:$RT+300-a)))):b.parentNode.removeChild(b)};$RC("B:0","S:0")</script><div hidden id="S:1"><script nonce="47ed933db91124d8bfbfbd9c1a5a6bd6">window.__reactRouterContext.streamController.close();</script></div><script nonce="47ed933db91124d8bfbfbd9c1a5a6bd6">$RC("B:1","S:1")</script></body></html>

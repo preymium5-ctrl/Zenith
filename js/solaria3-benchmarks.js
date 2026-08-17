@@ -1,0 +1,68 @@
+/* Solaria-3 landing — benchmark chart data (source: Solaria-3 campaign brief) */
+window.SOLARIA3_BENCH = {
+  charts: [
+    {
+      id: 'real-customer',
+      title: 'Real customer audio — English',
+      rank: '#1',
+      footnote: '−26% vs. Solaria-1. Top of the field on real production calls.',
+      max: 14,
+      models: [
+        { name: 'Solaria-3', value: 9.6, highlight: true },
+        { name: 'ElevenLabs Scribe v2', value: 9.9 },
+        { name: 'AssemblyAI', value: 10.0 },
+        { name: 'Deepgram Nova-3', value: 10.7 },
+        { name: 'Mistral Voxtral', value: 12.2 },
+        { name: 'Solaria-1', value: 12.9 },
+      ],
+    },
+    {
+      id: 'earnings22',
+      title: 'Earnings22 cleaned AA',
+      rank: '#1',
+      footnote: 'Only model under 7% WER. −21% vs. Solaria-1.',
+      max: 14,
+      models: [
+        { name: 'Solaria-3', value: 6.4, highlight: true },
+        { name: 'AssemblyAI', value: 6.9 },
+        { name: 'ElevenLabs Scribe v2', value: 7.7 },
+        { name: 'Speechmatics', value: 7.8 },
+        { name: 'Mistral Voxtral', value: 7.9 },
+        { name: 'Solaria-1', value: 8.1 },
+        { name: 'Deepgram Nova-3', value: 12.0 },
+      ],
+    },
+    {
+      id: 'switchboard',
+      title: 'Switchboard',
+      rank: '#1',
+      footnote: 'Only model under 35% WER. ElevenLabs collapses at 55.2%. −9% vs. Solaria-1.',
+      max: 60,
+      models: [
+        { name: 'Solaria-3', value: 33.9, highlight: true },
+        { name: 'Solaria-1', value: 37.3 },
+        { name: 'AssemblyAI', value: 42.3 },
+        { name: 'Speechmatics', value: 46.0 },
+        { name: 'Mistral Voxtral', value: 48.1 },
+        { name: 'Deepgram Nova-3', value: 49.8 },
+        { name: 'ElevenLabs Scribe v2', value: 55.2 },
+      ],
+    },
+    {
+      id: 'noisy',
+      title: 'Noisy audio',
+      rank: '#2',
+      footnote: '−26% vs. Solaria-1. Mistral leads; Solaria-3 best among major production models.',
+      max: 5,
+      models: [
+        { name: 'Mistral Voxtral', value: 1.0 },
+        { name: 'Solaria-3', value: 1.4, highlight: true },
+        { name: 'Solaria-1', value: 1.9 },
+        { name: 'Speechmatics', value: 1.9 },
+        { name: 'AssemblyAI', value: 2.1 },
+        { name: 'Deepgram Nova-3', value: 3.2 },
+        { name: 'ElevenLabs Scribe v2', value: 4.0 },
+      ],
+    },
+  ],
+};

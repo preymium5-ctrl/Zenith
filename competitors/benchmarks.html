@@ -1,0 +1,2846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Axeptio CMP — must load before GTM -->
+<script>
+window.axeptioSettings = {
+  clientId: "6931856caf2dc33718035e3a",
+  cookiesVersion: "fr-fr-gpdr-04-12-2025",
+  googleConsentMode: {
+    default: {
+      analytics_storage: "denied",
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      wait_for_update: 500
+    }
+  }
+};
+(function(d, s) {
+  var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+  e.async = true; e.src = "//static.axept.io/sdk.js";
+  t.parentNode.insertBefore(e, t);
+})(document, "script");
+</script>
+
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5M3X2DX');</script>
+<!-- End Google Tag Manager -->
+<!-- Google Ads (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11135522798"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-11135522798');</script>
+<!-- PostHog -->
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="xi Si init Ni ji pr qi Ui $i capture calculateEventProperties Zi register register_once register_for_session unregister unregister_for_session Yi getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Ki identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty Qi Wi createPersonProfile setInternalOrTestUser Ji Fi tn opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing zi debug mr it getPageViewId captureTraceFeedback captureTraceMetric Ri".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_kYph4UveZpKEWbuWvaYset7nAPEVjuyyQ9hAkLfiHX35', {
+    api_host: '/ingest',
+    ui_host: 'https://eu.posthog.com',
+    defaults: '2026-05-30',
+    person_profiles: 'identified_only',
+    autocapture: true,
+    capture_pageview: true,
+    capture_pageleave: true,
+  });
+</script>
+<!-- End PostHog -->
+<!-- Clarity -->
+<script type="text/javascript">
+  (function () {
+    function loadClarity() {
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = 'https://www.clarity.ms/tag/' + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, 'clarity', 'script', 'hrmdb7ts2c');
+    }
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadClarity, { timeout: 4000 });
+    } else {
+      window.addEventListener('load', loadClarity);
+    }
+  })();
+</script>
+<!-- End Clarity -->
+
+  <!-- Third-party: DOMPurify from jsDelivr — preconnect shortens the critical request chain -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+  <meta charset="UTF-8">
+  <meta name="zenith-page" content="Benchmarks">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Zenith | Speech-to-Text Benchmarks — Real Data, Open Methodology</title>
+  <meta name="description" content="Open STT benchmarks: Solaria-3 and Solaria-1 vs 9 providers across 8 datasets and 74+ hours of audio. WER and DER results, including regressions. Full methodology on GitHub.">
+  <link rel="canonical" href="https://zenith.io/competitors/benchmarks">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zenith | Speech-to-Text Benchmarks">
+  <meta property="og:description" content="Solaria-3 and Solaria-1 vs 9 STT providers across 8 datasets and 74+ hours of audio. Open methodology, including regressions.">
+  <meta property="og:url" content="https://zenith.io/competitors/benchmarks">
+  <meta property="og:image" content="https://cdn.prod.website-files.com/6458f30fed157c01444bd0b2/69c2751637a28e6b2e124655_1539d75b968db9cb0b668dbb89baf7b5_Gladia_Website_Thumbnail_Open-Benchmark-STT.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "Zenith Speech-to-Text Benchmark Results",
+    "description": "Word Error Rate (WER) and Diarization Error Rate (DER) comparison of Zenith Solaria-3 and Solaria-1 against 9 STT providers across 8 datasets spanning 74+ hours of audio. Lower WER and DER are better. Metrics per provider: WER (%), Perfect transcriptions (count of files with 0% WER), High WER (count of files above 50% WER), RTFx (real-time factor multiplier, higher = faster).",
+    "url": "https://zenith.io/competitors/benchmarks",
+    "creator": { "@type": "Organization", "name": "Gladia", "url": "https://zenith.io" },
+    "license": "https://github.com/gladiaio/normalization",
+    "variableMeasured": [
+      { "@type": "PropertyValue", "name": "Metric", "value": "Word Error Rate (WER) — lower is better" },
+      { "@type": "PropertyValue", "name": "Diarization Metric", "value": "Diarization Error Rate (DER) — lower is better" }
+    ],
+    "hasPart": [
+      {
+        "@type": "Dataset",
+        "name": "Real Customer Audio — English (Zenith Internal Dataset)",
+        "description": "Zenith internal production dataset of real customer calls, annotated by humans. Lower WER is better.",
+        "creator": { "@type": "Organization", "name": "Gladia", "url": "https://zenith.io" },
+        "variableMeasured": [
+          { "@type": "PropertyValue", "name": "Solaria-3 — WER (%)",           "value": 9.6 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — WER (%)", "value": 9.9 },
+          { "@type": "PropertyValue", "name": "AssemblyAI — WER (%)",           "value": 10.0 },
+          { "@type": "PropertyValue", "name": "Deepgram Nova-3 — WER (%)",      "value": 10.7 },
+          { "@type": "PropertyValue", "name": "Mistral Voxtral — WER (%)",      "value": 12.2 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — WER (%)",            "value": 12.9 }
+        ]
+      },
+      {
+        "@type": "Dataset",
+        "name": "Switchboard — Conversational Speech",
+        "description": "Spontaneous telephone conversations between strangers. Lower WER is better.",
+        "creator": { "@type": "Organization", "name": "Linguistic Data Consortium", "url": "https://www.ldc.upenn.edu" },
+        "license": "https://catalog.ldc.upenn.edu/license/ldc-non-members-agreement.pdf",
+        "variableMeasured": [
+          { "@type": "PropertyValue", "name": "Solaria-3 — WER (%)",                 "value": 33.9 },
+          { "@type": "PropertyValue", "name": "Solaria-3 — Perfect",                  "value": 27 },
+          { "@type": "PropertyValue", "name": "Solaria-3 — High WER",                 "value": 3 },
+          { "@type": "PropertyValue", "name": "Solaria-3 — RTFx",                    "value": 0 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — WER (%)",                 "value": 37.3 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — Perfect",                  "value": 27 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — High WER",                 "value": 3 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — RTFx",                    "value": 0 },
+          { "@type": "PropertyValue", "name": "AssemblyAI — WER (%)",                  "value": 42.3 },
+          { "@type": "PropertyValue", "name": "AssemblyAI — Perfect",                  "value": 28 },
+          { "@type": "PropertyValue", "name": "AssemblyAI — High WER",                 "value": 4 },
+          { "@type": "PropertyValue", "name": "AssemblyAI — RTFx",                     "value": 1 },
+          { "@type": "PropertyValue", "name": "Speechmatics — WER (%)",              "value": 46.0 },
+          { "@type": "PropertyValue", "name": "Speechmatics — Perfect",              "value": 31 },
+          { "@type": "PropertyValue", "name": "Speechmatics — High WER",             "value": 7 },
+          { "@type": "PropertyValue", "name": "Speechmatics — RTFx",                 "value": 0 },
+          { "@type": "PropertyValue", "name": "Mistral Voxtral — WER (%)",           "value": 48.1 },
+          { "@type": "PropertyValue", "name": "Mistral Voxtral — Perfect",           "value": 25 },
+          { "@type": "PropertyValue", "name": "Mistral Voxtral — High WER",          "value": 6 },
+          { "@type": "PropertyValue", "name": "Mistral Voxtral — RTFx",              "value": 6 },
+          { "@type": "PropertyValue", "name": "Deepgram Nova-3 — WER (%)",           "value": 49.8 },
+          { "@type": "PropertyValue", "name": "Deepgram Nova-3 — Perfect",           "value": 26 },
+          { "@type": "PropertyValue", "name": "Deepgram Nova-3 — High WER",          "value": 7 },
+          { "@type": "PropertyValue", "name": "Deepgram Nova-3 — RTFx",              "value": 1 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — WER (%)",      "value": 55.2 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — Perfect",      "value": 31 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — High WER",     "value": 6 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — RTFx",         "value": 0 }
+        ]
+      },
+      {
+        "@type": "Dataset",
+        "name": "Common Voice 24 — Clean Audio (Multilingual)",
+        "description": "Mozilla crowd-sourced multilingual speech corpus. Lower WER is better.",
+        "creator": { "@type": "Organization", "name": "Mozilla Foundation", "url": "https://www.mozillafoundation.org" },
+        "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "variableMeasured": [
+          { "@type": "PropertyValue", "name": "Speechmatics — WER (%)",              "value": 3.8 },
+          { "@type": "PropertyValue", "name": "Speechmatics — Perfect",              "value": 1067 },
+          { "@type": "PropertyValue", "name": "Speechmatics — High WER",             "value": 2 },
+          { "@type": "PropertyValue", "name": "Speechmatics — RTFx",                 "value": 2 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — WER (%)",   "value": 3.9 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — Perfect",   "value": 1041 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — High WER",  "value": 1 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — RTFx",      "value": 0 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — WER (%)",      "value": 3.9 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — Perfect",      "value": 1059 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — High WER",     "value": 3 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — RTFx",         "value": 6 },
+          { "@type": "PropertyValue", "name": "Mistral STT — WER (%)",               "value": 5.1 },
+          { "@type": "PropertyValue", "name": "Mistral STT — Perfect",               "value": 984 },
+          { "@type": "PropertyValue", "name": "Mistral STT — High WER",              "value": 2 },
+          { "@type": "PropertyValue", "name": "Mistral STT — RTFx",                  "value": 6 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — WER (%)",   "value": 5.2 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — Perfect",   "value": 968 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — High WER",  "value": 2 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — RTFx",      "value": 1 },
+          { "@type": "PropertyValue", "name": "Solaria-3 — WER (%)",                 "value": 6.9 },
+          { "@type": "PropertyValue", "name": "Soniox v4 — WER (%)",                 "value": 7.2 },
+          { "@type": "PropertyValue", "name": "Soniox v4 — Perfect",                 "value": 902 },
+          { "@type": "PropertyValue", "name": "Soniox v4 — High WER",                "value": 7 },
+          { "@type": "PropertyValue", "name": "Soniox v4 — RTFx",                    "value": 1 },
+          { "@type": "PropertyValue", "name": "Deepgram Nova-3 — WER (%)",           "value": 7.9 },
+          { "@type": "PropertyValue", "name": "Deepgram Nova-3 — Perfect",           "value": 808 },
+          { "@type": "PropertyValue", "name": "Deepgram Nova-3 — High WER",          "value": 0 },
+          { "@type": "PropertyValue", "name": "Deepgram Nova-3 — RTFx",              "value": 2 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — WER (%)",                 "value": 8.2 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — Perfect",                  "value": 904 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — High WER",                 "value": 2 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — RTFx",                    "value": 1 }
+        ]
+      },
+      {
+        "@type": "Dataset",
+        "name": "VoxPopuli — Formal Discourse (European Parliament)",
+        "description": "European Parliament speech recordings. Lower WER is better.",
+        "creator": { "@type": "Organization", "name": "Meta AI", "url": "https://ai.meta.com" },
+        "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "variableMeasured": [
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — WER (%)",      "value": 1.7 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — Perfect",      "value": 418 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — High WER",     "value": 0 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — RTFx",         "value": 5 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — WER (%)",   "value": 2.1 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — Perfect",   "value": 396 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — High WER",  "value": 0 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — RTFx",      "value": 2 },
+          { "@type": "PropertyValue", "name": "Mistral Voxtral — WER (%)",           "value": 2.1 },
+          { "@type": "PropertyValue", "name": "Mistral Voxtral — Perfect",           "value": 394 },
+          { "@type": "PropertyValue", "name": "Mistral Voxtral — High WER",          "value": 0 },
+          { "@type": "PropertyValue", "name": "Mistral Voxtral — RTFx",              "value": 5 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — WER (%)",                 "value": 2.2 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — Perfect",                  "value": 393 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — High WER",                 "value": 0 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — RTFx",                    "value": 3 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — WER (%)",   "value": 2.2 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — Perfect",   "value": 377 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — High WER",  "value": 0 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — RTFx",      "value": 3 },
+          { "@type": "PropertyValue", "name": "Solaria-3 — WER (%)",                 "value": 2.9 },
+          { "@type": "PropertyValue", "name": "Speechmatics — WER (%)",              "value": 3.0 },
+          { "@type": "PropertyValue", "name": "Speechmatics — Perfect",              "value": 326 },
+          { "@type": "PropertyValue", "name": "Speechmatics — High WER",             "value": 0 },
+          { "@type": "PropertyValue", "name": "Speechmatics — RTFx",                 "value": 6 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — WER (%)",               "value": 3.2 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — Perfect",               "value": 363 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — High WER",              "value": 0 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — RTFx",                  "value": 7 }
+        ]
+      },
+      {
+        "@type": "Dataset",
+        "name": "Earnings22 Full — Financial Calls (Long-form)",
+        "description": "Corporate earnings calls, long-form recording. Lower WER is better. RTFx = real-time processing speed multiplier.",
+        "creator": { "@type": "Organization", "name": "Rev.com", "url": "https://www.rev.com" },
+        "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "variableMeasured": [
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — WER (%)",      "value": 9.4 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — RTFx",         "value": 35 },
+          { "@type": "PropertyValue", "name": "Speechmatics — WER (%)",              "value": 10.0 },
+          { "@type": "PropertyValue", "name": "Speechmatics — RTFx",                 "value": 17 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — WER (%)",   "value": 11.0 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — RTFx",      "value": 71 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — WER (%)",   "value": 11.1 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — RTFx",      "value": 82 },
+          { "@type": "PropertyValue", "name": "Mistral STT — WER (%)",               "value": 11.6 },
+          { "@type": "PropertyValue", "name": "Mistral STT — RTFx",                  "value": 135 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — WER (%)",                 "value": 11.8 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — RTFx",                    "value": 28 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — WER (%)",               "value": 14.5 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — RTFx",                  "value": 348 }
+        ]
+      },
+      {
+        "@type": "Dataset",
+        "name": "Earnings22 Cleaned AA — Financial Calls (Curated by Artificial Analysis)",
+        "description": "Curated earnings calls with aligned segments. Lower WER is better.",
+        "creator": { "@type": "Organization", "name": "Rev.com", "url": "https://www.rev.com" },
+        "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "variableMeasured": [
+          { "@type": "PropertyValue", "name": "Solaria-3 — WER (%)",                 "value": 6.4 },
+          { "@type": "PropertyValue", "name": "AssemblyAI — WER (%)",                  "value": 6.9 },
+          { "@type": "PropertyValue", "name": "AssemblyAI — RTFx",                     "value": 64 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — WER (%)",      "value": 7.7 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — RTFx",         "value": 32 },
+          { "@type": "PropertyValue", "name": "Speechmatics — WER (%)",              "value": 7.8 },
+          { "@type": "PropertyValue", "name": "Speechmatics — RTFx",                 "value": 24 },
+          { "@type": "PropertyValue", "name": "Mistral Voxtral — WER (%)",           "value": 7.9 },
+          { "@type": "PropertyValue", "name": "Mistral Voxtral — RTFx",              "value": 57 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — WER (%)",                 "value": 8.1 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — RTFx",                    "value": 39 },
+          { "@type": "PropertyValue", "name": "Deepgram Nova-3 — WER (%)",           "value": 12.0 },
+          { "@type": "PropertyValue", "name": "Deepgram Nova-3 — RTFx",              "value": 234 }
+        ]
+      },
+      {
+        "@type": "Dataset",
+        "name": "Multilingual LibriSpeech — Audiobooks (DE, ES, FR, IT, PT — average)",
+        "description": "Audiobooks across 5 European languages. Lower WER is better.",
+        "creator": { "@type": "Organization", "name": "Meta AI", "url": "https://ai.meta.com" },
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "variableMeasured": [
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — WER (%)",      "value": 3.7 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — Perfect",      "value": 565 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — High WER",     "value": 3 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — RTFx",         "value": 15 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — WER (%)",   "value": 4.7 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — Perfect",   "value": 508 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — High WER",  "value": 3 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — RTFx",      "value": 1 },
+          { "@type": "PropertyValue", "name": "Soniox v4 — WER (%)",                 "value": 5.6 },
+          { "@type": "PropertyValue", "name": "Soniox v4 — Perfect",                 "value": 378 },
+          { "@type": "PropertyValue", "name": "Soniox v4 — High WER",                "value": 3 },
+          { "@type": "PropertyValue", "name": "Soniox v4 — RTFx",                    "value": 6 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — WER (%)",                 "value": 5.9 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — Perfect",                  "value": 367 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — High WER",                 "value": 3 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — RTFx",                    "value": 3 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — WER (%)",   "value": 6.2 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — Perfect",   "value": 369 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — High WER",  "value": 2 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — RTFx",      "value": 3 },
+          { "@type": "PropertyValue", "name": "Deepgram Nova-3 — WER (%)",           "value": 7.5 },
+          { "@type": "PropertyValue", "name": "Deepgram Nova-3 — Perfect",           "value": 270 },
+          { "@type": "PropertyValue", "name": "Deepgram Nova-3 — High WER",          "value": 4 },
+          { "@type": "PropertyValue", "name": "Deepgram Nova-3 — RTFx",              "value": 7 },
+          { "@type": "PropertyValue", "name": "Solaria-3 — WER (%)",                 "value": 8.0 }
+        ]
+      },
+      {
+        "@type": "Dataset",
+        "name": "Multilingual LibriSpeech — WER by Language (%)",
+        "description": "Per-language Word Error Rate breakdown. Lower is better.",
+        "creator": { "@type": "Organization", "name": "Meta AI", "url": "https://ai.meta.com" },
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "variableMeasured": [
+          { "@type": "PropertyValue", "name": "Solaria-1 — German (DE)",              "value": 5.0 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — Spanish (ES)",             "value": 4.0 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — French (FR)",              "value": 4.8 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — Italian (IT)",             "value": 9.9 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — Portuguese (PT)",          "value": 5.3 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — German (DE)","value": 3.5 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — Spanish (ES)","value": 3.2 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — French (FR)","value": 2.6 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — Italian (IT)","value": 9.7 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — Portuguese (PT)","value": 4.4 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — German (DE)",   "value": 3.1 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — Spanish (ES)",  "value": 3.2 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — French (FR)",   "value": 2.9 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — Italian (IT)",  "value": 6.1 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — Portuguese (PT)","value": 3.0 },
+          { "@type": "PropertyValue", "name": "Soniox v4 — German (DE)",              "value": 5.4 },
+          { "@type": "PropertyValue", "name": "Soniox v4 — Spanish (ES)",             "value": 4.4 },
+          { "@type": "PropertyValue", "name": "Soniox v4 — French (FR)",              "value": 5.0 },
+          { "@type": "PropertyValue", "name": "Soniox v4 — Italian (IT)",             "value": 8.8 },
+          { "@type": "PropertyValue", "name": "Soniox v4 — Portuguese (PT)",          "value": 4.3 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — German (DE)","value": 3.4 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — Spanish (ES)","value": 4.0 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — French (FR)","value": 5.8 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — Italian (IT)","value": 11.9 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — Portuguese (PT)","value": 5.9 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — German (DE)",            "value": 6.9 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — Spanish (ES)",           "value": 4.6 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — French (FR)",            "value": 6.2 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — Italian (IT)",           "value": 8.8 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — Portuguese (PT)",        "value": 11.3 }
+        ]
+      },
+      {
+        "@type": "Dataset",
+        "name": "Pipecat STT Benchmark — Real-Time Streaming",
+        "description": "Curated real-time STT benchmark by Pipecat. Lower WER is better.",
+        "creator": { "@type": "Organization", "name": "Pipecat (pipecat-ai)", "url": "https://github.com/pipecat-ai" },
+        "license": "https://opensource.org/licenses/MIT",
+        "variableMeasured": [
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — WER (%)",   "value": 2.0 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — Perfect",   "value": 531 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — High WER",  "value": 0 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v3 — RTFx",      "value": 2 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — WER (%)",      "value": 2.2 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — Perfect",      "value": 512 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — High WER",     "value": 0 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe v2 — RTFx",         "value": 8 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — WER (%)",   "value": 2.5 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — Perfect",   "value": 494 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — High WER",  "value": 0 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal v2 — RTFx",      "value": 1 },
+          { "@type": "PropertyValue", "name": "Mistral STT — WER (%)",               "value": 2.6 },
+          { "@type": "PropertyValue", "name": "Mistral STT — Perfect",               "value": 485 },
+          { "@type": "PropertyValue", "name": "Mistral STT — High WER",              "value": 0 },
+          { "@type": "PropertyValue", "name": "Mistral STT — RTFx",                  "value": 5 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — WER (%)",                 "value": 2.7 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — Perfect",                  "value": 482 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — High WER",                 "value": 0 },
+          { "@type": "PropertyValue", "name": "Solaria-1 — RTFx",                    "value": 4 },
+          { "@type": "PropertyValue", "name": "Speechmatics — WER (%)",              "value": 2.7 },
+          { "@type": "PropertyValue", "name": "Speechmatics — Perfect",              "value": 476 },
+          { "@type": "PropertyValue", "name": "Speechmatics — High WER",             "value": 0 },
+          { "@type": "PropertyValue", "name": "Speechmatics — RTFx",                 "value": 0 },
+          { "@type": "PropertyValue", "name": "Soniox v4 — WER (%)",                 "value": 2.9 },
+          { "@type": "PropertyValue", "name": "Soniox v4 — Perfect",                 "value": 480 },
+          { "@type": "PropertyValue", "name": "Soniox v4 — High WER",                "value": 0 },
+          { "@type": "PropertyValue", "name": "Soniox v4 — RTFx",                    "value": 2 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — WER (%)",               "value": 3.1 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — Perfect",               "value": 449 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — High WER",              "value": 0 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — RTFx",                  "value": 8 }
+        ]
+      },
+      {
+        "@type": "Dataset",
+        "name": "DIHARD III — Speaker Diarization",
+        "description": "Diarization Error Rate (DER %) across 10 domains. Lower is better. Includes simple average and weighted average.",
+        "creator": { "@type": "Organization", "name": "Linguistic Data Consortium", "url": "https://www.ldc.upenn.edu" },
+        "license": "https://catalog.ldc.upenn.edu/license/ldc-non-members-agreement.pdf",
+        "variableMeasured": [
+          { "@type": "PropertyValue", "name": "Zenith solaria-1 — Broadcast",        "value": 9.4 },
+          { "@type": "PropertyValue", "name": "Zenith solaria-1 — Meeting",           "value": 29.9 },
+          { "@type": "PropertyValue", "name": "Zenith solaria-1 — Web Video",         "value": 44.4 },
+          { "@type": "PropertyValue", "name": "Zenith solaria-1 — Socio Field",       "value": 12.3 },
+          { "@type": "PropertyValue", "name": "Zenith solaria-1 — Court",             "value": 3.9 },
+          { "@type": "PropertyValue", "name": "Zenith solaria-1 — Clinical",          "value": 13.3 },
+          { "@type": "PropertyValue", "name": "Zenith solaria-1 — Restaurant",        "value": 41.3 },
+          { "@type": "PropertyValue", "name": "Zenith solaria-1 — Socio Lab",         "value": 5.5 },
+          { "@type": "PropertyValue", "name": "Zenith solaria-1 — CTS",               "value": 7.7 },
+          { "@type": "PropertyValue", "name": "Zenith solaria-1 — Maptask",           "value": 4.5 },
+          { "@type": "PropertyValue", "name": "Zenith solaria-1 — Simple Avg DER",    "value": 17.2 },
+          { "@type": "PropertyValue", "name": "Zenith solaria-1 — Weighted Avg DER",  "value": 16.6 },
+          { "@type": "PropertyValue", "name": "NVIDIA NeMo Sortformer — Broadcast",   "value": 10.3 },
+          { "@type": "PropertyValue", "name": "NVIDIA NeMo Sortformer — Meeting",     "value": 33.0 },
+          { "@type": "PropertyValue", "name": "NVIDIA NeMo Sortformer — Web Video",   "value": 43.5 },
+          { "@type": "PropertyValue", "name": "NVIDIA NeMo Sortformer — Socio Field", "value": 13.0 },
+          { "@type": "PropertyValue", "name": "NVIDIA NeMo Sortformer — Court",       "value": 24.1 },
+          { "@type": "PropertyValue", "name": "NVIDIA NeMo Sortformer — Clinical",    "value": 14.4 },
+          { "@type": "PropertyValue", "name": "NVIDIA NeMo Sortformer — Restaurant",  "value": 50.9 },
+          { "@type": "PropertyValue", "name": "NVIDIA NeMo Sortformer — Socio Lab",   "value": 8.6 },
+          { "@type": "PropertyValue", "name": "NVIDIA NeMo Sortformer — CTS",         "value": 14.1 },
+          { "@type": "PropertyValue", "name": "NVIDIA NeMo Sortformer — Maptask",     "value": 8.2 },
+          { "@type": "PropertyValue", "name": "NVIDIA NeMo Sortformer — Simple Avg DER","value": 22.0 },
+          { "@type": "PropertyValue", "name": "NVIDIA NeMo Sortformer — Weighted Avg DER","value": 20.4 },
+          { "@type": "PropertyValue", "name": "pyannoteAI Community-1 — Broadcast",   "value": 10.5 },
+          { "@type": "PropertyValue", "name": "pyannoteAI Community-1 — Meeting",     "value": 35.8 },
+          { "@type": "PropertyValue", "name": "pyannoteAI Community-1 — Web Video",   "value": 48.7 },
+          { "@type": "PropertyValue", "name": "pyannoteAI Community-1 — Socio Field", "value": 17.9 },
+          { "@type": "PropertyValue", "name": "pyannoteAI Community-1 — Court",       "value": 11.6 },
+          { "@type": "PropertyValue", "name": "pyannoteAI Community-1 — Clinical",    "value": 23.8 },
+          { "@type": "PropertyValue", "name": "pyannoteAI Community-1 — Restaurant",  "value": 49.9 },
+          { "@type": "PropertyValue", "name": "pyannoteAI Community-1 — Socio Lab",   "value": 13.9 },
+          { "@type": "PropertyValue", "name": "pyannoteAI Community-1 — CTS",         "value": 12.3 },
+          { "@type": "PropertyValue", "name": "pyannoteAI Community-1 — Maptask",     "value": 10.2 },
+          { "@type": "PropertyValue", "name": "pyannoteAI Community-1 — Simple Avg DER","value": 23.5 },
+          { "@type": "PropertyValue", "name": "pyannoteAI Community-1 — Weighted Avg DER","value": 23.0 },
+          { "@type": "PropertyValue", "name": "Speechmatics — Broadcast",             "value": 17.2 },
+          { "@type": "PropertyValue", "name": "Speechmatics — Meeting",               "value": 55.6 },
+          { "@type": "PropertyValue", "name": "Speechmatics — Web Video",             "value": 55.6 },
+          { "@type": "PropertyValue", "name": "Speechmatics — Socio Field",           "value": 28.9 },
+          { "@type": "PropertyValue", "name": "Speechmatics — Court",                 "value": 15.0 },
+          { "@type": "PropertyValue", "name": "Speechmatics — Clinical",              "value": 24.9 },
+          { "@type": "PropertyValue", "name": "Speechmatics — Restaurant",            "value": 58.4 },
+          { "@type": "PropertyValue", "name": "Speechmatics — Socio Lab",             "value": 18.6 },
+          { "@type": "PropertyValue", "name": "Speechmatics — CTS",                   "value": 20.1 },
+          { "@type": "PropertyValue", "name": "Speechmatics — Maptask",               "value": 23.4 },
+          { "@type": "PropertyValue", "name": "Speechmatics — Simple Avg DER",        "value": 31.8 },
+          { "@type": "PropertyValue", "name": "Speechmatics — Weighted Avg DER",      "value": 30.1 },
+          { "@type": "PropertyValue", "name": "AWS Transcribe — Broadcast",           "value": 16.4 },
+          { "@type": "PropertyValue", "name": "AWS Transcribe — Meeting",             "value": 51.4 },
+          { "@type": "PropertyValue", "name": "AWS Transcribe — Web Video",           "value": 60.3 },
+          { "@type": "PropertyValue", "name": "AWS Transcribe — Socio Field",         "value": 25.2 },
+          { "@type": "PropertyValue", "name": "AWS Transcribe — Court",               "value": 16.7 },
+          { "@type": "PropertyValue", "name": "AWS Transcribe — Clinical",            "value": 27.3 },
+          { "@type": "PropertyValue", "name": "AWS Transcribe — Restaurant",          "value": 63.1 },
+          { "@type": "PropertyValue", "name": "AWS Transcribe — Socio Lab",           "value": 20.2 },
+          { "@type": "PropertyValue", "name": "AWS Transcribe — CTS",                 "value": 31.2 },
+          { "@type": "PropertyValue", "name": "AWS Transcribe — Maptask",             "value": 22.9 },
+          { "@type": "PropertyValue", "name": "AWS Transcribe — Simple Avg DER",      "value": 33.5 },
+          { "@type": "PropertyValue", "name": "AWS Transcribe — Weighted Avg DER",    "value": 33.8 },
+          { "@type": "PropertyValue", "name": "Soniox STT-async-preview-v1 — Broadcast","value": 24.8 },
+          { "@type": "PropertyValue", "name": "Soniox STT-async-preview-v1 — Meeting","value": 58.3 },
+          { "@type": "PropertyValue", "name": "Soniox STT-async-preview-v1 — Web Video","value": 57.5 },
+          { "@type": "PropertyValue", "name": "Soniox STT-async-preview-v1 — Socio Field","value": 30.1 },
+          { "@type": "PropertyValue", "name": "Soniox STT-async-preview-v1 — Court", "value": 39.3 },
+          { "@type": "PropertyValue", "name": "Soniox STT-async-preview-v1 — Clinical","value": 35.1 },
+          { "@type": "PropertyValue", "name": "Soniox STT-async-preview-v1 — Restaurant","value": 67.4 },
+          { "@type": "PropertyValue", "name": "Soniox STT-async-preview-v1 — Socio Lab","value": 28.0 },
+          { "@type": "PropertyValue", "name": "Soniox STT-async-preview-v1 — CTS",   "value": 29.2 },
+          { "@type": "PropertyValue", "name": "Soniox STT-async-preview-v1 — Maptask","value": 27.6 },
+          { "@type": "PropertyValue", "name": "Soniox STT-async-preview-v1 — Simple Avg DER","value": 39.7 },
+          { "@type": "PropertyValue", "name": "Soniox STT-async-preview-v1 — Weighted Avg DER","value": 37.8 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe-v1 — Broadcast",    "value": 25.6 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe-v1 — Meeting",       "value": 50.5 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe-v1 — Web Video",     "value": 63.4 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe-v1 — Socio Field",   "value": 29.7 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe-v1 — Court",         "value": 23.1 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe-v1 — Clinical",      "value": 47.7 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe-v1 — Restaurant",    "value": 57.4 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe-v1 — Socio Lab",     "value": 30.3 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe-v1 — CTS",           "value": 22.9 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe-v1 — Maptask",       "value": 45.2 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe-v1 — Simple Avg DER","value": 39.6 },
+          { "@type": "PropertyValue", "name": "ElevenLabs Scribe-v1 — Weighted Avg DER","value": 39.5 },
+          { "@type": "PropertyValue", "name": "OpenAI GPT-4o Transcribe — Broadcast", "value": 26.4 },
+          { "@type": "PropertyValue", "name": "OpenAI GPT-4o Transcribe — Meeting",   "value": 57.8 },
+          { "@type": "PropertyValue", "name": "OpenAI GPT-4o Transcribe — Web Video", "value": 64.1 },
+          { "@type": "PropertyValue", "name": "OpenAI GPT-4o Transcribe — Socio Field","value": 28.8 },
+          { "@type": "PropertyValue", "name": "OpenAI GPT-4o Transcribe — Court",     "value": 30.0 },
+          { "@type": "PropertyValue", "name": "OpenAI GPT-4o Transcribe — Clinical",  "value": 40.8 },
+          { "@type": "PropertyValue", "name": "OpenAI GPT-4o Transcribe — Restaurant","value": 59.7 },
+          { "@type": "PropertyValue", "name": "OpenAI GPT-4o Transcribe — Socio Lab", "value": 26.5 },
+          { "@type": "PropertyValue", "name": "OpenAI GPT-4o Transcribe — Simple Avg DER","value": 41.0 },
+          { "@type": "PropertyValue", "name": "OpenAI GPT-4o Transcribe — Weighted Avg DER","value": 42.8 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal — Broadcast",     "value": 30.9 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal — Meeting",       "value": 46.4 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal — Web Video",     "value": 68.4 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal — Socio Field",   "value": 33.1 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal — Court",         "value": 24.5 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal — Clinical",      "value": 51.4 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal — Restaurant",    "value": 59.4 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal — Socio Lab",     "value": 33.1 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal — CTS",           "value": 33.1 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal — Maptask",       "value": 42.1 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal — Simple Avg DER","value": 42.2 },
+          { "@type": "PropertyValue", "name": "AssemblyAI Universal — Weighted Avg DER","value": 43.9 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — Broadcast",              "value": 27.0 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — Meeting",                "value": 59.7 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — Web Video",              "value": 83.0 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — Socio Field",            "value": 35.5 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — Court",                  "value": 25.6 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — Clinical",               "value": 44.8 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — Restaurant",             "value": 75.2 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — Socio Lab",              "value": 32.2 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — CTS",                    "value": 35.5 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — Maptask",                "value": 45.9 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — Simple Avg DER",         "value": 46.4 },
+          { "@type": "PropertyValue", "name": "Deepgram v3 — Weighted Avg DER",       "value": 46.9 }
+        ]
+      }
+    ]
+  }
+  </script>
+  <script>
+    history.scrollRestoration = 'manual';
+    if (!window.location.hash) window.scrollTo(0, 0);
+  </script>
+  <style>
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { overflow-x: hidden; }
+
+    /* ── Reveal ── */
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity .7s var(--ease-out), transform .7s var(--ease-out); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Hero + Bento (merged, shared background) ── */
+    /* shared.css loads after inline style at build time — .section resets background; !important ensures we win */
+    .bench-hero-bento {
+      background: url(/images/Benchmarks_hero-section_bg.png) center bottom / cover no-repeat, var(--bg-primary) !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: var(--space-40);
+      padding-bottom: var(--space-20);
+    }
+    .bench-hero-bento .hero-content { padding-bottom: var(--space-16); }
+    .bench-hero-bento .hero { min-height: auto; padding: 0; }
+    .bench-hl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-bottom: var(--space-20); }
+    .bench-hl-card {
+      background: color-mix(in srgb, var(--bg-secondary) 70%, transparent);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-card);
+      border-radius: 0;
+      padding: var(--space-10);
+      position: relative;
+      overflow: hidden;
+      transition: border-color var(--duration-160) var(--ease-out);
+      text-align: left;
+    }
+    .bench-hl-card + .bench-hl-card { border-left: none; }
+    .bench-hl-card:first-child { border-radius: var(--radius-3) 0 0 var(--radius-3); }
+    .bench-hl-card:last-child { border-radius: 0 var(--radius-3) var(--radius-3) 0; }
+    .bench-hl-rank {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-12);
+      font-weight: var(--font-weight-medium);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: var(--space-6);
+    }
+    .bench-hl-rank--gold { background: color-mix(in srgb, var(--color-yellow-400) 15%, transparent); color: var(--color-yellow-400); }
+    .bench-hl-rank--purple { background: color-mix(in srgb, var(--color-purple-400) 12%, transparent); color: var(--color-purple-300); }
+    .bench-hl-value { font-size: var(--font-size-40); font-weight: var(--font-weight-medium); color: var(--text-primary); margin-bottom: var(--space-2); line-height: 1.1; }
+    .bench-hl-label { font-size: var(--font-size-16); font-weight: var(--font-weight-medium); color: var(--text-secondary); margin-bottom: var(--space-2); }
+    .bench-hl-desc { font-size: var(--font-size-14); color: var(--text-tertiary); line-height: var(--line-height-normal); }
+
+    /* ── Filter Chips ── */
+    .bench-filter-bar { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: var(--space-8); }
+    .bench-chip {
+      padding: 6px 12px;
+      font-size: var(--font-size-13);
+      font-family: var(--font-sans);
+      font-weight: var(--font-weight-medium);
+      color: var(--text-tertiary);
+      background: transparent;
+      border: 1px solid var(--border-primary);
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all var(--duration-80) var(--ease-out);
+      white-space: nowrap;
+    }
+    .bench-chip:hover { color: var(--text-secondary); border-color: var(--color-neutral-500); }
+    .bench-chip.active { background: var(--color-purple-400); color: var(--color-neutral-0); border-color: var(--color-purple-400); }
+
+    /* ── Dataset Section ── */
+    .bench-ds { border-top: 1px solid var(--border-primary); padding-top: var(--space-16); }
+    .bench-ds-tag {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: var(--font-size-12);
+      font-weight: var(--font-weight-medium);
+      text-transform: uppercase;
+      letter-spacing: var(--letter-spacing-widest);
+      color: var(--text-tertiary);
+      margin-bottom: var(--space-4);
+    }
+    .bench-ds-tag-dot {
+      width: 16px;
+      height: 8px;
+      border-radius: var(--radius-full);
+      background: #9770E8;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      flex-shrink: 0;
+    }
+    .bench-ds .section-title { margin-bottom: var(--space-2); }
+    .bench-ds .section-title .bench-title-token { color: var(--text-tertiary); font-weight: var(--font-weight-regular); }
+    .bench-ds .section-subtitle { margin-bottom: var(--space-8); }
+
+    /* ── View Toggle (Table / Chart) ── */
+    .bench-view-toggle {
+      display: inline-flex;
+      gap: 2px;
+      padding: 3px;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-primary);
+      border-radius: var(--radius-full);
+      flex-shrink: 0;
+    }
+    .bench-view-btn {
+      padding: var(--space-2) var(--space-6);
+      font-size: var(--font-size-14);
+      font-weight: var(--font-weight-medium);
+      font-family: var(--font-sans);
+      color: var(--text-secondary);
+      background: transparent;
+      border: none;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all var(--duration-160) var(--ease-out);
+    }
+    .bench-view-btn.active { background: var(--color-neutral-0); color: var(--color-neutral-1000); }
+    .bench-view-panel { display: none; }
+    .bench-view-panel.active { display: block; }
+
+    /* ── Sub-toggle (Earnings22 Full/Cleaned) ── */
+    .bench-sub-toggle {
+      display: inline-flex;
+      gap: 2px;
+      padding: 2px;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-primary);
+      border-radius: var(--radius-full);
+      margin-left: var(--space-4);
+      vertical-align: middle;
+    }
+    .bench-sub-btn {
+      padding: 4px 12px;
+      font-size: var(--font-size-12);
+      font-weight: var(--font-weight-medium);
+      font-family: var(--font-sans);
+      color: var(--text-tertiary);
+      background: transparent;
+      border: none;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all var(--duration-80) var(--ease-out);
+    }
+    .bench-sub-btn.active { background: var(--color-neutral-0); color: var(--color-neutral-1000); }
+
+    /* ── Chart ── */
+    .bench-chart { display: flex; align-items: flex-end; gap: var(--space-4); height: 320px; padding-bottom: var(--space-16); position: relative; }
+    .bench-chart-col { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; position: relative; --bar-color: var(--color-neutral-500); }
+    .bench-chart-col--s1 .bench-chart-bar-track { box-shadow: 0 0 24px -4px color-mix(in srgb, var(--color-purple-400) 30%, transparent); }
+    .bench-chart-bar-track { flex: 1; width: 100%; max-width: 72px; background: var(--bg-tertiary); border-radius: var(--radius-1) var(--radius-1) 0 0; overflow: hidden; display: flex; align-items: flex-end; }
+    .bench-chart-bar-fill { width: 100%; border-radius: var(--radius-1) var(--radius-1) 0 0; height: 0; transition: height .8s var(--ease-out); background: var(--bar-color); }
+    .bench-chart-col--muted .bench-chart-bar-fill { background: color-mix(in srgb, var(--bar-color) 38%, var(--color-neutral-600)); }
+    .bench-chart-col.anim .bench-chart-bar-fill { height: var(--bar-h); }
+    .bench-chart-value { font-size: var(--font-size-12); font-weight: var(--font-weight-medium); font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 4px; }
+    .bench-chart-col--muted .bench-chart-value { color: var(--text-tertiary); font-weight: var(--font-weight-regular); }
+    .bench-chart-label { position: absolute; bottom: calc(-1 * var(--space-12)); font-size: 11px; font-weight: var(--font-weight-medium); color: var(--text-secondary); white-space: nowrap; text-align: center; }
+    .bench-chart-col--muted .bench-chart-label { color: var(--text-tertiary); font-weight: var(--font-weight-regular); }
+    .bench-chart-label-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 3px; vertical-align: middle; background: var(--bar-color); }
+    .bench-chart-col--muted .bench-chart-label-dot { background: color-mix(in srgb, var(--bar-color) 38%, var(--color-neutral-600)); }
+    .bench-chart-na { font-size: var(--font-size-12); color: var(--text-tertiary); font-family: var(--font-mono); margin-bottom: 4px; }
+
+    /* ── Table ── */
+    .bench-table-wrap { overflow-x: auto; border: 1px solid var(--border-primary); border-radius: var(--radius-3); scrollbar-width: thin; scrollbar-color: var(--color-neutral-600) transparent; }
+    .bench-table { width: 100%; border-collapse: collapse; font-size: var(--font-size-14); }
+    .bench-table thead { position: sticky; top: 0; z-index: 2; }
+    .bench-table th { padding: var(--space-4) var(--space-6); background: var(--bg-tertiary); color: var(--text-secondary); font-weight: var(--font-weight-medium); font-size: var(--font-size-12); text-transform: uppercase; letter-spacing: var(--letter-spacing-wider); text-align: right; white-space: nowrap; border-bottom: 1px solid var(--border-primary); }
+    .bench-table th:first-child { text-align: left; }
+    .bench-table td { padding: var(--space-4) var(--space-6); font-family: var(--font-mono); text-align: right; border-bottom: 1px solid var(--border-primary); color: var(--text-primary); white-space: nowrap; }
+    .bench-table td:first-child { font-family: var(--font-sans); text-align: left; font-weight: var(--font-weight-medium); color: var(--text-secondary); }
+    .bench-table tr:last-child td { border-bottom: none; }
+    .bench-table tr:hover td { background: rgba(255,255,255,.02); }
+    .bench-table td.best { color: var(--color-green-500); font-weight: var(--font-weight-medium); }
+    .bench-table td.worst { color: var(--text-tertiary); }
+    .bench-table td.na { color: var(--text-tertiary); font-style: italic; }
+    .bench-table .col-gl { background: color-mix(in srgb, var(--color-purple-400) 5%, transparent); }
+    .bench-table .col-s3 { background: color-mix(in srgb, var(--color-orange-500) 8%, transparent); }
+    #compare .bench-table { font-size: var(--font-size-12); display: block; }
+    #compare .bench-table thead, #compare .bench-table tbody { display: block; }
+    #compare .bench-table tr { display: flex; }
+    #compare .bench-table th, #compare .bench-table td { padding: var(--space-6) var(--space-4); line-height: 1.5; }
+    #compare .bench-table .bench-col-provider { flex: 0 0 150px; min-width: 150px; }
+    #compare .bench-table th:not(.bench-col-provider), #compare .bench-table td:not(.bench-col-provider) { flex: 1; min-width: 0; }
+    #compare .bench-table th { font-size: var(--font-size-12); letter-spacing: .04em; text-align: center; }
+    #compare .bench-table td:not(.bench-col-provider) { text-align: center; font-size: var(--font-size-14); font-family: var(--font-mono); }
+
+    /* ── Insight + Toggle row ── */
+    .bench-controls-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-6);
+      margin-bottom: var(--space-8);
+    }
+    .bench-insight {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: 8px 14px;
+      background: color-mix(in srgb, var(--color-purple-400) 8%, transparent);
+      border: 1px solid color-mix(in srgb, var(--color-purple-400) 20%, transparent);
+      border-radius: var(--radius-2);
+      font-size: var(--font-size-13);
+      color: var(--color-purple-200);
+      flex: 1;
+      min-width: 0;
+    }
+    .bench-insight-icon {
+      display: inline-block;
+      width: 14px; height: 14px; flex-shrink: 0;
+      background-color: var(--color-purple-200);
+      -webkit-mask: url("/icons/Interface%20General/IconCircleInfo.svg") center/contain no-repeat;
+      mask: url("/icons/Interface%20General/IconCircleInfo.svg") center/contain no-repeat;
+    }
+
+    /* ── Provider Cards (mobile comparison) ── */
+    .bench-cards { display: none; }
+
+    /* ── MLS Language Grid ── */
+    .bench-lang-title { font-size: var(--font-size-18); font-weight: var(--font-weight-medium); margin-top: var(--space-8); margin-bottom: var(--space-4); color: var(--text-primary); }
+
+    /* ── Methodology ── */
+    .bench-method { max-width: 1200px; }
+    .bench-method p { font-size: var(--font-size-16); color: var(--text-secondary); line-height: var(--line-height-relaxed); margin-bottom: var(--space-6); }
+    .bench-method-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 0; margin-bottom: var(--space-12); }
+    .bench-method-stat { background: var(--bg-secondary); border: 1px solid var(--border-card); padding: var(--space-8); text-align: center; }
+    .bench-method-stat + .bench-method-stat { border-left: none; }
+    .bench-method-stat:first-child { border-radius: var(--radius-3) 0 0 var(--radius-3); }
+    .bench-method-stat:last-child { border-radius: 0 var(--radius-3) var(--radius-3) 0; }
+    .bench-method-stat-value { font-size: var(--font-size-40); font-weight: var(--font-weight-medium); color: var(--text-primary); margin-bottom: var(--space-2); }
+    .bench-method-stat-label { font-size: var(--font-size-14); color: var(--text-tertiary); display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
+    .bench-datasets-trigger {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 20px; height: 20px;
+      padding: 0; margin: 0; border: none;
+      background: transparent;
+      color: var(--text-tertiary);
+      cursor: pointer;
+      border-radius: var(--radius-full);
+      transition: color var(--duration-160) var(--ease-out), background var(--duration-160) var(--ease-out);
+    }
+    .bench-datasets-trigger:hover { color: var(--color-purple-400); background: color-mix(in srgb, var(--color-purple-400) 12%, transparent); }
+    .bench-datasets-trigger svg,
+    .bench-datasets-trigger img { transition: transform var(--duration-160) var(--ease-out); filter: brightness(0) invert(1); }
+    .bench-datasets-trigger[aria-expanded="true"] svg,
+    .bench-datasets-trigger[aria-expanded="true"] img { transform: rotate(180deg); }
+    .bench-datasets-popup { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: var(--space-8); pointer-events: none; opacity: 0; visibility: hidden; transition: opacity var(--duration-160) var(--ease-out), visibility var(--duration-160) var(--ease-out); }
+    .bench-datasets-popup.is-open { pointer-events: auto; opacity: 1; visibility: visible; }
+    .bench-datasets-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.4); cursor: pointer; }
+    .bench-datasets-popup-content { position: relative; z-index: 1; max-width: 480px; width: 100%; max-height: 80vh; overflow: auto; }
+    .bench-datasets-table-wrap { border: 1px solid var(--border-card); border-radius: var(--radius-2); overflow: hidden; background: var(--bg-primary); }
+    .bench-datasets-table { width: 100%; border-collapse: collapse; font-size: var(--font-size-12); }
+    .bench-datasets-table th { padding: var(--space-4) var(--space-6); background: var(--bg-tertiary); color: var(--text-tertiary); font-weight: var(--font-weight-medium); font-size: var(--font-size-11); text-transform: uppercase; letter-spacing: var(--letter-spacing-wider); text-align: left; border-bottom: 1px solid var(--border-card); }
+    .bench-datasets-table th + th { border-left: 1px solid var(--border-card); }
+    .bench-datasets-table td { padding: var(--space-4) var(--space-6); border-bottom: 1px solid var(--border-card); color: var(--text-secondary); transition: color var(--duration-160) var(--ease-out), background var(--duration-160) var(--ease-out); }
+    .bench-datasets-table td + td { border-left: 1px solid var(--border-card); }
+    .bench-datasets-table tr:last-child td { border-bottom: none; }
+    .bench-datasets-table td { opacity: 1; color: var(--text-secondary); }
+    .bench-datasets-table tbody tr:hover td { color: var(--text-primary); background: rgba(255,255,255,.02); }
+    .bench-datasets-table .ds-link { color: inherit; text-decoration: none; font-weight: var(--font-weight-medium); }
+    .bench-datasets-table .ds-tag { font-size: var(--font-size-11); text-transform: uppercase; letter-spacing: var(--letter-spacing-wider); }
+
+    /* ── Audio Sample Player ── */
+    .bench-audio {
+      display: flex;
+      align-items: center;
+      gap: var(--space-6);
+      padding: var(--space-4) var(--space-6);
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-4);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-2);
+    }
+    .bench-audio-play {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      background: var(--color-purple-400);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background var(--duration-160) var(--ease-out), transform var(--duration-160) var(--ease-out), box-shadow var(--duration-160) var(--ease-out);
+      box-shadow: 0 0 0 0 rgba(148, 122, 252, 0);
+    }
+    .bench-audio-play:hover {
+      background: var(--color-purple-500);
+      transform: scale(1.06);
+      box-shadow: 0 0 16px rgba(148, 122, 252, 0.35);
+    }
+    .bench-audio-play:active { transform: scale(0.96); }
+    .bench-audio-play svg { width: 16px; height: 16px; fill: currentColor; }
+    .bench-audio-play.is-playing svg .play-icon { display: none; }
+    .bench-audio-play:not(.is-playing) svg .pause-icon { display: none; }
+    .bench-audio-spectrum {
+      flex: 1;
+      min-width: 0;
+      height: 40px;
+      cursor: pointer;
+      border-radius: var(--radius-1);
+    }
+    .bench-audio-time {
+      font-size: var(--font-size-11);
+      font-family: var(--font-mono);
+      color: var(--text-tertiary);
+      flex-shrink: 0;
+      min-width: 36px;
+      text-align: right;
+    }
+    .bench-audio--empty .bench-audio-play { opacity: 0.4; pointer-events: none; }
+    .bench-audio--empty .bench-audio-spectrum { opacity: 0.3; }
+
+      /* ── Mobile chart hint ── */
+    .bench-mobile-hint {
+      display: none;
+      font-size: var(--font-size-12);
+      font-family: var(--font-mono);
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: var(--letter-spacing-wider);
+      margin-bottom: var(--space-4);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .bench-hl-grid { grid-template-columns: repeat(3, 1fr); }
+      .bench-chart { height: 260px; }
+      .bench-chart-bar-track { max-width: 56px; }
+    }
+
+    @media (max-width: 768px) {
+      /* Hero */
+      .hero { min-height: auto; }
+      .bench-hero-bento { padding-top: var(--space-20); padding-bottom: var(--space-12); }
+      .bench-hero-bento .hero-content { padding-bottom: var(--space-10); }
+      .bench-hero-bento.hero h1 { font-size: var(--font-size-32); }
+      .hero-subtitle { font-size: var(--font-size-14); }
+
+      /* Highlight cards */
+      .bench-hl-grid { grid-template-columns: 1fr; }
+      .bench-hl-card { padding: var(--space-6); }
+      .bench-hl-card:first-child { border-radius: var(--radius-3) var(--radius-3) 0 0; }
+      .bench-hl-card:last-child { border-radius: 0 0 var(--radius-3) var(--radius-3); }
+      .bench-hl-card + .bench-hl-card { border-left: 1px solid var(--border-card); border-top: none; }
+      .bench-hl-value { font-size: var(--font-size-32); }
+
+      /* Controls */
+      .bench-controls-row { flex-direction: column; align-items: flex-start; }
+      .bench-insight { font-size: var(--font-size-12); }
+
+      .bench-mobile-hint { display: block; }
+
+      /* Charts — horizontal bars on mobile */
+      .bench-chart {
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+        gap: var(--space-4);
+        overflow-x: visible;
+        padding-bottom: 0;
+      }
+      .bench-chart-col {
+        flex: none;
+        flex-direction: row;
+        align-items: center;
+        height: auto;
+        gap: var(--space-4);
+        position: static;
+      }
+      .bench-chart-bar-track {
+        flex: 1;
+        height: 28px;
+        max-width: none;
+        border-radius: var(--radius-1);
+        align-items: stretch;
+      }
+      .bench-chart-bar-fill {
+        height: 100% !important;
+        width: 0 !important;
+        border-radius: var(--radius-1);
+        transition: width .8s var(--ease-out) !important;
+      }
+      .bench-chart-col.anim .bench-chart-bar-fill {
+        width: var(--bar-h) !important;
+        height: 100% !important;
+      }
+      .bench-chart-value {
+        order: 3;
+        flex: 0 0 44px;
+        text-align: right;
+        font-size: 11px;
+        margin-bottom: 0;
+      }
+      .bench-chart-label {
+        position: static;
+        order: -1;
+        flex: 0 0 90px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 11px;
+        text-align: left;
+        bottom: auto;
+      }
+      .bench-chart-na {
+        order: 3;
+        flex: 0 0 44px;
+        text-align: right;
+        margin-bottom: 0;
+      }
+
+      /* Tables — scroll hint gradient */
+      .bench-table-wrap { position: relative; }
+      .bench-table-wrap::after {
+        content: '';
+        position: absolute;
+        top: 0; right: 0; bottom: 0;
+        width: 32px;
+        background: linear-gradient(to right, transparent, var(--bg-primary));
+        pointer-events: none;
+        border-radius: 0 var(--radius-3) var(--radius-3) 0;
+        z-index: 3;
+        opacity: 1;
+        transition: opacity .3s;
+      }
+      .bench-table-wrap.scrolled-end::after { opacity: 0; }
+
+      /* Global comparison — hide table, show cards */
+      .bench-compare-table { display: none; }
+      .bench-cards {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-6);
+      }
+      .bench-card {
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-card);
+        border-radius: var(--radius-2);
+        padding: var(--space-6);
+      }
+      .bench-card--hl {
+        border-color: color-mix(in srgb, var(--color-purple-400) 40%, var(--border-card));
+        background: color-mix(in srgb, var(--color-purple-400) 4%, var(--bg-secondary));
+      }
+      .bench-card--s3 {
+        border-color: color-mix(in srgb, var(--color-orange-500) 45%, var(--border-card));
+        background: color-mix(in srgb, var(--color-orange-500) 6%, var(--bg-secondary));
+      }
+      .bench-card-header {
+        display: flex;
+        align-items: center;
+        gap: var(--space-4);
+        margin-bottom: var(--space-6);
+      }
+      .bench-card-dot {
+        width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+        background: var(--dot-color, var(--color-neutral-500));
+      }
+      .bench-card-dot--muted {
+        background: color-mix(in srgb, var(--dot-color) 38%, var(--color-neutral-600));
+      }
+      .bench-card-name {
+        font-weight: var(--font-weight-medium);
+        font-size: var(--font-size-14);
+        color: var(--text-primary);
+      }
+      .bench-card-rows {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .bench-card-row {
+        display: flex;
+        align-items: center;
+        gap: var(--space-4);
+      }
+      .bench-card-ds {
+        flex: 0 0 82px;
+        font-size: var(--font-size-11);
+        color: var(--text-tertiary);
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .bench-card-bar-track {
+        flex: 1;
+        height: 6px;
+        background: var(--bg-tertiary);
+        border-radius: 3px;
+        overflow: hidden;
+      }
+      .bench-card-bar-fill {
+        height: 100%;
+        border-radius: 3px;
+        background: var(--text-tertiary);
+        transition: width .6s var(--ease-out);
+      }
+      .bench-card-bar-fill.best { background: var(--color-green-500); }
+      .bench-card-val {
+        flex: 0 0 40px;
+        font-size: var(--font-size-12);
+        font-family: var(--font-mono);
+        text-align: right;
+        color: var(--text-secondary);
+      }
+      .bench-card-val.best { color: var(--color-green-500); font-weight: var(--font-weight-medium); }
+      .bench-card-val.worst { color: var(--text-tertiary); }
+      .bench-card-val.na { color: var(--text-tertiary); font-style: italic; }
+
+      /* Filter chips */
+      .bench-filter-bar { gap: 6px; row-gap: 8px; }
+      .bench-chip { padding: 5px 10px; font-size: var(--font-size-12); }
+
+      /* Section title with sub-toggle */
+      .section-title { font-size: var(--font-size-32); }
+      .bench-sub-toggle { display: flex; margin-left: 0; margin-top: var(--space-4); }
+
+      /* Methodology stats */
+      .bench-method-grid { grid-template-columns: 1fr; row-gap: 0; }
+      .bench-method-stat + .bench-method-stat { border-left: 1px solid var(--border-card); border-top: none; }
+      .bench-method-stat:first-child { border-radius: var(--radius-3) var(--radius-3) 0 0; }
+      .bench-method-stat:nth-child(2) { border-radius: 0; }
+      .bench-method-stat:last-child { border-radius: 0 0 var(--radius-3) var(--radius-3); }
+      .bench-method-stat-value { font-size: var(--font-size-32); }
+
+      /* Datasets popup */
+      .bench-datasets-popup-content { max-width: 100%; }
+      .bench-datasets-table { font-size: var(--font-size-11); }
+
+      /* CTA */
+      .container.cta-bento { padding: var(--space-16) var(--space-6); border-radius: 16px; }
+      .cta-title { font-size: var(--font-size-32); }
+    }
+
+    @media (max-width: 480px) {
+      .bench-hero-bento { padding-top: var(--space-16); }
+      .bench-hero-bento.hero h1 { font-size: var(--font-size-24); }
+      .bench-hl-value { font-size: var(--font-size-24); }
+      .bench-hl-label { font-size: var(--font-size-14); }
+      .bench-chart-label { flex: 0 0 72px; font-size: 10px; }
+      .bench-chart-value { font-size: 10px; flex: 0 0 38px; }
+      .bench-chart-bar-track { height: 24px; }
+      .bench-card-ds { flex: 0 0 68px; }
+      .container.cta-bento { padding: var(--space-12) var(--space-4); }
+      .cta-title { font-size: var(--font-size-24); }
+      .cta-subtitle { font-size: var(--font-size-14); }
+    }
+
+    /* ── CTA Bento (page-specific, ensures styles apply) ── */
+    .container.cta-bento {
+      position: relative;
+      max-width: 1200px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: var(--space-40) var(--space-12);
+      background: linear-gradient(180deg, #0a0a0f 0%, #0d0a18 50%, #120d1f 100%);
+      border: 1px solid var(--border-transparent-subtle);
+      border-radius: 24px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .container.cta-bento > * { position: relative; z-index: 1; }
+    .container.cta-bento::before {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120%;
+      height: 80%;
+      background: radial-gradient(ellipse at center, rgba(148, 122, 252, 0.25) 0%, rgba(126, 58, 237, 0.12) 40%, transparent 70%);
+      pointer-events: none;
+    }
+    .container.cta-bento .cta-title { color: var(--color-neutral-0); margin-bottom: var(--space-4); }
+    .container.cta-bento .cta-subtitle { color: rgba(255, 255, 255, 0.7); margin-bottom: var(--space-10); }
+    .container.cta-bento .cta-actions { justify-content: center; }
+    /* CTA bento: same button style as hero (override shared cta-bento) */
+    .container.cta-bento .btn-primary {
+      border-radius: var(--radius-5);
+      padding: 8px 20px;
+      background: var(--bg-inverse);
+      color: var(--text-inverse);
+      border: none;
+    }
+    .container.cta-bento .btn-primary:hover { background: var(--bg-inverse); opacity: 0.92; }
+    .container.cta-bento .btn-secondary {
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      border: 1px solid var(--border-transparent);
+    }
+    .container.cta-bento .btn-secondary:hover {
+      background: var(--bg-glass-light);
+      border-color: var(--border-transparent);
+    }
+
+    /* ── Hero h1 bar-chart animation (words rise from bottom) ── */
+    @keyframes benchHeroBarIn {
+      from { transform: translateY(100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .bench-hero-bento .bench-hero-word {
+      display: inline-block;
+      transform-origin: bottom;
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    .bench-hero-bento.bench-hero-active .bench-hero-word {
+      animation: benchHeroBarIn 0.55s var(--ease-out) forwards;
+    }
+
+  </style>
+  <link rel="stylesheet" crossorigin href="/assets/shared-0ymG48HZ.css">
+</head>
+<body>
+  <!-- LLM-readable benchmark data — visually hidden, always present in HTML, placed first for crawler priority -->
+  <section aria-label="Benchmark data tables" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
+    <h2>Speech-to-Text Benchmark Results — Word Error Rate (WER %, lower is better)</h2>
+    <p>Methodology: benchmarks run on the same framework as the Solaria-1 campaign. Solaria-3 and Solaria-1 compared against 9 STT providers. Each provider tested on identical audio files via production APIs with default settings. Real customer audio = Zenith internal production dataset, annotated by humans. Soniox and Pipecat STT Benchmark excluded on some datasets pending data availability. Transcriptions normalized with OpenAI Whisper text normalizer before WER computation. Diarization Error Rate (DER) measured on DIHARD III using standard protocols. 74+ hours of audio across 8 evaluation datasets. Full open benchmark methodology: https://github.com/gladiaio/normalization</p>
+    <p>Columns: WER = Word Error Rate (%, lower is better) · Perfect = number of files with 0% WER · High WER = files with WER above 50% · RTFx = Real-Time Factor multiplier (higher = faster than real-time)</p>
+
+    <h3>Real Customer Audio — English (Zenith Internal Dataset)</h3>
+    <table>
+      <thead><tr><th>Provider</th><th>WER (%)</th></tr></thead>
+      <tbody>
+        <tr><td>Solaria-3</td><td>9.6</td></tr>
+        <tr><td>ElevenLabs Scribe v2</td><td>9.9</td></tr>
+        <tr><td>AssemblyAI</td><td>10.0</td></tr>
+        <tr><td>Deepgram Nova-3</td><td>10.7</td></tr>
+        <tr><td>Mistral Voxtral</td><td>12.2</td></tr>
+        <tr><td>Solaria-1</td><td>12.9</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Switchboard — Conversational Speech</h3>
+    <table>
+      <thead><tr><th>Provider</th><th>WER (%)</th><th>Perfect transcriptions</th><th>High WER files</th><th>RTFx</th></tr></thead>
+      <tbody>
+        <tr><td>Solaria-3</td><td>33.9</td><td>27</td><td>3</td><td>0</td></tr>
+        <tr><td>Solaria-1</td><td>37.3</td><td>27</td><td>3</td><td>0</td></tr>
+        <tr><td>AssemblyAI</td><td>42.3</td><td>28</td><td>4</td><td>1</td></tr>
+        <tr><td>Speechmatics</td><td>46.0</td><td>31</td><td>7</td><td>0</td></tr>
+        <tr><td>Mistral Voxtral</td><td>48.1</td><td>25</td><td>6</td><td>6</td></tr>
+        <tr><td>Deepgram Nova-3</td><td>49.8</td><td>26</td><td>7</td><td>1</td></tr>
+        <tr><td>ElevenLabs Scribe v2</td><td>55.2</td><td>31</td><td>6</td><td>0</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Common Voice 24 — Clean Audio (Multilingual)</h3>
+    <table>
+      <thead><tr><th>Provider</th><th>WER (%)</th><th>Perfect transcriptions</th><th>High WER files</th><th>RTFx</th></tr></thead>
+      <tbody>
+        <tr><td>Speechmatics</td><td>3.8</td><td>1067</td><td>2</td><td>2</td></tr>
+        <tr><td>AssemblyAI</td><td>3.9</td><td>1041</td><td>1</td><td>0</td></tr>
+        <tr><td>ElevenLabs Scribe v2</td><td>3.9</td><td>1059</td><td>3</td><td>6</td></tr>
+        <tr><td>Mistral Voxtral</td><td>5.1</td><td>984</td><td>2</td><td>6</td></tr>
+        <tr><td>AssemblyAI Universal v2</td><td>5.2</td><td>968</td><td>2</td><td>1</td></tr>
+        <tr><td>Solaria-3</td><td>6.9</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td>Soniox v4</td><td>7.2</td><td>902</td><td>7</td><td>1</td></tr>
+        <tr><td>Deepgram Nova-3</td><td>7.9</td><td>808</td><td>0</td><td>2</td></tr>
+        <tr><td>Solaria-1</td><td>8.2</td><td>904</td><td>2</td><td>1</td></tr>
+      </tbody>
+    </table>
+
+    <h3>VoxPopuli — Formal Discourse (European Parliament)</h3>
+    <table>
+      <thead><tr><th>Provider</th><th>WER (%)</th><th>Perfect transcriptions</th><th>High WER files</th><th>RTFx</th></tr></thead>
+      <tbody>
+        <tr><td>ElevenLabs Scribe v2</td><td>1.7</td><td>418</td><td>0</td><td>5</td></tr>
+        <tr><td>AssemblyAI</td><td>2.1</td><td>396</td><td>0</td><td>2</td></tr>
+        <tr><td>Mistral Voxtral</td><td>2.1</td><td>394</td><td>0</td><td>5</td></tr>
+        <tr><td>Solaria-1</td><td>2.2</td><td>393</td><td>0</td><td>3</td></tr>
+        <tr><td>AssemblyAI Universal v2</td><td>2.2</td><td>377</td><td>0</td><td>3</td></tr>
+        <tr><td>Solaria-3</td><td>2.9</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td>Speechmatics</td><td>3.0</td><td>326</td><td>0</td><td>6</td></tr>
+        <tr><td>Deepgram Nova-3</td><td>3.2</td><td>363</td><td>0</td><td>7</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Earnings22 Full — Financial Calls (Long-form, single file)</h3>
+    <table>
+      <thead><tr><th>Provider</th><th>WER (%)</th><th>RTFx</th></tr></thead>
+      <tbody>
+        <tr><td>ElevenLabs Scribe v2</td><td>9.4</td><td>35</td></tr>
+        <tr><td>Speechmatics</td><td>10.0</td><td>17</td></tr>
+        <tr><td>AssemblyAI Universal v3</td><td>11.0</td><td>71</td></tr>
+        <tr><td>AssemblyAI Universal v2</td><td>11.1</td><td>82</td></tr>
+        <tr><td>Mistral STT</td><td>11.6</td><td>135</td></tr>
+        <tr><td>Solaria-1</td><td>11.8</td><td>28</td></tr>
+        <tr><td>Deepgram v3</td><td>14.5</td><td>348</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Earnings22 Cleaned AA — Financial Calls (Curated by Artificial Analysis)</h3>
+    <table>
+      <thead><tr><th>Provider</th><th>WER (%)</th><th>RTFx</th></tr></thead>
+      <tbody>
+        <tr><td>Solaria-3</td><td>6.4</td><td>—</td></tr>
+        <tr><td>AssemblyAI</td><td>6.9</td><td>64</td></tr>
+        <tr><td>ElevenLabs Scribe v2</td><td>7.7</td><td>32</td></tr>
+        <tr><td>Speechmatics</td><td>7.8</td><td>24</td></tr>
+        <tr><td>Mistral Voxtral</td><td>7.9</td><td>57</td></tr>
+        <tr><td>Solaria-1</td><td>8.1</td><td>39</td></tr>
+        <tr><td>Deepgram Nova-3</td><td>12.0</td><td>234</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Multilingual LibriSpeech — Audiobooks (5 languages, average)</h3>
+    <table>
+      <thead><tr><th>Provider</th><th>WER (%)</th><th>Perfect transcriptions</th><th>High WER files</th><th>RTFx</th></tr></thead>
+      <tbody>
+        <tr><td>ElevenLabs Scribe v2</td><td>3.7</td><td>565</td><td>3</td><td>15</td></tr>
+        <tr><td>AssemblyAI</td><td>4.7</td><td>508</td><td>3</td><td>1</td></tr>
+        <tr><td>Soniox v4</td><td>5.6</td><td>378</td><td>3</td><td>6</td></tr>
+        <tr><td>Solaria-1</td><td>5.9</td><td>367</td><td>3</td><td>3</td></tr>
+        <tr><td>AssemblyAI Universal v2</td><td>6.2</td><td>369</td><td>2</td><td>3</td></tr>
+        <tr><td>Deepgram Nova-3</td><td>7.5</td><td>270</td><td>4</td><td>7</td></tr>
+        <tr><td>Solaria-3</td><td>8.0</td><td>—</td><td>—</td><td>—</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Multilingual LibriSpeech — WER by Language (%)</h3>
+    <table>
+      <thead><tr><th>Provider</th><th>German (DE)</th><th>Spanish (ES)</th><th>French (FR)</th><th>Italian (IT)</th><th>Portuguese (PT)</th></tr></thead>
+      <tbody>
+        <tr><td>Solaria-1</td><td>5.0</td><td>4.0</td><td>4.8</td><td>9.9</td><td>5.3</td></tr>
+        <tr><td>AssemblyAI Universal v3</td><td>3.5</td><td>3.2</td><td>2.6</td><td>9.7</td><td>4.4</td></tr>
+        <tr><td>ElevenLabs Scribe v2</td><td>3.1</td><td>3.2</td><td>2.9</td><td>6.1</td><td>3.0</td></tr>
+        <tr><td>Soniox v4</td><td>5.4</td><td>4.4</td><td>5.0</td><td>8.8</td><td>4.3</td></tr>
+        <tr><td>AssemblyAI Universal v2</td><td>3.4</td><td>4.0</td><td>5.8</td><td>11.9</td><td>5.9</td></tr>
+        <tr><td>Deepgram v3</td><td>6.9</td><td>4.6</td><td>6.2</td><td>8.8</td><td>11.3</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Pipecat STT Benchmark — Real-Time Streaming</h3>
+    <table>
+      <thead><tr><th>Provider</th><th>WER (%)</th><th>Perfect transcriptions</th><th>High WER files</th><th>RTFx</th></tr></thead>
+      <tbody>
+        <tr><td>AssemblyAI Universal v3</td><td>2.0</td><td>531</td><td>0</td><td>2</td></tr>
+        <tr><td>ElevenLabs Scribe v2</td><td>2.2</td><td>512</td><td>0</td><td>8</td></tr>
+        <tr><td>AssemblyAI Universal v2</td><td>2.5</td><td>494</td><td>0</td><td>1</td></tr>
+        <tr><td>Mistral STT</td><td>2.6</td><td>485</td><td>0</td><td>5</td></tr>
+        <tr><td>Solaria-1</td><td>2.7</td><td>482</td><td>0</td><td>4</td></tr>
+        <tr><td>Speechmatics</td><td>2.7</td><td>476</td><td>0</td><td>0</td></tr>
+        <tr><td>Soniox v4</td><td>2.9</td><td>480</td><td>0</td><td>2</td></tr>
+        <tr><td>Deepgram v3</td><td>3.1</td><td>449</td><td>0</td><td>8</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Speaker Diarization Benchmark — DIHARD III — Diarization Error Rate (DER %, lower is better)</h2>
+    <table>
+      <thead><tr><th>Provider</th><th>Broadcast</th><th>Meeting</th><th>Web Video</th><th>Socio Field</th><th>Court</th><th>Clinical</th><th>Restaurant</th><th>Socio Lab</th><th>CTS</th><th>Maptask</th><th>Simple Avg</th><th>Weighted Avg</th></tr></thead>
+      <tbody>
+        <tr><td>Solaria-1</td><td>9.4</td><td>29.9</td><td>44.4</td><td>12.3</td><td>3.9</td><td>13.3</td><td>41.3</td><td>5.5</td><td>7.7</td><td>4.5</td><td>17.2</td><td>16.6</td></tr>
+        <tr><td>NVIDIA NeMo Sortformer</td><td>10.3</td><td>33.0</td><td>43.5</td><td>13.0</td><td>24.1</td><td>14.4</td><td>50.9</td><td>8.6</td><td>14.1</td><td>8.2</td><td>22.0</td><td>20.4</td></tr>
+        <tr><td>pyannoteAI Community-1</td><td>10.5</td><td>35.8</td><td>48.7</td><td>17.9</td><td>11.6</td><td>23.8</td><td>49.9</td><td>13.9</td><td>12.3</td><td>10.2</td><td>23.5</td><td>23.0</td></tr>
+        <tr><td>Speechmatics</td><td>17.2</td><td>55.6</td><td>55.6</td><td>28.9</td><td>15.0</td><td>24.9</td><td>58.4</td><td>18.6</td><td>20.1</td><td>23.4</td><td>31.8</td><td>30.1</td></tr>
+        <tr><td>AWS Transcribe</td><td>16.4</td><td>51.4</td><td>60.3</td><td>25.2</td><td>16.7</td><td>27.3</td><td>63.1</td><td>20.2</td><td>31.2</td><td>22.9</td><td>33.5</td><td>33.8</td></tr>
+        <tr><td>Soniox STT-async-preview-v1</td><td>24.8</td><td>58.3</td><td>57.5</td><td>30.1</td><td>39.3</td><td>35.1</td><td>67.4</td><td>28.0</td><td>29.2</td><td>27.6</td><td>39.7</td><td>37.8</td></tr>
+        <tr><td>ElevenLabs Scribe-v1</td><td>25.6</td><td>50.5</td><td>63.4</td><td>29.7</td><td>23.1</td><td>47.7</td><td>57.4</td><td>30.3</td><td>22.9</td><td>45.2</td><td>39.6</td><td>39.5</td></tr>
+        <tr><td>OpenAI GPT-4o Transcribe</td><td>26.4</td><td>57.8</td><td>64.1</td><td>28.8</td><td>30.0</td><td>40.8</td><td>59.7</td><td>26.5</td><td>—</td><td>34.8</td><td>41.0</td><td>42.8</td></tr>
+        <tr><td>AssemblyAI Universal</td><td>30.9</td><td>46.4</td><td>68.4</td><td>33.1</td><td>24.5</td><td>51.4</td><td>59.4</td><td>33.1</td><td>33.1</td><td>42.1</td><td>42.2</td><td>43.9</td></tr>
+        <tr><td>Deepgram v3</td><td>27.0</td><td>59.7</td><td>83.0</td><td>35.5</td><td>25.6</td><td>44.8</td><td>75.2</td><td>32.2</td><td>35.5</td><td>45.9</td><td>46.4</td><td>46.9</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5M3X2DX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <!-- =====================================================
+     NAVBAR — Preview default (.navbar / .mega-menu v2)
+     10-iteration pass: UI · UX · architecture · efficiency · design
+     ===================================================== -->
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var useWebflowNav = params.get('wf-nav') === '1';
+  document.documentElement.setAttribute('data-nav-mode', useWebflowNav ? 'webflow' : 'code');
+  document.documentElement.setAttribute('data-nav-variant', 'enhanced');
+})();
+</script>
+<header class="site-nav" data-nav-shell>
+<nav class="navbar" aria-label="Main">
+  <div class="navbar-inner">
+    <a href="/" class="navbar-logo" aria-label="Zenith"><svg viewBox="0 0 322 82" style="width:110px;height:auto;" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Zenith"><path d="M14 10H66C69.3137 10 72 12.6863 72 16C72 17.75 71.25 19.38 69.95 20.55L36.2 51H66C69.3137 51 72 53.6863 72 57V66C72 69.3137 69.3137 72 66 72H16C12.6863 72 10 69.3137 10 66C10 64.25 10.75 62.62 12.05 61.45L45.8 31H16C12.6863 31 10 28.3137 10 25V16C10 12.6863 12.6863 10 16 10H14Z" fill="white"/><text x="94" y="56" fill="white" font-family="'SuisseIntl', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="700" letter-spacing="-0.8px">Zenith</text></svg></a>
+    <div class="navbar-links">
+      <button type="button" data-menu="product" aria-haspopup="true" aria-expanded="false" aria-controls="mega-panel-product">
+        <span class="mega-menu-nav-label">Product</span><svg class="mega-menu-nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button type="button" data-menu="solutions" aria-haspopup="true" aria-expanded="false" aria-controls="mega-panel-solutions">
+        <span class="mega-menu-nav-label">Solutions</span><svg class="mega-menu-nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <a href="/pricing">Pricing</a>
+      <button type="button" data-menu="developers" aria-haspopup="true" aria-expanded="false" aria-controls="mega-panel-developers">
+        <span class="mega-menu-nav-label">Developers</span><svg class="mega-menu-nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button type="button" data-menu="resources" aria-haspopup="true" aria-expanded="false" aria-controls="mega-panel-resources">
+        <span class="mega-menu-nav-label">Resources</span><svg class="mega-menu-nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button type="button" data-menu="company" aria-haspopup="true" aria-expanded="false" aria-controls="mega-panel-company">
+        <span class="mega-menu-nav-label">Company</span><svg class="mega-menu-nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <div class="navbar-actions">
+      <a href="/demo-request" class="btn btn-secondary btn-sm navbar-cta-demo">
+        <span class="btn-text-wrapper">
+          <span class="btn-text">Request a demo</span>
+          <span class="btn-text-clone">Request a demo</span>
+        </span>
+      </a>
+      <a href="/app/signup" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm navbar-cta-signup">
+        <span class="btn-text-wrapper">
+          <span class="btn-text">Sign up</span>
+          <span class="btn-text-clone">Sign up</span>
+        </span>
+      </a>
+      <button type="button" class="navbar-menu-toggle" id="navbarMenuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+        <span class="navbar-menu-toggle-box" aria-hidden="true">
+          <span class="navbar-menu-toggle-line"></span>
+          <span class="navbar-menu-toggle-line"></span>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile navigation — content built from mega-menu panels (keeps desktop/mobile in sync) -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav-backdrop" data-mobile-nav-close tabindex="-1"></div>
+  <div class="mobile-nav-sheet" role="dialog" aria-modal="true" aria-label="Navigation">
+    <div class="mobile-nav-scroll">
+      <nav class="mobile-nav-list" id="mobileNavList" aria-label="Mobile"></nav>
+    </div>
+    <div class="mobile-nav-footer">
+      <a href="/demo-request" class="btn btn-secondary btn-sm">
+        <span class="btn-text-wrapper">
+          <span class="btn-text">Request a demo</span>
+          <span class="btn-text-clone">Request a demo</span>
+        </span>
+      </a>
+      <a href="/app/signup" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+        <span class="btn-text-wrapper">
+          <span class="btn-text">Sign up</span>
+          <span class="btn-text-clone">Sign up</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="mega-menu" id="megaMenu" aria-live="polite">
+  <section class="mega-menu-panel" data-panel="product" id="mega-panel-product" role="region" aria-label="Product">
+    <div class="mega-menu-bridge"></div>
+    <div class="mega-menu-panel-body">
+      <div class="mega-menu-grid mega-menu-grid--flat" data-flat-cols="3">
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title">APIs</span>
+              <a href="/product/async-transcription" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Folders & Files/IconFiles.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Async STT</span>
+                  <span class="mega-menu-item-desc">High-accuracy transcription for recordings &amp; long-form audio</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/product/real-time" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Weather/IconLightning.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Real-time STT</span>
+                  <span class="mega-menu-item-desc">Sub-300ms latency for live voice applications</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/product/audio-intelligence" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/AI & Magic/IconBrain1.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Audio Intelligence</span>
+                  <span class="mega-menu-item-desc">Enrichment layer for transcripts: diarization, translation &amp; more</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title">Models</span>
+              <a href="/solaria" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/AI & Magic/IconSparkle.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Solaria-1</span>
+                  <span class="mega-menu-item-desc">The first truly universal STT — fluent in any language</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/solaria-3" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/AI & Magic/IconSparkle.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Solaria-3</span>
+                  <span class="mega-menu-item-desc">Best on real English audio and European languages</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title">Compare</span>
+              <a href="/competitors/benchmarks" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Statistics & Charts/IconChart1.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">STT API Benchmarks</span>
+                  <span class="mega-menu-item-desc">See our performance against 8 leading providers</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/competitors/zenith-vs-deepgram" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Statistics & Charts/IconChart1.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Zenith vs Deepgram</span>
+                  <span class="mega-menu-item-desc">Multilingual accuracy, latency, and performance compared</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/competitors/zenith-vs-assemblyai" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Statistics & Charts/IconChart1.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Zenith vs Assembly AI</span>
+                  <span class="mega-menu-item-desc">Real-time accuracy and audio intelligence compared</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/competitors/zenith-vs-elevenlabs" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Statistics & Charts/IconChart1.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Zenith vs ElevenLabs</span>
+                  <span class="mega-menu-item-desc">Studio audio vs real conversations compared</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <aside class="mega-menu-spotlight mega-menu-spotlight--flow mega-menu-spotlight--product">
+              <span class="mega-menu-spotlight-tag">New</span>
+              <a href="/gladiaflow" class="mega-menu-spotlight-link">
+                <span class="mega-menu-spotlight-title">GladiaFlow</span>
+                <span class="mega-menu-spotlight-desc">Real-time dictation for your entire desktop. No code.</span>
+                <span class="mega-menu-spotlight-cta">Try it now <span aria-hidden="true">→</span></span>
+              </a>
+            </aside>
+      </div>
+      <a href="/solaria-3" class="mega-menu-news-callout">
+        <span class="mega-menu-news-callout-tag">News</span>
+        <span class="mega-menu-news-callout-body">
+          <span class="mega-menu-news-callout-title">Solaria-3 is live</span>
+          <span class="mega-menu-news-callout-desc">9.6% WER on real English audio · strongest gains across EN, FR, DE, ES &amp; IT</span>
+        </span>
+        <span class="mega-menu-news-callout-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="mega-menu-panel" data-panel="solutions" id="mega-panel-solutions" role="region" aria-label="Solutions">
+    <div class="mega-menu-bridge"></div>
+    <div class="mega-menu-panel-body">
+      <div class="mega-menu-grid mega-menu-grid--flat" data-flat-cols="2">
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title">Use cases</span>
+              <a href="/use-cases/meeting-assistants" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Folders & Files/IconNotepad.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Meeting assistants</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/use-cases/ccaas" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Statistics & Charts/IconLineChart1.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">CCaaS</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title mega-menu-col-title--placeholder" aria-hidden="true"></span>
+              <a href="/use-cases/voice-agents" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/AI & Magic/IconRobot.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Voice agents</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/use-cases/media" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Photography & Video/IconMultiMedia.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Content &amp; media</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <aside class="mega-menu-spotlight mega-menu-spotlight--indigo mega-menu-spotlight--solutions">
+              <span class="mega-menu-spotlight-tag">Success stories</span>
+              <a href="/testimonials" class="mega-menu-spotlight-link">
+                <span class="mega-menu-spotlight-title">Voices that shape our story</span>
+                <span class="mega-menu-spotlight-desc">Discover why builders, startups &amp; enterprises trust us for their voice applications.</span>
+                <span class="mega-menu-spotlight-cta">See success stories <span aria-hidden="true">→</span></span>
+              </a>
+            </aside>
+      </div>
+      <a href="/solaria-3" class="mega-menu-news-callout">
+        <span class="mega-menu-news-callout-tag">News</span>
+        <span class="mega-menu-news-callout-body">
+          <span class="mega-menu-news-callout-title">Solaria-3 is live</span>
+          <span class="mega-menu-news-callout-desc">9.6% WER on real English audio · strongest gains across EN, FR, DE, ES &amp; IT</span>
+        </span>
+        <span class="mega-menu-news-callout-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="mega-menu-panel" data-panel="developers" id="mega-panel-developers" role="region" aria-label="Developers">
+    <div class="mega-menu-bridge"></div>
+    <div class="mega-menu-panel-body">
+      <div class="mega-menu-grid mega-menu-grid--flat" data-flat-cols="3">
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title">Tools</span>
+              <a href="/app/signup" class="mega-menu-item" target="_blank" rel="noopener noreferrer">
+                <span class="mega-menu-item-icon"><img src="/icons/Code/IconSandbox.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Playground</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/docs/" class="mega-menu-item" target="_blank" rel="noopener noreferrer">
+                <span class="mega-menu-item-icon"><img src="/icons/Communication/IconBook.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Documentation</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/changelog" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Sound & Music/IconMegaphone.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Changelog</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title">Platform</span>
+              <a href="/status/" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Interface General/IconBell.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Status</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/docs/chapters/integrations" class="mega-menu-item" target="_blank" rel="noopener noreferrer">
+                <span class="mega-menu-item-icon"><img src="/icons/Code/IconCode.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Integration</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title">Community</span>
+              <a href="https://discord.com/invite/UUd79ckzz9" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Social Media & Brands/IconDiscord.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Discord</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <aside class="mega-menu-spotlight mega-menu-spotlight--teal mega-menu-spotlight--developers">
+              <span class="mega-menu-spotlight-tag">Developers</span>
+              <a href="/app/auth/signup" class="mega-menu-spotlight-link" target="_blank" rel="noopener noreferrer">
+                <span class="mega-menu-spotlight-title">Test our real-time and async transcription</span>
+                <span class="mega-menu-spotlight-desc">Upload a file or start a live session, evaluate the output yourself.</span>
+                <span class="mega-menu-spotlight-cta">Get your API key <span aria-hidden="true">→</span></span>
+              </a>
+            </aside>
+      </div>
+      <a href="/solaria-3" class="mega-menu-news-callout">
+        <span class="mega-menu-news-callout-tag">News</span>
+        <span class="mega-menu-news-callout-body">
+          <span class="mega-menu-news-callout-title">Solaria-3 is live</span>
+          <span class="mega-menu-news-callout-desc">9.6% WER on real English audio · strongest gains across EN, FR, DE, ES &amp; IT</span>
+        </span>
+        <span class="mega-menu-news-callout-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="mega-menu-panel" data-panel="resources" id="mega-panel-resources" role="region" aria-label="Resources">
+    <div class="mega-menu-bridge"></div>
+    <div class="mega-menu-panel-body">
+      <div class="mega-menu-grid mega-menu-grid--flat" data-flat-cols="2">
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title">Content</span>
+              <a href="/blog" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Communication/IconNewspaper.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Blog</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/library" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Communication/IconBook.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Library</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/build-vs-buy-whisper" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Interface General/IconMagnifyingGlass.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">TCO Calculator</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/gladiaflow" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Brand/IconGladia.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">GladiaFlow</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title">Guides</span>
+              <a href="/compliance-hub" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Security/IconShield.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Compliance Hub</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/content/ai-note-takers-guide" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Folders & Files/IconNotepad.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">AI note-taker guide</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/content/ccaas-async-speech-ai-guide" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Sound & Music/IconHeadphones.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Contact center guide</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <aside class="mega-menu-spotlight mega-menu-spotlight--magenta mega-menu-spotlight--resources">
+              <span class="mega-menu-spotlight-tag">Report</span>
+              <a href="/meeting-assistant-market-map" class="mega-menu-spotlight-link">
+                <span class="mega-menu-spotlight-title">2026 Meeting Assistant Report</span>
+                <span class="mega-menu-spotlight-desc">See who's leading the race, and where the gaps are.</span>
+                <span class="mega-menu-spotlight-cta">Read the report <span aria-hidden="true">→</span></span>
+              </a>
+            </aside>
+      </div>
+      <a href="/solaria-3" class="mega-menu-news-callout">
+        <span class="mega-menu-news-callout-tag">News</span>
+        <span class="mega-menu-news-callout-body">
+          <span class="mega-menu-news-callout-title">Solaria-3 is live</span>
+          <span class="mega-menu-news-callout-desc">9.6% WER on real English audio · strongest gains across EN, FR, DE, ES &amp; IT</span>
+        </span>
+        <span class="mega-menu-news-callout-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="mega-menu-panel" data-panel="company" id="mega-panel-company" role="region" aria-label="Company">
+    <div class="mega-menu-bridge"></div>
+    <div class="mega-menu-panel-body">
+      <div class="mega-menu-grid mega-menu-grid--flat" data-flat-cols="2">
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title">Company</span>
+              <a href="/about-us" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Building/IconBuildings.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">About us</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="https://www.welcometothejungle.com/fr/companies/gladia" class="mega-menu-item" target="_blank" rel="noopener noreferrer">
+                <span class="mega-menu-item-icon"><img src="/icons/Shopping & Payment/IconShoppingBag1.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Careers</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="https://drive.google.com/drive/folders/1_Lmv2iGeNrRakRYqKrYjwZGEuQi3gmYa" class="mega-menu-item" target="_blank" rel="noopener noreferrer">
+                <span class="mega-menu-item-icon"><img src="/icons/Sound & Music/IconMegaphone.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Press</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title mega-menu-col-title--placeholder" aria-hidden="true"></span>
+              <a href="/partners" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Hands/IconHandshake.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Partners</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/testimonials" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Communication/IconBook.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Testimonials</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <aside class="mega-menu-spotlight mega-menu-spotlight--crimson mega-menu-spotlight--company">
+              <span class="mega-menu-spotlight-tag">Security</span>
+              <a href="/compliance-hub" class="mega-menu-spotlight-link">
+                <span class="mega-menu-spotlight-title">Compliance Hub</span>
+                <span class="mega-menu-spotlight-desc">How our security and compliance protect your data.</span>
+                <span class="mega-menu-spotlight-cta">Learn more <span aria-hidden="true">→</span></span>
+              </a>
+            </aside>
+      </div>
+      <a href="/solaria-3" class="mega-menu-news-callout">
+        <span class="mega-menu-news-callout-tag">News</span>
+        <span class="mega-menu-news-callout-body">
+          <span class="mega-menu-news-callout-title">Solaria-3 is live</span>
+          <span class="mega-menu-news-callout-desc">9.6% WER on real English audio · strongest gains across EN, FR, DE, ES &amp; IT</span>
+        </span>
+        <span class="mega-menu-news-callout-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+</div>
+</header>
+
+<script src="/js/nav-mega-menu.js" defer></script>
+<script src="/js/nav-mobile-menu.js" defer></script>
+<script src="/js/webflow-nav.js" defer></script>
+
+
+  <!-- ==================== HERO + BENTO (merged) ==================== -->
+  <section class="section hero hero--centered bench-hero-bento reveal">
+    <div class="hero-content">
+      <a href="https://compare-stt.com" class="announcement-bar" target="_blank" rel="noopener">
+        <span class="announcement-bar__label">New</span>
+        <span class="announcement-bar__text">Try our blind STT comparison tool →</span>
+      </a>
+      <h1 id="benchHeroH1">Open benchmark for speech-to-text</h1>
+      <p class="hero-subtitle">We evaluated Solaria-1 against 8 leading providers across 8 datasets and 74 hours of audio. The full methodology is open-sourced so results can be independently reproduced.</p>
+      <div class="hero-actions">
+        <a href="/app" class="btn btn-primary btn-md">
+          <span class="btn-text-wrapper">
+            <span class="btn-text">Get started free</span>
+            <span class="btn-text-clone">Get started free</span>
+          </span>
+        </a>
+        <a href="#bench-cta" class="btn btn-secondary btn-md">
+          <span class="btn-text-wrapper">
+            <span class="btn-text">Read methodology</span>
+            <span class="btn-text-clone">Read methodology</span>
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="bench-hl-grid" id="highlightsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ==================== GLOBAL COMPARISON TABLE ==================== -->
+  <section class="section reveal" id="compare">
+    <div class="container">
+      <div class="tag-label" style="margin-bottom: var(--space-6);">
+        <span class="tag-indicator"></span>
+        <span class="tag-text">ALL RESULTS AT A GLANCE</span>
+      </div>
+      <h2 class="section-title" style="margin-bottom: var(--space-4);">WER comparison across datasets</h2>
+      <p class="section-subtitle" style="margin-bottom: var(--space-8);">Lower WER is better. Filter by dataset to focus on what matters to you.</p>
+      <div class="bench-filter-bar" id="filterChips"></div>
+      <div class="bench-table-wrap bench-compare-table">
+        <table class="bench-table" id="globalTable">
+          <thead id="globalThead"></thead>
+          <tbody id="globalTbody"></tbody>
+        </table>
+      </div>
+      <div class="bench-cards" id="globalCards"></div>
+    </div>
+  </section>
+
+  <!-- ==================== DATASET SECTIONS ==================== -->
+  <div id="sectionsContainer"></div>
+
+  <!-- ==================== METHODOLOGY ==================== -->
+  <section class="section reveal" id="methodology">
+    <div class="container">
+      <div class="tag-label" style="margin-bottom: var(--space-6);">
+        <span class="tag-indicator"></span>
+        <span class="tag-text">OPEN METHODOLOGY</span>
+      </div>
+      <h2 class="section-title" style="margin-bottom: var(--space-8);">How we benchmark</h2>
+
+      <div class="bench-method-grid">
+        <div class="bench-method-stat">
+          <div class="bench-method-stat-value">8</div>
+          <div class="bench-method-stat-label">
+            Evaluation datasets
+            <button type="button" class="bench-datasets-trigger" id="benchDatasetsTrigger" aria-label="View datasets" aria-expanded="false">
+              <img src="/icons/Arrows/IconSquareArrowTopRight2.svg" width="12" height="12" alt="" aria-hidden="true">
+            </button>
+          </div>
+        </div>
+        <div class="bench-method-stat">
+          <div class="bench-method-stat-value">74+</div>
+          <div class="bench-method-stat-label">Hours of audio</div>
+        </div>
+        <div class="bench-method-stat">
+          <div class="bench-method-stat-value">9</div>
+          <div class="bench-method-stat-label">STT providers compared</div>
+        </div>
+      </div>
+
+      <div class="bench-datasets-popup" id="benchDatasetsPopup" role="dialog" aria-label="Evaluation datasets" aria-modal="true" aria-hidden="true">
+        <div class="bench-datasets-backdrop" id="benchDatasetsBackdrop"></div>
+        <div class="bench-datasets-popup-content">
+          <div class="bench-datasets-table-wrap" id="benchDatasetsList"></div>
+        </div>
+      </div>
+
+      <div class="bench-method">
+        <p>Each audio file is sent to every provider's production API with default settings. Solaria-3, Solaria-1, and every competitor are tested on identical files — no custom tuning or prompt engineering.</p>
+        <p>Transcription outputs are normalized using the OpenAI Whisper text normalizer before WER computation. Diarization Error Rate (DER) is measured on DIHARD III challenge datasets using standard protocols.</p>
+        <p>The full framework is open-sourced on GitHub. Real customer audio is Zenith's internal production dataset, annotated by humans — Soniox and Pipecat STT Benchmark excluded on some datasets pending data availability.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA ==================== -->
+  <section class="cta-section reveal" id="bench-cta">
+    <div class="container cta-bento">
+      <div class="cta-content">
+        <h2 class="cta-title">Transparent benchmarks,<br>open source</h2>
+        <p class="cta-subtitle">Full methodology, evaluation framework, and benchmark report. Reproduce every result independently.</p>
+        <div class="cta-actions">
+          <a href="https://25856368.fs1.hubspotusercontent-eu1.net/hubfs/25856368/Resources/Gladia%20-%20Speech%20Recognition%20Benchmark%20Report%20-%202026.pdf" target="_blank" rel="noopener" class="btn btn-primary btn-md">
+            <span class="btn-text-wrapper">
+              <span class="btn-text">Read methodology report</span>
+              <span class="btn-text-clone">Read methodology report</span>
+            </span>
+          </a>
+          <a href="https://github.com/gladiaio/normalization" target="_blank" rel="noopener" class="btn btn-secondary btn-md">
+            <span class="btn-text-wrapper">
+              <span class="btn-text">Get the OSS repo</span>
+              <span class="btn-text-clone">Get the OSS repo</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <a href="/" class="footer-brand" aria-label="Zenith home">
+        <svg viewBox="0 0 322 82" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:24px;width:auto;">
+          <path d="M125.497 14.5989C128.431 14.5989 131.174 15.0301 133.728 15.8928C136.299 16.7383 138.594 17.9461 140.613 19.5168C142.632 21.0867 144.289 22.9511 145.583 25.1077C146.894 27.2642 147.748 29.6455 148.146 32.2512H138.362C137.965 30.8536 137.378 29.5935 136.602 28.4719C135.825 27.3506 134.884 26.4014 133.78 25.6252C132.676 24.8317 131.433 24.2364 130.053 23.8391C128.69 23.4246 127.214 23.218 125.626 23.218C122.762 23.2181 120.2 23.9343 117.94 25.3665C115.679 26.7987 113.892 28.904 112.581 31.6819C111.287 34.4426 110.64 37.8078 110.64 41.7766C110.64 45.7798 111.27 49.1706 112.529 51.9485C113.807 54.7264 115.567 56.8416 117.81 58.2903C120.053 59.7225 122.65 60.4387 125.601 60.4387C128.361 60.4387 130.752 59.8958 132.771 58.8088C134.79 57.721 136.343 56.211 137.43 54.2786C138.462 52.4728 139.012 50.4109 139.079 48.092H126.559V40.5862H148.533V68.3333H141.649L140.949 62.1213H140.665C138.801 64.3472 136.653 66.0645 134.22 67.2717C131.787 68.4625 128.896 69.0588 125.549 69.0588C120.683 69.0588 116.403 67.9629 112.71 65.7717C109.035 63.5624 106.163 60.4304 104.092 56.3752C102.021 52.3026 100.986 47.4707 100.986 41.8801C100.986 37.6006 101.607 33.7781 102.849 30.4133C104.092 27.0489 105.825 24.1928 108.051 21.8459C110.278 19.4826 112.875 17.6876 115.843 16.4622C118.81 15.2203 122.029 14.5989 125.497 14.5989ZM191.687 28.0588C194.016 28.0588 195.931 28.4548 197.433 29.2483C198.934 30.0255 200.126 30.9663 201.006 32.0706C201.885 33.1573 202.567 34.1841 203.05 35.1506H203.439V28.5764H212.834V68.3333H203.619V62.0696H203.05C202.567 63.0362 201.868 64.0628 200.953 65.1497C200.039 66.2192 198.831 67.1339 197.329 67.8928C195.829 68.6527 193.939 69.0325 191.661 69.0325C188.538 69.0325 185.743 68.2305 183.275 66.6252C180.807 65.0208 178.857 62.691 177.425 59.637C175.993 56.5821 175.277 52.872 175.277 48.5071C175.277 44.0891 176.001 40.3612 177.45 37.3245C178.917 34.2704 180.894 31.9659 183.378 30.4133C185.863 28.8426 188.633 28.0588 191.687 28.0588ZM258.017 68.3333H248.802V62.0696H248.233C247.749 63.0361 247.05 64.0629 246.136 65.1497C245.222 66.2193 244.013 67.1339 242.512 67.8928C241.01 68.6527 239.122 69.0325 236.844 69.0325C233.72 69.0324 230.924 68.2306 228.457 66.6252C225.99 65.0208 224.039 62.691 222.608 59.637C221.175 56.5821 220.459 52.872 220.459 48.5071C220.459 44.0892 221.183 40.3612 222.633 37.3245C224.1 34.2705 226.075 31.9659 228.561 30.4133C231.045 28.8426 233.815 28.0589 236.869 28.0588C239.199 28.0588 241.115 28.4547 242.616 29.2483C244.117 30.0254 245.308 30.9664 246.188 32.0706C247.068 33.1573 247.749 34.1841 248.233 35.1506H248.621V15.3235H258.017V68.3333ZM300.328 28.0588C302.658 28.0588 304.573 28.4549 306.074 29.2483C307.575 30.0255 308.767 30.9663 309.647 32.0706C310.527 33.1573 311.208 34.1841 311.692 35.1506H312.08V28.5764H321.476V68.3333H312.261V62.0696H311.692C311.208 63.0361 310.509 64.0629 309.595 65.1497C308.681 66.2193 307.472 67.1339 305.971 67.8928C304.469 68.6527 302.581 69.0325 300.303 69.0325C297.179 69.0325 294.383 68.2306 291.916 66.6252C289.449 65.0208 287.498 62.691 286.067 59.637C284.634 56.5821 283.918 52.872 283.918 48.5071C283.918 44.0891 284.642 40.3612 286.092 37.3245C287.559 34.2704 289.534 31.9659 292.02 30.4133C294.504 28.8426 297.274 28.0589 300.328 28.0588ZM166.079 56.9446C166.079 58.4287 166.303 59.4904 166.752 60.1282C167.2 60.7668 167.994 61.069 169.133 61.0344C169.754 61.0171 170.22 60.9828 170.53 60.9309C170.858 60.8617 171.153 60.7931 171.411 60.7239L172.964 67.8157C172.412 67.9878 171.722 68.1521 170.894 68.3079C170.083 68.4628 169.081 68.5574 167.891 68.592C164.094 68.6958 161.282 67.9021 159.452 66.2112C157.624 64.5202 156.709 61.9402 156.709 58.4719V15.3235H166.079V56.9446ZM276.643 68.3333H267.273V28.5764H276.643V68.3333ZM194.276 35.7454C192.188 35.7454 190.445 36.2893 189.047 37.3762C187.649 38.4632 186.596 39.965 185.889 41.8801C185.181 43.7952 184.828 45.9873 184.828 48.4543C184.828 50.9389 185.181 53.157 185.889 55.1067C186.613 57.0391 187.675 58.5662 189.072 59.6887C190.487 60.793 192.222 61.345 194.276 61.345C196.26 61.3449 197.95 60.8099 199.348 59.7395C200.745 58.6525 201.807 57.1427 202.532 55.2102C203.257 53.2778 203.619 51.0254 203.619 48.4543C203.619 45.8835 203.257 43.6489 202.532 41.7512C201.824 39.8534 200.772 38.3768 199.374 37.3245C197.994 36.2724 196.294 35.7454 194.276 35.7454ZM239.458 35.7454C237.37 35.7454 235.626 36.2893 234.229 37.3762C232.831 38.4632 231.779 39.9651 231.071 41.8801C230.364 43.7952 230.011 45.9872 230.011 48.4543C230.011 50.9389 230.364 53.1569 231.071 55.1067C231.797 57.0391 232.858 58.5662 234.256 59.6887C235.671 60.7928 237.405 61.345 239.458 61.345C241.443 61.3449 243.134 60.81 244.531 59.7395C245.929 58.6526 246.99 57.1425 247.714 55.2102C248.439 53.2778 248.802 51.0254 248.802 48.4543C248.802 45.8835 248.439 43.6489 247.714 41.7512C247.007 39.8534 245.955 38.3768 244.557 37.3245C243.177 36.2722 241.477 35.7454 239.458 35.7454ZM302.917 35.7454C300.829 35.7454 299.085 36.2893 297.688 37.3762C296.29 38.4632 295.238 39.9651 294.53 41.8801C293.823 43.7952 293.47 45.9872 293.47 48.4543C293.47 50.9389 293.823 53.1569 294.53 55.1067C295.256 57.039 296.317 58.5663 297.714 59.6887C299.129 60.793 300.864 61.345 302.917 61.345C304.901 61.3449 306.593 60.81 307.99 59.7395C309.388 58.6526 310.449 57.1425 311.173 55.2102C311.898 53.2778 312.261 51.0254 312.261 48.4543C312.261 45.8835 311.898 43.6489 311.173 41.7512C310.466 39.8534 309.414 38.3768 308.016 37.3245C306.636 36.2722 304.936 35.7454 302.917 35.7454ZM271.983 12.761C273.484 12.761 274.762 13.2616 275.815 14.2629C276.884 15.2459 277.418 16.4449 277.418 17.8596C277.418 19.258 276.884 20.457 275.815 21.4573C274.762 22.4413 273.484 22.9338 271.983 22.9338C270.499 22.9338 269.222 22.4412 268.153 21.4573C267.083 20.4569 266.548 19.2581 266.548 17.8596C266.548 16.4448 267.083 15.246 268.153 14.2629C269.222 13.2617 270.499 12.7611 271.983 12.761Z" fill="white"/>
+          <path d="M42.8783 53.1389C48.1056 53.139 53.1197 55.2166 56.8177 58.9143L71.1429 75.5637H62.7972C60.6349 75.5636 58.5758 74.6324 57.1468 73.0061L45.2816 59.4934V82.0002H37.3314V59.9797L25.8949 73.0032C24.4689 74.6263 22.41 75.5598 20.2445 75.5598H11.8929L26.2279 58.9104C29.9259 55.2129 34.9401 53.135 40.1673 53.135H42.8783V53.1389ZM23.6126 25.7092C27.3105 29.407 29.388 34.4208 29.388 39.6477V42.3586C29.388 47.5855 27.3105 52.5994 23.6126 56.2971L6.96127 70.6213V62.2766L6.95834 62.2737C6.95834 60.1115 7.89247 58.0523 9.51889 56.6233L23.0326 44.759H0.52475V36.8088H22.5472L9.52182 25.3733C7.89561 23.9475 6.96136 21.889 6.96127 19.7239V11.3723L23.6126 25.7092ZM76.0843 19.717C76.0843 21.8793 75.1532 23.9385 73.5267 25.3674L60.013 37.2317H82.5247V45.1819H60.5023L73.5267 56.6165C75.1501 58.0423 76.0843 60.1015 76.0843 62.2668V70.6184L59.4339 56.2844C55.7359 52.5866 53.6576 47.573 53.6576 42.3459V39.635C53.6576 34.408 55.7359 29.3943 59.4339 25.6965L76.0843 11.3723V19.717ZM45.7083 22.0139L57.1439 8.99048C58.5698 7.36731 60.6288 6.43385 62.7943 6.43384H71.1458L56.8119 23.0833C53.1138 26.781 48.0989 28.8586 42.8714 28.8586H40.1605L40.1576 28.8616C34.9303 28.8615 29.9161 26.7839 26.2181 23.0862L11.8929 6.43677H20.2386C22.401 6.43682 24.46 7.37096 25.889 8.99731L37.7572 22.5061V0.000244141H45.7083V22.0139Z" fill="white"/>
+        </svg>
+      </a>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <span class="footer-column-title">Product</span>
+          <a href="/product/real-time">Real-time STT</a>
+          <a href="/product/async-transcription">Batch STT</a>
+          <a href="/product/audio-intelligence">Audio Intelligence</a>
+          <a href="/pricing">Pricing</a>
+        </div>
+        <div class="footer-column">
+          <span class="footer-column-title">Solutions</span>
+          <a href="/use-cases/meeting-assistants">Meeting assistants</a>
+          <a href="/use-cases/ccaas">CCaaS</a>
+          <a href="/use-cases/voice-agents">Voice agents</a>
+          <a href="/use-cases/media">Content &amp; media</a>
+        </div>
+        <div class="footer-column">
+          <span class="footer-column-title">Resources</span>
+          <a href="/blog">Blog</a>
+          <a href="/library">Library</a>
+          <a href="/content/ai-note-takers-guide">AI note-takers guide</a>
+          <a href="/content/ccaas-async-speech-ai-guide">CCaaS async speech AI guide</a>
+          <a href="/competitors/benchmarks">API benchmarks</a>
+          <a href="/build-vs-buy-whisper">Whisper TCO calculator</a>
+          <a href="/compliance-hub">Compliance hub</a>
+          <a href="/meeting-assistant-market-map">Meeting assistant map</a>
+          <a href="/competitors/zenith-vs-assemblyai">Zenith vs AssemblyAI</a>
+          <a href="/competitors/zenith-vs-deepgram">Zenith vs Deepgram</a>
+          <a href="/competitors/zenith-vs-elevenlabs">Zenith vs ElevenLabs</a>
+        </div>
+        <div class="footer-column">
+          <span class="footer-column-title">Developers</span>
+          <a href="/docs/" target="_blank" rel="noopener noreferrer">Documentation</a>
+          <a href="/app/" target="_blank" rel="noopener noreferrer">Playground</a>
+          <a href="/status/" target="_blank" rel="noopener noreferrer">Status</a>
+          <a href="https://discord.com/invite/UUd79ckzz9" target="_blank" rel="noopener noreferrer">Discord</a>
+        </div>
+        <div class="footer-column">
+          <span class="footer-column-title">Legal</span>
+          <a href="/privacy-notice">Privacy notice</a>
+          <a href="/legal-notice">Legal notice</a>
+          <a href="/data-process-agreement">Data processing agreement</a>
+          <a href="/general-terms-of-use-gladia-inc">Terms of use — Zenith Inc.</a>
+          <a href="/general-terms-of-use-gladia-sas">Terms of use — Zenith SAS</a>
+          <a href="/terms-conditions-gladia-inc">Terms &amp; conditions — Zenith Inc.</a>
+          <a href="/terms-conditions">Terms &amp; conditions - Zenith SAS</a>
+          <a href="/security">Security</a>
+          <a href="/bug-bounty">Bug bounty</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-certs" aria-label="Compliance certifications">
+      <a href="/compliance-hub" class="footer-cert">GDPR Compliant</a>
+      <a href="/compliance-hub" class="footer-cert">HIPAA Compliant</a>
+      <a href="/compliance-hub" class="footer-cert">AICPA SOC Type 2</a>
+      <a href="/compliance-hub" class="footer-cert">ISO&nbsp;27001&nbsp;Compliant</a>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-bottom-text">&copy; 2025 Zenith. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+<!-- Liquid Glass SVG defs — filters injected by /js/liquid-glass.js (kube.io method) -->
+<svg class="liquid-glass-svg" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;overflow:hidden;pointer-events:none">
+  <defs id="liquid-glass-defs"></defs>
+</svg>
+
+<script src="/js/liquid-glass.js" defer></script>
+<script src="/js/webflow-footer.js" defer></script>
+<script src="/js/evolution.js" defer></script>
+<script>
+/**
+ * Persist UTM params from URL and prefill HubSpot hidden fields.
+ */
+(function () {
+  if (window.__gladiaUtmsLoaded) return;
+  window.__gladiaUtmsLoaded = true;
+
+  var params = new URLSearchParams(window.location.search);
+  var utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+
+  var utms = {};
+  var hasUtms = false;
+
+  utmParams.forEach(function (param) {
+    var value = params.get(param);
+    if (value) {
+      utms[param] = value;
+      hasUtms = true;
+    }
+  });
+
+  if (hasUtms) {
+    var cookieValue = encodeURIComponent(JSON.stringify(utms));
+    var expiryDate = new Date();
+    expiryDate.setDate(expiryDate.getDate() + 30);
+
+    document.cookie =
+      'gladia_utms=' +
+      cookieValue +
+      '; domain=.gladia.io; path=/; expires=' +
+      expiryDate.toUTCString() +
+      '; SameSite=Lax; Secure';
+  }
+
+  function fillUtmFieldsFromCookie() {
+    var cookie = document.cookie.split('; ').find(function (row) {
+      return row.startsWith('gladia_utms=');
+    });
+    if (!cookie) return;
+
+    try {
+      var stored = JSON.parse(decodeURIComponent(cookie.split('=')[1]));
+      var map = {
+        utm_source: 'UTMSource',
+        utm_medium: 'UTMMedium',
+        utm_campaign: 'UTMCampaign',
+        utm_content: 'UTMContent',
+        utm_term: 'UTMTerm',
+      };
+
+      Object.keys(map).forEach(function (key) {
+        if (stored[key]) {
+          document.querySelectorAll('input[name="' + map[key] + '"]').forEach(function (el) {
+            el.value = stored[key];
+          });
+        }
+      });
+    } catch (e) {}
+  }
+
+  function initUtmFieldFill() {
+    fillUtmFieldsFromCookie();
+
+    if (!('MutationObserver' in window) || !document.body) return;
+
+    var fillTimer;
+    var observer = new MutationObserver(function () {
+      clearTimeout(fillTimer);
+      fillTimer = setTimeout(fillUtmFieldsFromCookie, 100);
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initUtmFieldFill);
+  } else {
+    initUtmFieldFill();
+  }
+})();
+</script>
+
+<!-- HubSpot — deferred until Axeptio consent -->
+<script>
+  void 0 === window._axcb && (window._axcb = []);
+  window._axcb.push(function(axeptio) {
+    axeptio.on("cookies:complete", function(choices) {
+      if (choices.hubspot) {
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.id = "hs-script-loader";
+        s.async = true;
+        s.defer = true;
+        s.src = "//js-eu1.hs-scripts.com/25856368.js";
+        document.body.appendChild(s);
+      }
+    });
+  });
+</script>
+
+
+
+  <script src="/js/benchmark-data.js"></script>
+  <script>
+  (function () {
+    const {
+      PROVIDERS_STT, PROVIDERS_DIARIZATION, DATA_STT, DATA_STT_DETAIL,
+      DATA_MLS_LANGUAGES, DATA_DIARIZATION, DIHARD_DOMAINS,
+      getDatasetRanking, getDiarizationRanking, getSTTChartProviders,
+    } = BENCH;
+
+    /* ================================================================
+       HERO H1 — blur animation (word-by-word on view)
+       ================================================================ */
+    (function () {
+      const heroSection = document.querySelector('.bench-hero-bento');
+      const heroH1 = document.getElementById('benchHeroH1');
+      if (!heroSection || !heroH1) return;
+      const lines = heroH1.innerHTML.split(/<br\s*\/?>/i);
+      const newHtml = lines.map(line => {
+        const words = line.trim().split(/\s+/);
+        return words.map(w => `<span class="bench-hero-word">${w}</span>`).join(' ');
+      }).join('<br>');
+      heroH1.innerHTML = newHtml;
+      const words = heroH1.querySelectorAll('.bench-hero-word');
+      words.forEach((w, i) => { w.style.animationDelay = `${i * 55}ms`; });
+      new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) heroSection.classList.add('bench-hero-active');
+      }, { threshold: 0.1 }).observe(heroSection);
+    })();
+
+    /* ================================================================
+       SECTION CONFIG — copy from PDF
+       ================================================================ */
+    const SECTIONS = [
+      {
+        id: 'real-customer',
+        dataKey: 'real-customer',
+        title: 'Real Customer Audio',
+        tag: 'Internal Dataset',
+        headingSuffix: 'English',
+        invertLabels: true,
+        desc: 'Zenith internal production dataset of real customer calls, annotated by humans. The truest test of a speech model isn\'t a curated benchmark — it\'s real production recordings with noisy, fast-paced, conversational audio.',
+        insight: '#1 — Solaria-3 hits 9.6% WER at the top of the field (−26% vs. Solaria-1).',
+        type: 'stt',
+      },
+      {
+        id: 'switchboard',
+        dataKey: 'switchboard',
+        title: 'Switchboard',
+        tag: 'Conversational speech',
+        desc: 'Spontaneous telephone conversations between strangers — interruptions, informal language, multiple speakers. Performance on this dataset reflects real-world conditions like customer calls, meetings, and voice assistants.',
+        insight: '#1 — Solaria-3 is the only model under 35% WER on conversational speech.',
+        type: 'stt',
+        audio: { src: '/audio/samples/switchboard.wav', label: 'Telephone conversation sample', duration: '' },
+      },
+      {
+        id: 'common-voice-24',
+        dataKey: 'common-voice-24',
+        title: 'Common Voice 24',
+        tag: 'Clean audio',
+        desc: 'Mozilla\'s crowd-sourced multilingual speech corpus. Thousands of volunteers record short sentences covering diverse accents, ages, and recording conditions — the broadest open-source speech dataset.',
+        insight: 'Tests robustness to accent diversity and non-professional recording environments.',
+        type: 'stt',
+        audio: { src: '/audio/samples/common-voice-24.wav', label: 'Spanish — "La abuela se quedaba dormida…"', duration: '' },
+      },
+      {
+        id: 'voxpopuli',
+        dataKey: 'voxpopuli',
+        title: 'VoxPopuli',
+        tag: 'Formal discourse',
+        desc: 'European Parliament speech recordings. Formal political speech in controlled acoustic conditions — the benchmark for professional, structured audio.',
+        insight: 'Evaluates performance on clear, professional speech with formal vocabulary.',
+        type: 'stt',
+        audio: { src: '/audio/samples/voxpopuli.wav', label: 'Parliament speech — freight transport', duration: '' },
+      },
+      {
+        id: 'earnings22',
+        dataKey: 'earnings22-cleaned',
+        altKey: 'earnings22-full',
+        title: 'Earnings22',
+        tag: 'Financial calls',
+        desc: 'Earnings22 consists of corporate earnings calls and financial presentations. Two variants are evaluated: Full (entire meeting recordings, testing long-form transcription) and Cleaned AA (curated by Artificial Analysis).',
+        insight: '#1 — Solaria-3 leads at 6.4% WER on cleaned earnings calls (−21% vs. Solaria-1).',
+        type: 'stt',
+        hasSubToggle: true,
+        subLabels: ['Cleaned AA', 'Full'],
+        audio: { src: '/audio/samples/earnings22.mp3', label: 'Loma Negra Q3 2021 earnings call', duration: '' },
+      },
+      {
+        id: 'multilingual-librispeech',
+        dataKey: 'multilingual-librispeech',
+        title: 'Multilingual Librispeech',
+        tag: 'Audiobooks',
+        desc: 'Audiobook recordings across 5 European languages — German, Spanish, French, Italian, Portuguese. The gold standard for multilingual STT evaluation across Romance and Germanic languages.',
+        insight: 'The gold standard for multilingual STT evaluation across 5 European languages (DE, ES, FR, IT, PT).',
+        type: 'stt',
+        hasLangBreakdown: true,
+        audio: { src: '/audio/samples/multilingual-librispeech.opus', label: 'Italian audiobook — "dagli spiriti sissignore…"', duration: '' },
+      },
+      {
+        id: 'pipecat',
+        dataKey: 'pipecat',
+        title: 'Pipecat STT Benchmark',
+        tag: 'Real-time streaming',
+        desc: 'Curated benchmark by Pipecat focused on real-time STT evaluation. Diverse, clean speech samples purpose-built for fair, reproducible comparison of streaming workloads.',
+        insight: 'Purpose-built benchmark for fair, reproducible comparison of streaming STT workloads.',
+        type: 'stt',
+        audio: { src: '/audio/samples/pipecat.wav', label: 'Streaming sample — "Latif formation"', duration: '' },
+      },
+      {
+        id: 'dihard',
+        title: 'DIHARD III',
+        tag: 'Speaker diarization',
+        desc: 'One of the most difficult diarization benchmarks. Measures who is speaking and when across 10 challenging domains: meetings, broadcast audio, web video, field recordings, court proceedings, and restaurant environments.',
+        insight: '#1 — Zenith achieves diarization error rates up to 3× lower than competing providers.',
+        type: 'diarization',
+      },
+    ];
+
+    function isGladiaNumberOne(s) {
+      if (s.type === 'diarization') {
+        return getDiarizationRanking('weightedAvg')[0]?.id === 'gladia';
+      }
+      const ranking = getDatasetRanking(s.dataKey);
+      if (!ranking.length) return false;
+      const top = ranking[0].id;
+      return top === 'solaria3' || top === 'gladia';
+    }
+
+    const GLADIA_FIRST_ORDER = ['real-customer', 'earnings22', 'switchboard', 'dihard'];
+
+    function sortSectionsByGladiaRank(sections) {
+      return [...sections].sort((a, b) => {
+        const aTop = isGladiaNumberOne(a);
+        const bTop = isGladiaNumberOne(b);
+        if (aTop !== bTop) return aTop ? -1 : 1;
+        if (aTop && bTop) {
+          const aIdx = GLADIA_FIRST_ORDER.indexOf(a.id);
+          const bIdx = GLADIA_FIRST_ORDER.indexOf(b.id);
+          if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx;
+          if (aIdx !== -1) return -1;
+          if (bIdx !== -1) return 1;
+        }
+        return sections.indexOf(a) - sections.indexOf(b);
+      });
+    }
+
+    const ORDERED_SECTIONS = sortSectionsByGladiaRank(SECTIONS);
+
+    const INFO_ICON = '<span class="bench-insight-icon" aria-hidden="true"></span>';
+
+    document.getElementById('benchDatasetsList').innerHTML = `
+      <table class="bench-datasets-table">
+        <thead><tr><th>Dataset</th><th>Category</th></tr></thead>
+        <tbody>${ORDERED_SECTIONS.map(s =>
+      `<tr><td><a href="#${s.id}" class="ds-link">${s.title}</a></td><td class="ds-tag">${s.tag}</td></tr>`
+    ).join('')}</tbody>
+      </table>`;
+
+    (function () {
+      const popup = document.getElementById('benchDatasetsPopup');
+      const trigger = document.getElementById('benchDatasetsTrigger');
+      const backdrop = document.getElementById('benchDatasetsBackdrop');
+      function open() { popup.classList.add('is-open'); popup.setAttribute('aria-hidden', 'false'); trigger.setAttribute('aria-expanded', 'true'); }
+      function close() { popup.classList.remove('is-open'); popup.setAttribute('aria-hidden', 'true'); trigger.setAttribute('aria-expanded', 'false'); }
+      trigger.addEventListener('click', (e) => { e.stopPropagation(); popup.classList.contains('is-open') ? close() : open(); });
+      backdrop.addEventListener('click', close);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && popup.classList.contains('is-open')) close(); });
+      popup.querySelectorAll('.ds-link').forEach(a => a.addEventListener('click', close));
+    })();
+
+    /* ================================================================
+       HELPERS
+       ================================================================ */
+    function bestWorstInRow(vals) {
+      const nums = vals.filter(v => v != null);
+      return { best: Math.min(...nums), worst: Math.max(...nums) };
+    }
+
+    /* ================================================================
+       1. HIGHLIGHT CARDS
+       ================================================================ */
+    document.getElementById('highlightsGrid').innerHTML = `
+      <div class="bench-hl-card">
+        <div class="bench-hl-rank bench-hl-rank--purple">✓ #1 — Conversational Speech</div>
+        <div class="bench-hl-value">33.9%</div>
+        <div class="bench-hl-label">WER on Switchboard</div>
+        <div class="bench-hl-desc">Only model under 35% WER on spontaneous dialogue — customer calls, meetings, voice assistants.</div>
+      </div>
+      <div class="bench-hl-card">
+        <div class="bench-hl-rank bench-hl-rank--purple">✓ #1 — Speaker Diarization</div>
+        <div class="bench-hl-value">16.6%</div>
+        <div class="bench-hl-label">Weighted DER on DIHARD III</div>
+        <div class="bench-hl-desc">Up to 3× lower diarization error than competing providers. Best in 9 out of 10 real-world domains.</div>
+      </div>
+      <div class="bench-hl-card">
+        <div class="bench-hl-rank bench-hl-rank--purple">✓ Full Coverage</div>
+        <div class="bench-hl-value">8</div>
+        <div class="bench-hl-label">Datasets evaluated</div>
+        <div class="bench-hl-desc">Consistently competitive across clean speech, multilingual, financial, real-time, and conversational benchmarks.</div>
+      </div>
+    `;
+
+    /* ================================================================
+       2. GLOBAL COMPARISON TABLE
+       ================================================================ */
+    const GLOBAL_DATASETS = [
+      { key: 'real-customer', label: 'Real customer', filterLabel: 'Real Customer Audio' },
+      { key: 'switchboard', label: 'Switchboard', filterLabel: 'Conversational' },
+      { key: 'common-voice-24', label: 'Common Voice', filterLabel: 'Clean' },
+      { key: 'voxpopuli', label: 'VoxPopuli', filterLabel: 'Formal' },
+      { key: 'earnings22-full', label: 'Earnings22', filterLabel: 'Financial' },
+      { key: 'earnings22-cleaned', label: 'Earnings22 AA', filterLabel: 'Financial (Cleaned)' },
+      { key: 'multilingual-librispeech', label: 'MLS', filterLabel: 'Multilingual' },
+      { key: 'pipecat', label: 'Pipecat', filterLabel: 'Real-time Streaming' },
+    ];
+
+    let activeFilters = new Set(GLOBAL_DATASETS.map(d => d.key));
+
+    function renderFilterChips() {
+      const bar = document.getElementById('filterChips');
+      const allActive = activeFilters.size === GLOBAL_DATASETS.length;
+      bar.innerHTML = `<button class="bench-chip${allActive ? ' active' : ''}" data-filter="all">All</button>` +
+        GLOBAL_DATASETS.map(d =>
+          `<button class="bench-chip${activeFilters.has(d.key) ? ' active' : ''}" data-filter="${d.key}">${d.filterLabel}</button>`
+        ).join('');
+    }
+
+    const STT_TO_DIAR_ID = { gladia: 'gladia', assembly3: 'assemblyai', assembly2: 'assemblyai', elevenlabs: 'elevenlabs', deepgram: 'deepgram', soniox: 'soniox' };
+
+    const GLADIA_STT_IDS = new Set(['solaria3', 'gladia']);
+
+    function chartColClass(id) {
+      if (id === 'solaria3') return ' bench-chart-col--s3';
+      if (id === 'gladia') return ' bench-chart-col--s1';
+      return ' bench-chart-col--muted';
+    }
+
+    function isGladiaSTT(id) { return GLADIA_STT_IDS.has(id); }
+
+    function renderGlobalTable() {
+      const thead = document.getElementById('globalThead');
+      const tbody = document.getElementById('globalTbody');
+      const cardsEl = document.getElementById('globalCards');
+      const cols = GLOBAL_DATASETS.filter(d => activeFilters.has(d.key));
+
+      thead.innerHTML = `<tr><th class="bench-col-provider">Provider</th>${cols.map(d => `<th>${d.label}</th>`).join('')}</tr>`;
+
+      const rows = PROVIDERS_STT.map(p => {
+        const vals = cols.map(d => DATA_STT[d.key]?.[p.id]);
+        return { provider: p, vals };
+      });
+
+      const bestWorstPerCol = cols.map((d, j) => {
+        const colVals = rows.map(r => r.vals[j]).filter(v => v != null);
+        return colVals.length ? { best: Math.min(...colVals), worst: Math.max(...colVals) } : { best: null, worst: null };
+      });
+
+      tbody.innerHTML = rows.map(r => {
+        const hlCls = r.provider.id === 'solaria3' ? ' col-s3' : (r.provider.highlight ? ' col-gl' : '');
+        return `<tr>
+          <td class="bench-col-provider${hlCls}">${r.provider.name}</td>
+          ${r.vals.map((v, j) => {
+            if (v == null) return '<td class="na">—</td>';
+            const bw = bestWorstPerCol[j];
+            const cls = bw && v === bw.best ? 'best' : bw && v === bw.worst ? 'worst' : '';
+            const suffix = '%';
+            return `<td class="${cls}">${v}${suffix}</td>`;
+          }).join('')}
+        </tr>`;
+      }).join('');
+
+      // Mobile cards
+      if (!cardsEl) return;
+      const maxPerCol = {};
+      cols.forEach(d => {
+        const all = PROVIDERS_STT.map(p => DATA_STT[d.key]?.[p.id]).filter(v => v != null);
+        maxPerCol[d.key] = all.length ? Math.max(...all) : 1;
+      });
+
+      cardsEl.innerHTML = rows.map(r => {
+        const p = r.provider;
+        const cardRows = r.vals.map((v, j) => {
+          const d = cols[j];
+          const bw = bestWorstPerCol[j];
+          if (v == null) return `<div class="bench-card-row">
+            <span class="bench-card-ds">${d.label}</span>
+            <div class="bench-card-bar-track"></div>
+            <span class="bench-card-val na">\u2014</span>
+          </div>`;
+          const pct = ((v / maxPerCol[d.key]) * 100).toFixed(0);
+          const cls = bw && v === bw.best ? ' best' : bw && v === bw.worst ? ' worst' : '';
+          return `<div class="bench-card-row">
+            <span class="bench-card-ds">${d.label}</span>
+            <div class="bench-card-bar-track"><div class="bench-card-bar-fill${cls}" style="width:${pct}%"></div></div>
+            <span class="bench-card-val${cls}">${v}%</span>
+          </div>`;
+        }).join('');
+        return `<div class="bench-card${p.id === 'solaria3' ? ' bench-card--s3' : p.highlight ? ' bench-card--hl' : ''}">
+          <div class="bench-card-header">
+            <span class="bench-card-dot${isGladiaSTT(p.id) ? '' : ' bench-card-dot--muted'}" style="--dot-color:${p.color}"></span>
+            <span class="bench-card-name">${p.name}</span>
+          </div>
+          <div class="bench-card-rows">${cardRows}</div>
+        </div>`;
+      }).join('');
+    }
+
+    document.getElementById('filterChips').addEventListener('click', e => {
+      const chip = e.target.closest('.bench-chip');
+      if (!chip) return;
+      const f = chip.dataset.filter;
+      if (f === 'all') {
+        activeFilters = new Set(GLOBAL_DATASETS.map(d => d.key));
+      } else {
+        if (activeFilters.size === GLOBAL_DATASETS.length) activeFilters = new Set();
+        if (activeFilters.has(f)) activeFilters.delete(f);
+        else activeFilters.add(f);
+        if (activeFilters.size === 0) activeFilters = new Set(GLOBAL_DATASETS.map(d => d.key));
+      }
+      renderFilterChips();
+      renderGlobalTable();
+    });
+
+    renderFilterChips();
+    renderGlobalTable();
+
+    /* ================================================================
+       3. DATASET SECTIONS
+       ================================================================ */
+    const container = document.getElementById('sectionsContainer');
+
+    function buildSTTChart(dsKey, providers, chartId) {
+      providers = providers || PROVIDERS_STT;
+      const data = DATA_STT[dsKey];
+      if (!data) return '';
+      const withData = providers.filter(p => data[p.id] != null);
+      if (withData.length === 0) return '';
+      const vals = withData.map(p => data[p.id]);
+      const maxV = Math.max(...vals) * 1.15;
+      const chartAttr = chartId ? ` id="bench-chart-${chartId}"` : '';
+
+      return `<div class="bench-chart"${chartAttr}>${withData.map(p => {
+        const v = data[p.id];
+        const pct = ((v / maxV) * 100).toFixed(1);
+        return `<div class="bench-chart-col${chartColClass(p.id)}" style="--bar-color:${p.color}">
+          <div class="bench-chart-value">${v}%</div>
+          <div class="bench-chart-bar-track"><div class="bench-chart-bar-fill" style="--bar-h:${pct}%"></div></div>
+          <div class="bench-chart-label"><span class="bench-chart-label-dot"></span>${p.short}</div>
+        </div>`;
+      }).join('')}</div>`;
+    }
+
+    function buildSTTTable(dsKey) {
+      const ranking = getDatasetRanking(dsKey);
+      const detail = DATA_STT_DETAIL[dsKey];
+      return `<div class="bench-table-wrap"><table class="bench-table">
+        <thead><tr><th>Provider</th><th>WER</th><th>Perfect</th><th>High WER</th></tr></thead>
+        <tbody>${ranking.map((r, i) => {
+          const d = detail?.[r.id];
+          const hasSolaria3 = DATA_STT[dsKey]?.solaria3 != null;
+          const hlClass = r.id === 'solaria3' ? 'col-s3' : (r.highlight && !hasSolaria3 ? 'col-gl' : '');
+          return `<tr>
+            <td${hlClass ? ` class="${hlClass}"` : ''}>${r.name}</td>
+            <td class="${i === 0 ? 'best' : i === ranking.length - 1 ? 'worst' : ''}">${r.wer}%</td>
+            <td>${d?.perfect ?? '—'}</td>
+            <td>${d?.highWer ?? '—'}</td>
+          </tr>`;
+        }).join('')}</tbody>
+      </table></div>`;
+    }
+
+    function buildDiarChart() {
+      const withData = PROVIDERS_DIARIZATION.filter(p => DATA_DIARIZATION[p.id]?.weightedAvg != null);
+      if (withData.length === 0) return '';
+      const maxV = Math.max(...withData.map(p => DATA_DIARIZATION[p.id].weightedAvg)) * 1.1;
+      return `<div class="bench-chart">${withData.map(p => {
+        const der = DATA_DIARIZATION[p.id].weightedAvg;
+        const pct = ((der / maxV) * 100).toFixed(1);
+        const colCls = p.id === 'gladia' ? ' bench-chart-col--s1' : ' bench-chart-col--muted';
+        return `<div class="bench-chart-col${colCls}" style="--bar-color:${p.color}">
+          <div class="bench-chart-value">${der}%</div>
+          <div class="bench-chart-bar-track"><div class="bench-chart-bar-fill" style="--bar-h:${pct}%"></div></div>
+          <div class="bench-chart-label"><span class="bench-chart-label-dot"></span>${p.short}</div>
+        </div>`;
+      }).join('')}</div>`;
+    }
+
+    function buildDiarTable() {
+      const ranking = getDiarizationRanking('weightedAvg');
+      return `<div class="bench-table-wrap"><table class="bench-table">
+        <thead><tr><th>Provider</th>${DIHARD_DOMAINS.map(d => `<th>${d.label}</th>`).join('')}<th>Avg</th><th>W. Avg</th></tr></thead>
+        <tbody>${ranking.map((r, i) => {
+          const d = DATA_DIARIZATION[r.id];
+          return `<tr>
+            <td${r.highlight ? ' class="col-gl"' : ''}>${r.name}</td>
+            ${DIHARD_DOMAINS.map(dom => {
+              const v = d[dom.id];
+              return `<td${v == null ? ' class="na"' : ''}>${v != null ? v : '—'}</td>`;
+            }).join('')}
+            <td>${d.simpleAvg}</td>
+            <td class="${i === 0 ? 'best' : ''}">${d.weightedAvg}</td>
+          </tr>`;
+        }).join('')}</tbody>
+      </table></div>`;
+    }
+
+    function buildLangTable() {
+      return `<h3 class="bench-lang-title">WER by Language</h3>
+      <div class="bench-table-wrap"><table class="bench-table">
+        <thead><tr><th>Provider</th><th>DE</th><th>ES</th><th>FR</th><th>IT</th><th>PT</th></tr></thead>
+        <tbody>${Object.entries(DATA_MLS_LANGUAGES).map(([pid, langs]) => {
+          const prov = PROVIDERS_STT.find(p => p.id === pid);
+          if (!prov) return '';
+          return `<tr><td${prov.highlight ? ' class="col-gl"' : ''}>${prov.name}</td>${['DE','ES','FR','IT','PT'].map(l => `<td>${langs[l]}%</td>`).join('')}</tr>`;
+        }).join('')}</tbody>
+      </table></div>`;
+    }
+
+    function buildAudioPlayer(audio, sectionId) {
+      if (!audio) return '';
+      const isEmpty = !audio.src;
+      return `<div class="bench-audio${isEmpty ? ' bench-audio--empty' : ''}" data-audio-section="${sectionId}">
+        <button class="bench-audio-play" type="button" aria-label="Play sample"${isEmpty ? ' disabled' : ''}>
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path class="play-icon" d="M4 2.5v11l9-5.5z"/>
+            <g class="pause-icon"><rect x="3" y="2" width="4" height="12" rx="1"/><rect x="9" y="2" width="4" height="12" rx="1"/></g>
+          </svg>
+        </button>
+        <canvas class="bench-audio-spectrum" height="40"></canvas>
+        <span class="bench-audio-time">${isEmpty ? '--:--' : '0:00'}</span>
+        ${audio.src ? '<audio preload="none" src="' + audio.src + '"></audio>' : ''}
+      </div>`;
+    }
+
+    function getSectionChartProviders(s) {
+      const exclude = new Set(s.chartExclude || []);
+      return getSTTChartProviders(s.dataKey).filter(p => !exclude.has(p.id));
+    }
+
+    ORDERED_SECTIONS.forEach(s => {
+      let chartHTML = '';
+      let tableHTML = '';
+
+      if (s.type === 'stt') {
+        if (s.hasSubToggle) {
+          chartHTML = `<div data-sub="primary-chart">${buildSTTChart(s.dataKey, getSectionChartProviders(s), s.id)}</div><div data-sub="alt-chart" style="display:none">${buildSTTChart(s.altKey, getSTTChartProviders(s.altKey).filter(p => !(s.chartExclude || []).includes(p.id)), s.id + '-full')}</div>`;
+          tableHTML = `<div data-sub="primary-table">${buildSTTTable(s.dataKey)}</div><div data-sub="alt-table" style="display:none">${buildSTTTable(s.altKey)}</div>`;
+        } else {
+          chartHTML = buildSTTChart(s.dataKey, getSectionChartProviders(s), s.id);
+          tableHTML = buildSTTTable(s.dataKey);
+        }
+        if (s.hasLangBreakdown) {
+          tableHTML += buildLangTable();
+        }
+      } else {
+        chartHTML = buildDiarChart();
+        tableHTML = buildDiarTable();
+      }
+
+      const subToggleHTML = s.hasSubToggle
+        ? `<div class="bench-sub-toggle" data-section="${s.id}">
+            <button class="bench-sub-btn active" data-sub="primary">${s.subLabels[0]}</button>
+            <button class="bench-sub-btn" data-sub="alt">${s.subLabels[1]}</button>
+          </div>`
+        : '';
+
+      const audioHTML = buildAudioPlayer(s.audio, s.id);
+      const mobileHint = (s.id === 'switchboard' || s.id === 'real-customer') ? '<div class="bench-mobile-hint">↓ Lower is better</div>' : '';
+
+      const dsTagLabel = s.invertLabels ? s.tag : s.title;
+      const headingLabel = s.invertLabels ? s.title : s.tag;
+      const headingHTML = s.headingSuffix
+        ? `${headingLabel}<span class="bench-title-token"> — ${s.headingSuffix}</span>`
+        : headingLabel;
+
+      const sectionHTML = `
+      <section class="section reveal" id="${s.id}">
+        <div class="container">
+          <div class="bench-ds">
+            <div class="bench-ds-tag"><span class="bench-ds-tag-dot"></span>${dsTagLabel}</div>
+            <h2 class="section-title">${headingHTML}${subToggleHTML}</h2>
+            <p class="section-subtitle">${s.desc}</p>
+            ${audioHTML}
+
+            <div class="bench-controls-row">
+              <div class="bench-insight">${INFO_ICON} ${s.insight}</div>
+              <div class="bench-view-toggle" data-section="${s.id}">
+                <button class="bench-view-btn active" data-view="chart">Chart</button>
+                <button class="bench-view-btn" data-view="table">Table</button>
+              </div>
+            </div>
+
+            ${mobileHint}
+            <div class="bench-view-panel active" data-view="chart">${chartHTML}</div>
+            <div class="bench-view-panel" data-view="table">${tableHTML}</div>
+          </div>
+        </div>
+      </section>`;
+
+      container.insertAdjacentHTML('beforeend', sectionHTML);
+    });
+
+    /* ================================================================
+       4. VIEW TOGGLES
+       ================================================================ */
+    document.querySelectorAll('.bench-view-toggle').forEach(toggle => {
+      toggle.addEventListener('click', e => {
+        const btn = e.target.closest('.bench-view-btn');
+        if (!btn) return;
+        const section = toggle.closest('.bench-ds');
+        toggle.querySelectorAll('.bench-view-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const view = btn.dataset.view;
+        section.querySelectorAll('.bench-view-panel[data-view]').forEach(p => {
+          p.classList.toggle('active', p.dataset.view === view);
+        });
+      });
+    });
+
+    /* ================================================================
+       5. SUB-TOGGLES (Earnings22 Full/Cleaned)
+       ================================================================ */
+    document.querySelectorAll('.bench-sub-toggle').forEach(toggle => {
+      toggle.addEventListener('click', e => {
+        const btn = e.target.closest('.bench-sub-btn');
+        if (!btn) return;
+        toggle.querySelectorAll('.bench-sub-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const sub = btn.dataset.sub;
+        const section = toggle.closest('.bench-ds');
+        section.querySelectorAll('[data-sub]').forEach(el => {
+          if (el.classList.contains('bench-sub-toggle') || el.classList.contains('bench-sub-btn')) return;
+          const isPrimary = el.dataset.sub.startsWith('primary');
+          const isAlt = el.dataset.sub.startsWith('alt');
+          if (sub === 'primary') {
+            el.style.display = isAlt ? 'none' : '';
+          } else {
+            el.style.display = isPrimary ? 'none' : '';
+          }
+        });
+      });
+    });
+
+    /* ================================================================
+       6. SCROLL REVEAL + CHART ANIMATION
+       ================================================================ */
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          e.target.querySelectorAll('.bench-chart-col').forEach((col, i) => {
+            setTimeout(() => col.classList.add('anim'), i * 60);
+          });
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    /* ================================================================
+       7. AUDIO PLAYERS — Spectrum Analyzer (Web Audio API)
+       ================================================================ */
+    (function () {
+      let currentAudio = null;
+      let currentBtn = null;
+      let audioCtx = null;
+
+      function getAudioContext() {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        return audioCtx;
+      }
+
+      function formatTime(s) {
+        const m = Math.floor(s / 60);
+        const sec = Math.floor(s % 60);
+        return m + ':' + (sec < 10 ? '0' : '') + sec;
+      }
+
+      function calcBars(w) {
+        const barW = 2;
+        const gap = 1.5;
+        const barCount = Math.floor((w + gap) / (barW + gap));
+        const totalW = barCount * barW + (barCount - 1) * gap;
+        const offsetX = (w - totalW) / 2;
+        return { barW, gap, barCount, offsetX };
+      }
+
+      function extractPeaks(audioBuffer, barCount) {
+        const chan = audioBuffer.getChannelData(0);
+        const step = Math.floor(chan.length / barCount);
+        const peaks = new Float32Array(barCount);
+        let maxPeak = 0;
+        for (let i = 0; i < barCount; i++) {
+          let peak = 0;
+          const start = i * step;
+          const end = Math.min(start + step, chan.length);
+          for (let j = start; j < end; j++) {
+            const v = Math.abs(chan[j]);
+            if (v > peak) peak = v;
+          }
+          peaks[i] = peak;
+          if (peak > maxPeak) maxPeak = peak;
+        }
+        if (maxPeak > 0) for (let i = 0; i < barCount; i++) peaks[i] /= maxPeak;
+        return peaks;
+      }
+
+      function pseudoPeaks(barCount) {
+        const p = new Float32Array(barCount);
+        for (let i = 0; i < barCount; i++) {
+          const t = i / barCount;
+          p[i] = 0.3 + 0.7 * Math.sin(t * Math.PI) * (0.4 + 0.6 * Math.sin(t * 3.7 + 1.2));
+        }
+        return p;
+      }
+
+      function resamplePeaks(peaks, barCount) {
+        if (peaks.length === barCount) return peaks;
+        const out = new Float32Array(barCount);
+        const ratio = peaks.length / barCount;
+        for (let i = 0; i < barCount; i++) {
+          const idx = i * ratio;
+          const lo = Math.floor(idx);
+          const hi = Math.min(lo + 1, peaks.length - 1);
+          const frac = idx - lo;
+          out[i] = peaks[lo] * (1 - frac) + peaks[hi] * frac;
+        }
+        return out;
+      }
+
+      function drawWaveform(canvas, peaks, progress) {
+        const c = canvas.getContext('2d');
+        const dpr = window.devicePixelRatio || 1;
+        const w = canvas.clientWidth;
+        const h = canvas.clientHeight;
+        canvas.width = w * dpr;
+        canvas.height = h * dpr;
+        c.scale(dpr, dpr);
+
+        const { barW, gap, barCount, offsetX } = calcBars(w);
+        const dp = resamplePeaks(peaks, barCount);
+        const playheadBar = Math.floor((progress || 0) * barCount);
+
+        for (let i = 0; i < barCount; i++) {
+          const barH = Math.max(2, dp[i] * h * 0.85);
+          const x = offsetX + i * (barW + gap);
+          const y = (h - barH) / 2;
+          const r = Math.min(barW / 2, 1);
+          c.beginPath();
+          c.roundRect(x, y, barW, barH, r);
+          c.fillStyle = i <= playheadBar && progress > 0
+            ? 'rgba(148, 122, 252, 0.9)'
+            : 'rgba(255, 255, 255, 0.13)';
+          c.fill();
+        }
+      }
+
+      const peaksCache = new Map();
+
+      async function decodePeaks(src, barCount) {
+        if (peaksCache.has(src)) return resamplePeaks(peaksCache.get(src), barCount);
+        const ctx = getAudioContext();
+        const resp = await fetch(src);
+        const buf = await resp.arrayBuffer();
+        const decoded = await ctx.decodeAudioData(buf);
+        const peaks = extractPeaks(decoded, barCount);
+        peaksCache.set(src, peaks);
+        return peaks;
+      }
+
+      document.querySelectorAll('.bench-audio:not(.bench-audio--empty)').forEach(player => {
+        const btn = player.querySelector('.bench-audio-play');
+        const audio = player.querySelector('audio');
+        const canvas = player.querySelector('.bench-audio-spectrum');
+        const timeEl = player.querySelector('.bench-audio-time');
+        if (!audio || !btn || !canvas) return;
+
+        let rafId = null;
+        const src = audio.getAttribute('src');
+        const { barCount } = calcBars(canvas.clientWidth);
+        let peaks = pseudoPeaks(barCount);
+
+        drawWaveform(canvas, peaks, 0);
+
+        if (src) {
+          decodePeaks(src, barCount).then(p => {
+            peaks = p;
+            const progress = audio.duration ? audio.currentTime / audio.duration : 0;
+            drawWaveform(canvas, peaks, progress);
+          }).catch(() => {});
+        }
+
+        function startProgressLoop() {
+          function tick() {
+            const progress = audio.duration ? audio.currentTime / audio.duration : 0;
+            drawWaveform(canvas, peaks, progress);
+            rafId = requestAnimationFrame(tick);
+          }
+          tick();
+        }
+
+        function stopProgressLoop() {
+          if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+        }
+
+        btn.addEventListener('click', () => {
+          if (currentAudio && currentAudio !== audio) {
+            currentAudio.pause();
+            if (currentBtn) currentBtn.classList.remove('is-playing');
+            const prevCanvas = currentBtn?.closest('.bench-audio')?.querySelector('.bench-audio-spectrum');
+            if (prevCanvas && prevCanvas._stopLoop) prevCanvas._stopLoop();
+            currentBtn = null;
+          }
+          if (audio.paused) {
+            audio.play();
+            btn.classList.add('is-playing');
+            currentAudio = audio;
+            currentBtn = btn;
+            startProgressLoop();
+          } else {
+            audio.pause();
+            btn.classList.remove('is-playing');
+            stopProgressLoop();
+            const progress = audio.duration ? audio.currentTime / audio.duration : 0;
+            drawWaveform(canvas, peaks, progress);
+          }
+        });
+
+        canvas._stopLoop = stopProgressLoop;
+
+        audio.addEventListener('timeupdate', () => {
+          if (!audio.duration) return;
+          timeEl.textContent = formatTime(audio.currentTime);
+        });
+
+        audio.addEventListener('ended', () => {
+          stopProgressLoop();
+          btn.classList.remove('is-playing');
+          timeEl.textContent = '0:00';
+          drawWaveform(canvas, peaks, 0);
+        });
+
+        canvas.addEventListener('click', (e) => {
+          if (!audio.duration) return;
+          const rect = canvas.getBoundingClientRect();
+          const pct = (e.clientX - rect.left) / rect.width;
+          audio.currentTime = pct * audio.duration;
+          if (audio.paused) {
+            drawWaveform(canvas, peaks, audio.currentTime / audio.duration);
+          }
+        });
+      });
+    })();
+
+    /* ================================================================
+       8. TABLE SCROLL HINT — hide gradient when scrolled to end
+       ================================================================ */
+    document.querySelectorAll('.bench-table-wrap').forEach(wrap => {
+      wrap.addEventListener('scroll', () => {
+        const atEnd = wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 4;
+        wrap.classList.toggle('scrolled-end', atEnd);
+      });
+    });
+
+  })();
+  </script>
+</body>
+</html>

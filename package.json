@@ -1,0 +1,11 @@
+{
+  "name": "zenith-clone",
+  "version": "1.0.0",
+  "description": "High-fidelity static clone of Zenith.io landing page",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

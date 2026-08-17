@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Zenith System Status</title>
+  <meta name="description" content="Real-time uptime, operational status, and system latency for Zenith AI Speech infrastructure.">
+  <link rel="canonical" href="/status">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zenith System Status — All Systems Operational">
+  <meta property="og:description" content="Current status of Zenith APIs, models, and real-time streaming infrastructure.">
+  <meta property="og:url" content="/status">
+  <meta property="og:site_name" content="Zenith">
+  <meta property="og:image" content="/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/assets/shared-0ymG48HZ.css">
+  <style>
+    body {
+      background-color: #060608;
+      color: #ffffff;
+      font-family: 'SuisseIntl', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .status-container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+    }
+    .status-hero {
+      text-align: center;
+      padding: 40px 0 50px;
+    }
+    .status-badge-overall {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 28px;
+      border-radius: 9999px;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      font-size: 16px;
+      font-weight: 600;
+      color: #4ade80;
+      margin-bottom: 24px;
+      box-shadow: 0 0 25px rgba(34, 197, 94, 0.15);
+    }
+    .pulse-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 12px #22c55e;
+      animation: pulse-glow 2s infinite ease-in-out;
+    }
+    @keyframes pulse-glow {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.6; }
+    }
+    .status-title {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin: 0 0 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .status-subtext {
+      color: #94a3b8;
+      font-size: 16px;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+    .status-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(10px);
+    }
+    .service-row {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .service-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .service-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .service-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .service-status {
+      font-size: 14px;
+      font-weight: 500;
+      color: #4ade80;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .uptime-bars {
+      display: flex;
+      gap: 3px;
+      align-items: center;
+      height: 24px;
+      width: 100%;
+    }
+    .uptime-bar {
+      flex: 1;
+      height: 18px;
+      background: #22c55e;
+      border-radius: 2px;
+      opacity: 0.85;
+      transition: all 0.2s ease;
+    }
+    .uptime-bar:hover {
+      opacity: 1;
+      transform: scaleY(1.2);
+    }
+    .uptime-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 4px;
+    }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+    .metric-box {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .metric-num {
+      font-size: 28px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+    .metric-name {
+      font-size: 13px;
+      color: #94a3b8;
+    }
+    .incidents-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 40px 0 20px;
+      color: #ffffff;
+    }
+    .incident-item {
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .incident-date {
+      font-size: 13px;
+      font-weight: 600;
+      color: #a78bfa;
+      margin-bottom: 6px;
+    }
+    .incident-desc {
+      font-size: 14px;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <!-- Dynamic Webflow Navigation -->
+  <script src="/js/webflow-nav.js" defer></script>
+
+  <div class="status-container">
+    <header class="status-hero">
+      <div class="status-badge-overall">
+        <span class="pulse-dot"></span>
+        All Systems Fully Operational
+      </div>
+      <h1 class="status-title">Zenith System Status</h1>
+      <p class="status-subtext">
+        Real-time telemetry, service health, and global infrastructure performance for Zenith speech AI APIs and models.
+      </p>
+    </header>
+
+    <div class="metrics-grid">
+      <div class="metric-box">
+        <div class="metric-num" style="color: #4ade80;">99.99%</div>
+        <div class="metric-name">Overall Uptime (90 days)</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-num">&lt;280ms</div>
+        <div class="metric-name">Average Streaming Latency</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-num">100%</div>
+        <div class="metric-name">ASR Model Availability</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-num">0</div>
+        <div class="metric-name">Active Incidents</div>
+      </div>
+    </div>
+
+    <div class="status-card">
+      <!-- Service 1 -->
+      <div class="service-row">
+        <div class="service-header">
+          <div class="service-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            Real-Time Streaming STT API (WebSocket)
+          </div>
+          <div class="service-status">Operational</div>
+        </div>
+        <div class="uptime-bars" id="bars-1"></div>
+        <div class="uptime-meta">
+          <span>90 days ago</span>
+          <span>99.99% uptime</span>
+          <span>Today</span>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="service-row">
+        <div class="service-header">
+          <div class="service-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Asynchronous Audio Transcription API
+          </div>
+          <div class="service-status">Operational</div>
+        </div>
+        <div class="uptime-bars" id="bars-2"></div>
+        <div class="uptime-meta">
+          <span>90 days ago</span>
+          <span>100.00% uptime</span>
+          <span>Today</span>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="service-row">
+        <div class="service-header">
+          <div class="service-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.5h-2V13h2zm0-4.5h-2V7h2z"/></svg>
+            Solaria-1 &amp; Solaria-3 Inference Clusters
+          </div>
+          <div class="service-status">Operational</div>
+        </div>
+        <div class="uptime-bars" id="bars-3"></div>
+        <div class="uptime-meta">
+          <span>90 days ago</span>
+          <span>100.00% uptime</span>
+          <span>Today</span>
+        </div>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="service-row">
+        <div class="service-header">
+          <div class="service-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg>
+            Audio Intelligence &amp; Speaker Diarization
+          </div>
+          <div class="service-status">Operational</div>
+        </div>
+        <div class="uptime-bars" id="bars-4"></div>
+        <div class="uptime-meta">
+          <span>90 days ago</span>
+          <span>99.98% uptime</span>
+          <span>Today</span>
+        </div>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="service-row">
+        <div class="service-header">
+          <div class="service-name">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg>
+            Developer Console &amp; Authentication Services
+          </div>
+          <div class="service-status">Operational</div>
+        </div>
+        <div class="uptime-bars" id="bars-5"></div>
+        <div class="uptime-meta">
+          <span>90 days ago</span>
+          <span>100.00% uptime</span>
+          <span>Today</span>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="incidents-title">Past Incident History</h2>
+    <div class="status-card">
+      <div class="incident-item">
+        <div class="incident-date">August 2026 &middot; Scheduled Maintenance</div>
+        <div class="incident-desc">Routine database indexing and model weight cache optimization completed with zero downtime on European cluster nodes.</div>
+      </div>
+      <div class="incident-item">
+        <div class="incident-date">July 2026 &middot; No Incidents Reported</div>
+        <div class="incident-desc">100% uptime across all global audio processing pipelines and WebSocket ingestion clusters.</div>
+      </div>
+      <div class="incident-item">
+        <div class="incident-date">June 2026 &middot; Solaria-3 Rollout</div>
+        <div class="incident-desc">Solaria-3 model deployment was executed with zero API interruption or degradation.</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      for (let i = 1; i <= 5; i++) {
+        const container = document.getElementById('bars-' + i);
+        if (!container) continue;
+        for (let b = 0; b < 60; b++) {
+          const bar = document.createElement('div');
+          bar.className = 'uptime-bar';
+          bar.title = 'Day ' + (60 - b) + ': 100% Operational';
+          container.appendChild(bar);
+        }
+      }
+    });
+  </script>
+
+  <footer class="footer" style="padding: 60px 24px; text-align: center; border-top: 1px solid rgba(255,255,255,0.06); color: #64748b; font-size: 14px;">
+    &copy; 2026 Zenith SAS. All systems normal.
+  </footer>
+  <script src="/js/webflow-footer.js" defer></script>
+
+<script data-docs-interceptor="true">
+document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var text = (a.textContent || '').trim();
+    if (
+      text.indexOf('Documentation') !== -1 ||
+      text.indexOf('Integration') !== -1 ||
+      text.indexOf('Browse integrations') !== -1 ||
+      text.indexOf('View docs') !== -1 ||
+      text.indexOf('View API docs') !== -1 ||
+      text.indexOf('Get started with SDK') !== -1 ||
+      href.indexOf('/docs') !== -1 ||
+      href.indexOf('docs.zenith.io') !== -1 ||
+      href.indexOf('docs.gladia.io') !== -1
+    ) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }
+  }, true);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/app", "destination": "/app/signup.html" },
+    { "source": "/app/", "destination": "/app/signup.html" },
+    { "source": "/app/auth/signin", "destination": "/app/signin.html" },
+    { "source": "/app/auth/signup", "destination": "/app/signup.html" },
+    { "source": "/app/signin", "destination": "/app/signin.html" },
+    { "source": "/app/signup", "destination": "/app/signup.html" },
+    { "source": "/pricing-old", "destination": "/pricing.html" },
+    { "source": "/solaria-old", "destination": "/solaria.html" },
+    { "source": "/docs", "destination": "/docs/index.html" },
+    { "source": "/docs/", "destination": "/docs/index.html" },
+    { "source": "/api-reference", "destination": "/docs/index.html" }
+  ]
+}

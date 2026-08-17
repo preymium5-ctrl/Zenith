@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Axeptio CMP — must load before GTM -->
+<script>
+window.axeptioSettings = {
+  clientId: "6931856caf2dc33718035e3a",
+  cookiesVersion: "fr-fr-gpdr-04-12-2025",
+  googleConsentMode: {
+    default: {
+      analytics_storage: "denied",
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      wait_for_update: 500
+    }
+  }
+};
+(function(d, s) {
+  var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+  e.async = true; e.src = "//static.axept.io/sdk.js";
+  t.parentNode.insertBefore(e, t);
+})(document, "script");
+</script>
+
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5M3X2DX');</script>
+<!-- End Google Tag Manager -->
+<!-- Google Ads (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11135522798"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-11135522798');</script>
+<!-- PostHog -->
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="xi Si init Ni ji pr qi Ui $i capture calculateEventProperties Zi register register_once register_for_session unregister unregister_for_session Yi getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Ki identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty Qi Wi createPersonProfile setInternalOrTestUser Ji Fi tn opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing zi debug mr it getPageViewId captureTraceFeedback captureTraceMetric Ri".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_kYph4UveZpKEWbuWvaYset7nAPEVjuyyQ9hAkLfiHX35', {
+    api_host: '/ingest',
+    ui_host: 'https://eu.posthog.com',
+    defaults: '2026-05-30',
+    person_profiles: 'identified_only',
+    autocapture: true,
+    capture_pageview: true,
+    capture_pageleave: true,
+  });
+</script>
+<!-- End PostHog -->
+<!-- Clarity -->
+<script type="text/javascript">
+  (function () {
+    function loadClarity() {
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = 'https://www.clarity.ms/tag/' + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, 'clarity', 'script', 'hrmdb7ts2c');
+    }
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadClarity, { timeout: 4000 });
+    } else {
+      window.addEventListener('load', loadClarity);
+    }
+  })();
+</script>
+<!-- End Clarity -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speech-to-text for contact centers and CCaaS platforms | Zenith</title>
+  <meta name="description" content="Multilingual call transcription for contact center platforms in one API. Solaria-3 leads on real-world business audio, async-first for QA and CRM.">
+  <meta name="zenith-page" content="CCaaS">
+  <link rel="canonical" href="https://www.zenith.io/use-cases/ccaas">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Speech-to-text for contact centers and CCaaS platforms | Zenith">
+  <meta property="og:description" content="Multilingual call transcription for contact center platforms in one API. Solaria-3 leads on real-world business audio, async-first for QA and CRM.">
+  <meta property="og:url" content="https://www.zenith.io/use-cases/ccaas">
+  <meta property="og:image" content="/illustrations/use-cases/hero-ccaas.avif">
+  <meta property="og:site_name" content="Zenith">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Speech-to-text for contact centers and CCaaS platforms | Zenith">
+  <meta name="twitter:description" content="Multilingual call transcription for contact center platforms in one API. Solaria-3 leads on real-world business audio, async-first for QA and CRM.">
+  <meta name="twitter:image" content="/illustrations/use-cases/hero-ccaas.avif">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Speech-to-text for contact centers and CCaaS platforms",
+    "description": "Multilingual call transcription for contact center platforms in one API. Solaria-3 leads on real-world business audio, async-first for QA and CRM.",
+    "url": "https://www.zenith.io/use-cases/ccaas",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Zenith",
+      "url": "https://zenith.io",
+      "sameAs": [
+        "https://twitter.com/zenith_ai",
+        "https://www.linkedin.com/company/zenith",
+        "https://github.com/zenith"
+      ]
+    }
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+  <link rel="stylesheet" crossorigin href="/assets/shared-0ymG48HZ.css">
+  <link rel="stylesheet" crossorigin href="/assets/use-cases-testimonials-C81Z4F04.css">
+</head>
+<body class="page-meeting-assistants page-ccaas">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5M3X2DX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+  <!-- =====================================================
+     NAVBAR — Preview default (.navbar / .mega-menu v2)
+     10-iteration pass: UI · UX · architecture · efficiency · design
+     ===================================================== -->
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var useWebflowNav = params.get('wf-nav') === '1';
+  document.documentElement.setAttribute('data-nav-mode', useWebflowNav ? 'webflow' : 'code');
+  document.documentElement.setAttribute('data-nav-variant', 'enhanced');
+})();
+</script>
+<header class="site-nav" data-nav-shell>
+<nav class="navbar" aria-label="Main">
+  <div class="navbar-inner">
+    <a href="/" class="navbar-logo" aria-label="Zenith"><svg viewBox="0 0 322 82" style="width:110px;height:auto;" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Zenith"><path d="M14 10H66C69.3137 10 72 12.6863 72 16C72 17.75 71.25 19.38 69.95 20.55L36.2 51H66C69.3137 51 72 53.6863 72 57V66C72 69.3137 69.3137 72 66 72H16C12.6863 72 10 69.3137 10 66C10 64.25 10.75 62.62 12.05 61.45L45.8 31H16C12.6863 31 10 28.3137 10 25V16C10 12.6863 12.6863 10 16 10H14Z" fill="white"/><text x="94" y="56" fill="white" font-family="'SuisseIntl', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="700" letter-spacing="-0.8px">Zenith</text></svg></a>
+    <div class="navbar-links">
+      <button type="button" data-menu="product" aria-haspopup="true" aria-expanded="false" aria-controls="mega-panel-product">
+        <span class="mega-menu-nav-label">Product</span><svg class="mega-menu-nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button type="button" data-menu="solutions" aria-haspopup="true" aria-expanded="false" aria-controls="mega-panel-solutions">
+        <span class="mega-menu-nav-label">Solutions</span><svg class="mega-menu-nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <a href="/pricing">Pricing</a>
+      <button type="button" data-menu="developers" aria-haspopup="true" aria-expanded="false" aria-controls="mega-panel-developers">
+        <span class="mega-menu-nav-label">Developers</span><svg class="mega-menu-nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button type="button" data-menu="resources" aria-haspopup="true" aria-expanded="false" aria-controls="mega-panel-resources">
+        <span class="mega-menu-nav-label">Resources</span><svg class="mega-menu-nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button type="button" data-menu="company" aria-haspopup="true" aria-expanded="false" aria-controls="mega-panel-company">
+        <span class="mega-menu-nav-label">Company</span><svg class="mega-menu-nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <div class="navbar-actions">
+      <a href="/demo-request" class="btn btn-secondary btn-sm navbar-cta-demo">
+        <span class="btn-text-wrapper">
+          <span class="btn-text">Request a demo</span>
+          <span class="btn-text-clone">Request a demo</span>
+        </span>
+      </a>
+      <a href="/app/signup" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm navbar-cta-signup">
+        <span class="btn-text-wrapper">
+          <span class="btn-text">Sign up</span>
+          <span class="btn-text-clone">Sign up</span>
+        </span>
+      </a>
+      <button type="button" class="navbar-menu-toggle" id="navbarMenuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+        <span class="navbar-menu-toggle-box" aria-hidden="true">
+          <span class="navbar-menu-toggle-line"></span>
+          <span class="navbar-menu-toggle-line"></span>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile navigation — content built from mega-menu panels (keeps desktop/mobile in sync) -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav-backdrop" data-mobile-nav-close tabindex="-1"></div>
+  <div class="mobile-nav-sheet" role="dialog" aria-modal="true" aria-label="Navigation">
+    <div class="mobile-nav-scroll">
+      <nav class="mobile-nav-list" id="mobileNavList" aria-label="Mobile"></nav>
+    </div>
+    <div class="mobile-nav-footer">
+      <a href="/demo-request" class="btn btn-secondary btn-sm">
+        <span class="btn-text-wrapper">
+          <span class="btn-text">Request a demo</span>
+          <span class="btn-text-clone">Request a demo</span>
+        </span>
+      </a>
+      <a href="/app/signup" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+        <span class="btn-text-wrapper">
+          <span class="btn-text">Sign up</span>
+          <span class="btn-text-clone">Sign up</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="mega-menu" id="megaMenu" aria-live="polite">
+  <section class="mega-menu-panel" data-panel="product" id="mega-panel-product" role="region" aria-label="Product">
+    <div class="mega-menu-bridge"></div>
+    <div class="mega-menu-panel-body">
+      <div class="mega-menu-grid mega-menu-grid--flat" data-flat-cols="3">
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title">APIs</span>
+              <a href="/product/async-transcription" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Folders & Files/IconFiles.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Async STT</span>
+                  <span class="mega-menu-item-desc">High-accuracy transcription for recordings &amp; long-form audio</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/product/real-time" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Weather/IconLightning.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Real-time STT</span>
+                  <span class="mega-menu-item-desc">Sub-300ms latency for live voice applications</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/product/audio-intelligence" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/AI & Magic/IconBrain1.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Audio Intelligence</span>
+                  <span class="mega-menu-item-desc">Enrichment layer for transcripts: diarization, translation &amp; more</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title">Models</span>
+              <a href="/solaria" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/AI & Magic/IconSparkle.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Solaria-1</span>
+                  <span class="mega-menu-item-desc">The first truly universal STT — fluent in any language</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a data-noclick="1" aria-disabled="true" style="cursor:default;pointer-events:none" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/AI & Magic/IconSparkle.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Solaria-3</span>
+                  <span class="mega-menu-item-desc">Best on real English audio and European languages</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title">Compare</span>
+              <a data-noclick="1" aria-disabled="true" style="cursor:default;pointer-events:none" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Statistics & Charts/IconChart1.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">STT API Benchmarks</span>
+                  <span class="mega-menu-item-desc">See our performance against 8 leading providers</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a data-noclick="1" aria-disabled="true" style="cursor:default;pointer-events:none" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Statistics & Charts/IconChart1.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Zenith vs Deepgram</span>
+                  <span class="mega-menu-item-desc">Multilingual accuracy, latency, and performance compared</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a data-noclick="1" aria-disabled="true" style="cursor:default;pointer-events:none" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Statistics & Charts/IconChart1.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Zenith vs Assembly AI</span>
+                  <span class="mega-menu-item-desc">Real-time accuracy and audio intelligence compared</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a data-noclick="1" aria-disabled="true" style="cursor:default;pointer-events:none" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Statistics & Charts/IconChart1.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Zenith vs ElevenLabs</span>
+                  <span class="mega-menu-item-desc">Studio audio vs real conversations compared</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <aside class="mega-menu-spotlight mega-menu-spotlight--flow mega-menu-spotlight--product">
+              <span class="mega-menu-spotlight-tag">New</span>
+              <a href="/zenithflow" class="mega-menu-spotlight-link">
+                <span class="mega-menu-spotlight-title">ZenithFlow</span>
+                <span class="mega-menu-spotlight-desc">Real-time dictation for your entire desktop. No code.</span>
+                <span class="mega-menu-spotlight-cta">Try it now <span aria-hidden="true">→</span></span>
+              </a>
+            </aside>
+      </div>
+      <a data-noclick="1" aria-disabled="true" style="cursor:default;pointer-events:none" class="mega-menu-news-callout">
+        <span class="mega-menu-news-callout-tag">News</span>
+        <span class="mega-menu-news-callout-body">
+          <span class="mega-menu-news-callout-title">Solaria-3 is live</span>
+          <span class="mega-menu-news-callout-desc">9.6% WER on real English audio · strongest gains across EN, FR, DE, ES &amp; IT</span>
+        </span>
+        <span class="mega-menu-news-callout-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="mega-menu-panel" data-panel="solutions" id="mega-panel-solutions" role="region" aria-label="Solutions">
+    <div class="mega-menu-bridge"></div>
+    <div class="mega-menu-panel-body">
+      <div class="mega-menu-grid mega-menu-grid--flat" data-flat-cols="2">
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title">Use cases</span>
+              <a href="/use-cases/meeting-assistants" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Folders & Files/IconNotepad.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Meeting assistants</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/use-cases/ccaas" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Statistics & Charts/IconLineChart1.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">CCaaS</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title mega-menu-col-title--placeholder" aria-hidden="true"></span>
+              <a href="/use-cases/voice-agents" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/AI & Magic/IconRobot.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Voice agents</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/use-cases/media" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Photography & Video/IconMultiMedia.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Content &amp; media</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <aside class="mega-menu-spotlight mega-menu-spotlight--indigo mega-menu-spotlight--solutions">
+              <span class="mega-menu-spotlight-tag">Success stories</span>
+              <a href="/testimonials" class="mega-menu-spotlight-link">
+                <span class="mega-menu-spotlight-title">Voices that shape our story</span>
+                <span class="mega-menu-spotlight-desc">Discover why builders, startups &amp; enterprises trust us for their voice applications.</span>
+                <span class="mega-menu-spotlight-cta">See success stories <span aria-hidden="true">→</span></span>
+              </a>
+            </aside>
+      </div>
+      <a data-noclick="1" aria-disabled="true" style="cursor:default;pointer-events:none" class="mega-menu-news-callout">
+        <span class="mega-menu-news-callout-tag">News</span>
+        <span class="mega-menu-news-callout-body">
+          <span class="mega-menu-news-callout-title">Solaria-3 is live</span>
+          <span class="mega-menu-news-callout-desc">9.6% WER on real English audio · strongest gains across EN, FR, DE, ES &amp; IT</span>
+        </span>
+        <span class="mega-menu-news-callout-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="mega-menu-panel" data-panel="developers" id="mega-panel-developers" role="region" aria-label="Developers">
+    <div class="mega-menu-bridge"></div>
+    <div class="mega-menu-panel-body">
+      <div class="mega-menu-grid mega-menu-grid--flat" data-flat-cols="3">
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title">Tools</span>
+              <a href="/app/signup" class="mega-menu-item" target="_blank" rel="noopener noreferrer">
+                <span class="mega-menu-item-icon"><img src="/icons/Code/IconSandbox.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Playground</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/docs/" class="mega-menu-item" target="_blank" rel="noopener noreferrer">
+                <span class="mega-menu-item-icon"><img src="/icons/Communication/IconBook.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Documentation</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/changelog" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Sound & Music/IconMegaphone.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Changelog</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title">Platform</span>
+              <a href="/status/" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Interface General/IconBell.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Status</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/docs/chapters/integrations" class="mega-menu-item" target="_blank" rel="noopener noreferrer">
+                <span class="mega-menu-item-icon"><img src="/icons/Code/IconCode.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Integration</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title">Community</span>
+              <a href="https://discord.com/invite/UUd79ckzz9" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Social Media & Brands/IconDiscord.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Discord</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <aside class="mega-menu-spotlight mega-menu-spotlight--teal mega-menu-spotlight--developers">
+              <span class="mega-menu-spotlight-tag">Developers</span>
+              <a href="/app/signup" class="mega-menu-spotlight-link" target="_blank" rel="noopener noreferrer">
+                <span class="mega-menu-spotlight-title">Test our real-time and async transcription</span>
+                <span class="mega-menu-spotlight-desc">Upload a file or start a live session, evaluate the output yourself.</span>
+                <span class="mega-menu-spotlight-cta">Get your API key <span aria-hidden="true">→</span></span>
+              </a>
+            </aside>
+      </div>
+      <a data-noclick="1" aria-disabled="true" style="cursor:default;pointer-events:none" class="mega-menu-news-callout">
+        <span class="mega-menu-news-callout-tag">News</span>
+        <span class="mega-menu-news-callout-body">
+          <span class="mega-menu-news-callout-title">Solaria-3 is live</span>
+          <span class="mega-menu-news-callout-desc">9.6% WER on real English audio · strongest gains across EN, FR, DE, ES &amp; IT</span>
+        </span>
+        <span class="mega-menu-news-callout-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="mega-menu-panel" data-panel="resources" id="mega-panel-resources" role="region" aria-label="Resources">
+    <div class="mega-menu-bridge"></div>
+    <div class="mega-menu-panel-body">
+      <div class="mega-menu-grid mega-menu-grid--flat" data-flat-cols="2">
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title">Content</span>
+              <a href="/blog" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Communication/IconNewspaper.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Blog</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/library" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Communication/IconBook.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Library</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/build-vs-buy-whisper" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Interface General/IconMagnifyingGlass.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">TCO Calculator</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/zenithflow" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Brand/IconZenith.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">ZenithFlow</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title">Guides</span>
+              <a href="/compliance-hub" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Security/IconShield.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Compliance Hub</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/content/ai-note-takers-guide" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Folders & Files/IconNotepad.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">AI note-taker guide</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/content/ccaas-async-speech-ai-guide" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Sound & Music/IconHeadphones.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Contact center guide</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <aside class="mega-menu-spotlight mega-menu-spotlight--magenta mega-menu-spotlight--resources">
+              <span class="mega-menu-spotlight-tag">Report</span>
+              <a href="/meeting-assistant-market-map" class="mega-menu-spotlight-link">
+                <span class="mega-menu-spotlight-title">2026 Meeting Assistant Report</span>
+                <span class="mega-menu-spotlight-desc">See who's leading the race, and where the gaps are.</span>
+                <span class="mega-menu-spotlight-cta">Read the report <span aria-hidden="true">→</span></span>
+              </a>
+            </aside>
+      </div>
+      <a data-noclick="1" aria-disabled="true" style="cursor:default;pointer-events:none" class="mega-menu-news-callout">
+        <span class="mega-menu-news-callout-tag">News</span>
+        <span class="mega-menu-news-callout-body">
+          <span class="mega-menu-news-callout-title">Solaria-3 is live</span>
+          <span class="mega-menu-news-callout-desc">9.6% WER on real English audio · strongest gains across EN, FR, DE, ES &amp; IT</span>
+        </span>
+        <span class="mega-menu-news-callout-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="mega-menu-panel" data-panel="company" id="mega-panel-company" role="region" aria-label="Company">
+    <div class="mega-menu-bridge"></div>
+    <div class="mega-menu-panel-body">
+      <div class="mega-menu-grid mega-menu-grid--flat" data-flat-cols="2">
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title">Company</span>
+              <a href="/about-us" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Building/IconBuildings.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">About us</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="https://www.welcometothejungle.com/fr/companies/zenith" class="mega-menu-item" target="_blank" rel="noopener noreferrer">
+                <span class="mega-menu-item-icon"><img src="/icons/Shopping & Payment/IconShoppingBag1.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Careers</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="https://drive.google.com/drive/folders/1_Lmv2iGeNrRakRYqKrYjwZGEuQi3gmYa" class="mega-menu-item" target="_blank" rel="noopener noreferrer">
+                <span class="mega-menu-item-icon"><img src="/icons/Sound & Music/IconMegaphone.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Press</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="mega-menu-flat-col">
+              <span class="mega-menu-col-title mega-menu-col-title--placeholder" aria-hidden="true"></span>
+              <a href="/partners" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Hands/IconHandshake.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Partners</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="/testimonials" class="mega-menu-item">
+                <span class="mega-menu-item-icon"><img src="/icons/Communication/IconBook.svg" alt="" loading="lazy" decoding="async"></span>
+                <span class="mega-menu-item-body">
+                  <span class="mega-menu-item-title">Testimonials</span>
+                </span>
+                <span class="mega-menu-item-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+            <aside class="mega-menu-spotlight mega-menu-spotlight--crimson mega-menu-spotlight--company">
+              <span class="mega-menu-spotlight-tag">Security</span>
+              <a href="/compliance-hub" class="mega-menu-spotlight-link">
+                <span class="mega-menu-spotlight-title">Compliance Hub</span>
+                <span class="mega-menu-spotlight-desc">How our security and compliance protect your data.</span>
+                <span class="mega-menu-spotlight-cta">Learn more <span aria-hidden="true">→</span></span>
+              </a>
+            </aside>
+      </div>
+      <a data-noclick="1" aria-disabled="true" style="cursor:default;pointer-events:none" class="mega-menu-news-callout">
+        <span class="mega-menu-news-callout-tag">News</span>
+        <span class="mega-menu-news-callout-body">
+          <span class="mega-menu-news-callout-title">Solaria-3 is live</span>
+          <span class="mega-menu-news-callout-desc">9.6% WER on real English audio · strongest gains across EN, FR, DE, ES &amp; IT</span>
+        </span>
+        <span class="mega-menu-news-callout-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+</div>
+</header>
+
+<script src="/js/nav-mega-menu.js" defer></script>
+<script src="/js/nav-mobile-menu.js" defer></script>
+<script src="/js/webflow-nav.js" defer></script>
+
+
+<main>
+<div class="uc-atmosphere-zone">
+<section class="hero hero--split hero--dark hero--stack">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="tag-label reveal">
+        <span class="tag-indicator"></span>
+        <span class="tag-text">CCaaS</span>
+      </div>
+
+      <h1 class="reveal">Speech-to-text built for contact centers</h1>
+
+      <p class="hero-subtitle reveal">
+        One API for call transcription, speaker separation, and audio intelligence — so your platform ships QA, coaching, and CRM data, not speech infrastructure.
+      </p>
+
+      <div class="hero-actions reveal">
+        <a href="/app/signup" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-md"><span class="btn-text-wrapper"><span class="btn-text">Start building free</span><span class="btn-text-clone">Start building free</span></span></a>
+        <a href="/demo-request" class="btn btn-secondary btn-md"><span class="btn-text-wrapper"><span class="btn-text">Talk to our team</span><span class="btn-text-clone">Talk to our team</span></span></a>
+      </div>
+
+            <div class="hero-used-by reveal">
+        <p class="hero-used-by__label">Used by</p>
+        <ul class="hero-used-by__logos" aria-label="CCaaS teams building on Zenith">
+          <li><img src="/logos/testimonials/Clients/SVG/White/Aircall-logo.svg" alt="Aircall" width="120" height="22" loading="lazy" decoding="async"></li>
+          <li><img src="/logos/testimonials/Clients/SVG/White/Selectra-logo.svg" alt="Selectra" width="120" height="22" loading="lazy" decoding="async"></li>
+          <li><img src="/logos/testimonials/Clients/SVG/White/adversus-logo.svg" alt="Adversus" width="120" height="22" loading="lazy" decoding="async"></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="hero-image reveal">
+      <img
+        src="/illustrations/use-cases/hero-ccaas.avif"
+        alt="Contact center speech-to-text illustration"
+        width="864"
+        height="864"
+        loading="eager"
+        decoding="async">
+    </div>
+  </div>
+
+  <div class="container hero__stack">
+    <div class="stats-bento reveal">
+      <div class="stats-bento__grid">
+        <div class="stats-bento__cell">
+          <div class="metric-value">#1</div>
+          <div class="stat-heading">On conversational call center speech</div>
+          <div class="stat-desc">Benchmarked on compressed, noisy 8kHz telephony audio against leading ASR providers, not studio recordings.</div>
+        </div>
+        <div class="stats-bento__cell">
+          <div class="metric-value">100+</div>
+          <div class="stat-heading">Languages with code-switching</div>
+          <div class="stat-desc">Detects and transcribes mid-sentence language switches across every supported language.</div>
+        </div>
+        <div class="stats-bento__cell">
+          <div class="metric-value">3x</div>
+          <div class="stat-heading">Fewer diarization errors</div>
+          <div class="stat-desc">On telephony audio, for agent-vs-customer separation your QA scores can trust.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="uc-atmosphere-zone__glow" aria-hidden="true"></div>
+
+<!-- ══ FEATURES + USE CASES (shared glow) ═══════════════════════ -->
+<div class="sections-atmosphere">
+<section class="section reveal">
+  <div class="container">
+    <div class="section-intro">
+      <div class="tag-label">
+        <span class="tag-indicator"></span>
+        <span class="tag-text">Why teams switch to Zenith</span>
+      </div>
+      <h2 class="section-title">Everything your contact center product needs. One request.</h2>
+      <p class="section-subtitle">Accurate call transcription, agent-vs-customer attribution, and full audio intelligence — built for real phone audio.</p>
+    </div>
+
+    <div class="api-features" id="apiFeatures">
+      <div class="api-features__shell">
+        <div class="api-features__nav" role="tablist" aria-label="API features">
+          <button type="button" class="api-features__item is-active" role="tab" id="api-feature-tab-stt" aria-selected="true" aria-controls="api-feature-panel-stt" data-api-feature="stt">
+            <span class="api-features__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+            <span class="api-features__label">Accurate on the audio your calls actually produce</span>
+          </button>
+          <button type="button" class="api-features__item" role="tab" id="api-feature-tab-diarization" aria-selected="false" aria-controls="api-feature-panel-diarization" data-api-feature="diarization" tabindex="-1">
+            <span class="api-features__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+            <span class="api-features__label">Agent vs. customer, correctly separated</span>
+          </button>
+          <button type="button" class="api-features__item" role="tab" id="api-feature-tab-codeswitch" aria-selected="false" aria-controls="api-feature-panel-codeswitch" data-api-feature="codeswitch" tabindex="-1">
+            <span class="api-features__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+            <span class="api-features__label">Real-time and async, one API</span>
+          </button>
+          <button type="button" class="api-features__item" role="tab" id="api-feature-tab-intelligence" aria-selected="false" aria-controls="api-feature-panel-intelligence" data-api-feature="intelligence" tabindex="-1">
+            <span class="api-features__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg></span>
+            <span class="api-features__label">Multilingual call transcription you can count on</span>
+          </button>
+          <button type="button" class="api-features__item" role="tab" id="api-feature-tab-vocabulary" aria-selected="false" aria-controls="api-feature-panel-vocabulary" data-api-feature="vocabulary" tabindex="-1">
+            <span class="api-features__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg></span>
+            <span class="api-features__label">Built for platforms that resell</span>
+          </button>
+          <button type="button" class="api-features__item" role="tab" id="api-feature-tab-security" aria-selected="false" aria-controls="api-feature-panel-security" data-api-feature="security" tabindex="-1">
+            <span class="api-features__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+            <span class="api-features__label">Compliant by default</span>
+          </button>
+        </div>
+
+        <div class="api-features__detail">
+          <div class="api-features__roll-viewport" aria-live="polite">
+            <div class="api-features__roll-track">
+              <div class="api-features__roll-slide is-active" id="api-feature-panel-stt" role="tabpanel" aria-labelledby="api-feature-tab-stt" data-api-feature-panel="stt">
+                <h3 class="api-features__panel-title">Accurate on the audio your calls actually produce</h3>
+                <p class="api-features__panel-body">QA scores, CRM entries, and compliance flags are only as reliable as the words underneath them. We benchmark on real 8kHz telephony audio – compressed, noisy, accented – and provide the only model under 7% WER.</p>
+              </div>
+              <div class="api-features__roll-slide" id="api-feature-panel-diarization" role="tabpanel" aria-labelledby="api-feature-tab-diarization" data-api-feature-panel="diarization" aria-hidden="true">
+                <h3 class="api-features__panel-title">Agent vs. customer, correctly separated</h3>
+                <p class="api-features__panel-body">Every downstream use case – QA scoring, coaching attribution, sentiment by speaker, talk ratios – depends on knowing who said what. Dual-channel diarization built for overlapping, noisy telephony calls, not controlled demo audio.</p>
+              </div>
+              <div class="api-features__roll-slide" id="api-feature-panel-codeswitch" role="tabpanel" aria-labelledby="api-feature-tab-codeswitch" data-api-feature-panel="codeswitch" aria-hidden="true">
+                <h3 class="api-features__panel-title">Real-time and async, one API</h3>
+                <p class="api-features__panel-body">One API call returns transcription, dual-channel diarization, sentiment, named entities, and summaries — ready for your QA scorecard or CRM, no orchestration layer and no transcript cleanup.</p>
+              </div>
+              <div class="api-features__roll-slide" id="api-feature-panel-intelligence" role="tabpanel" aria-labelledby="api-feature-tab-intelligence" data-api-feature-panel="intelligence" aria-hidden="true">
+                <h3 class="api-features__panel-title">Multilingual call transcription you can count on</h3>
+                <p class="api-features__panel-body">100+ languages including 42 no other API-level provider supports. Mid-conversation code-switching handled automatically – when callers and agents switch languages, the transcript stays intact.</p>
+              </div>
+              <div class="api-features__roll-slide" id="api-feature-panel-vocabulary" role="tabpanel" aria-labelledby="api-feature-tab-vocabulary" data-api-feature-panel="vocabulary" aria-hidden="true">
+                <h3 class="api-features__panel-title">Built for platforms that resell</h3>
+                <p class="api-features__panel-body">Platforms reselling transcription to enterprise clients need per-client API keys, usage data granular enough to invoice downstream, and per-client configuration. Built in, not a custom integration request.</p>
+              </div>
+              <div class="api-features__roll-slide" id="api-feature-panel-security" role="tabpanel" aria-labelledby="api-feature-tab-security" data-api-feature-panel="security" aria-hidden="true">
+                <h3 class="api-features__panel-title">Compliant by default</h3>
+                <p class="api-features__panel-body">EU-hosted infrastructure with GDPR, SOC 2 Type II, ISO 27001, and HIPAA to meet your data residency and compliance requirements. Zero audio retention by default. Customer audio is never used for model training.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sections-atmosphere-glow" aria-hidden="true"></div>
+
+<section class="section reveal">
+  <div class="container">
+    <div class="use-cases-split">
+      <div class="benefits-stage use-cases-stage">
+        <div class="benefits-stage__flare" aria-hidden="true"></div>
+        <div class="benefits-stage__intro section-intro">
+          <div class="tag-label">
+            <span class="tag-indicator"></span>
+            <span class="tag-text">What you can build</span>
+          </div>
+          <h2 class="section-title">From quality monitoring to AI agents</h2>
+          <p class="section-subtitle">Zenith powers contact center AI across every layer, from quality assurance to AI agents to conversational IVR and more.</p>
+        </div>
+        <div class="benefits-stage__grid use-cases-bento">
+        <div class="use-case-card benefit-float">
+          <div class="b__cell-icon b--fill">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.6997 2.38913C11.5424 2.09946 12.4576 2.09946 13.3003 2.38913L18.9752 4.33988C20.1866 4.7563 21 5.89596 21 7.17694V11.9119C21 14.7187 19.8511 16.7414 18.1875 18.3163C16.6151 19.805 14.5552 20.9158 12.6319 21.9529L12.4748 22.0376C12.1785 22.1975 11.8215 22.1975 11.5252 22.0376L11.3681 21.9529C9.44484 20.9158 7.38493 19.805 5.8125 18.3163C4.14891 16.7414 3 14.7187 3 11.9119V7.17694C3 5.89596 3.81336 4.7563 5.02476 4.33988L10.6997 2.38913ZM15.2071 10.4571C15.5976 10.0666 15.5976 9.43342 15.2071 9.04289C14.8166 8.65237 14.1834 8.65237 13.7929 9.04289L11 11.8358L10.2071 11.0429C9.81658 10.6524 9.18342 10.6524 8.79289 11.0429C8.40237 11.4334 8.40237 12.0666 8.79289 12.4571L10.2929 13.9571C10.4804 14.1446 10.7348 14.25 11 14.25C11.2652 14.25 11.5196 14.1446 11.7071 13.9571L15.2071 10.4571Z" fill="currentColor"/></svg>
+
+          </div>
+          <h3 class="b__cell-title">Quality assurance</h3>
+          <p class="b__cell-body">Automated call scoring, compliance monitoring, and coaching across 100% of calls, not just a sample of them. With accurate call center transcription your scorecards can trust.</p>
+          <a href="/use-cases/quality-assurance" class="cell-link">Learn more <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+        <div class="use-case-card benefit-float">
+          <div class="b__cell-icon b--fill">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 3C13 2.44772 12.5523 2 12 2C11.4477 2 11 2.44772 11 3C11 6.18838 10.331 8.25562 9.1178 9.53621C7.91616 10.8046 5.98995 11.5 3 11.5C2.44772 11.5 2 11.9477 2 12.5C2 13.0523 2.44772 13.5 3 13.5C5.98995 13.5 7.91616 14.1954 9.1178 15.4638C10.331 16.7444 11 18.8116 11 22C11 22.5523 11.4477 23 12 23C12.5523 23 13 22.5523 13 22C13 18.8116 13.669 16.7444 14.8822 15.4638C16.0838 14.1954 18.01 13.5 21 13.5C21.5523 13.5 22 13.0523 22 12.5C22 11.9477 21.5523 11.5 21 11.5C18.01 11.5 16.0838 10.8046 14.8822 9.53621C13.669 8.25562 13 6.18838 13 3Z" fill="currentColor"/></svg>
+
+          </div>
+          <h3 class="b__cell-title">Conversation intelligence</h3>
+          <p class="b__cell-body">Turn 100% of customer interactions into topic trends, voice-of-customer data, and outcome intelligence with transcription accurate enough that the insights built on top of it are actually trustworthy.</p>
+          <a href="/use-cases/conversation-intelligence" class="cell-link">Learn more <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+        <div class="use-case-card benefit-float">
+          <div class="b__cell-icon b--fill">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12C5 8.13401 8.13401 5 12 5C15.866 5 19 8.13401 19 12V13C16.7909 13 15 14.7909 15 17V18C15 19.6569 16.3431 21 18 21C19.6569 21 21 19.6569 21 18V12C21 7.36745 17.5 3.55237 13 3.05493V3H12C7.02944 3 3 7.02944 3 12V18C3 19.6569 4.34315 21 6 21C7.65685 21 9 19.6569 9 18V17C9 14.7909 7.20914 13 5 13V12Z" fill="currentColor"/></svg>
+
+          </div>
+          <h3 class="b__cell-title">AI agents &amp; IVR</h3>
+          <p class="b__cell-body">Sub-103ms partials for autonomous voice agents and natural-language call routing that's accurate from the first word, before any conversation context exists.</p>
+          <a href="/use-cases/ai-agents-ivr" class="cell-link">Learn more <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+        <div class="use-case-card benefit-float">
+          <div class="b__cell-icon b--fill">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 2C5.34315 2 4 3.34315 4 5V19C4 20.6569 5.34315 22 7 22H16C18.2091 22 20 20.2091 20 18V6C20 3.79086 18.2091 2 16 2H7ZM6 19C6 19.5523 6.44772 20 7 20H16C17.1046 20 18 19.1046 18 18V17.4649C17.4117 17.8052 16.7286 18 16 18H7C6.44772 18 6 18.4477 6 19ZM9 6C8.44772 6 8 6.44772 8 7C8 7.55228 8.44772 8 9 8H15C15.5523 8 16 7.55228 16 7C16 6.44772 15.5523 6 15 6H9ZM8 11C8 10.4477 8.44772 10 9 10H12C12.5523 10 13 10.4477 13 11C13 11.5523 12.5523 12 12 12H9C8.44772 12 8 11.5523 8 11Z" fill="currentColor"/></svg>
+
+          </div>
+          <h3 class="b__cell-title">Something else entirely</h3>
+          <p class="b__cell-body">If your product records, transcribes, or understands contact center audio in any context, Zenith handles the layer underneath. Explore the API and build what you have in mind.</p>
+          <a href="/docs/" class="cell-link">View our docs <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+</div>
+
+<!-- ══ HOW IT WORKS ══════════════════════════════════════════════ -->
+<section class="section section--getting-started reveal">
+  <div class="container">
+    <div class="section-intro">
+      <div class="tag-label">
+        <span class="tag-indicator"></span>
+        <span class="tag-text">Getting started</span>
+      </div>
+      <h2 class="section-title">From API key to your first call transcript in minutes</h2>
+      <p class="section-subtitle">No sales call. No STT infrastructure to build. Your call audio and one integration, that's it.</p>
+    </div>
+
+    <div class="steps-layout reveal">
+      <div class="steps-stepper" id="stepsStepper">
+        <div class="steps-stepper__shell">
+          <div class="steps-accordion" role="tablist" aria-label="Getting started steps">
+            <article class="steps-accordion__card is-active" data-step="1">
+              <button type="button" class="steps-accordion__header" role="tab" id="steps-tab-1" aria-selected="true" aria-controls="steps-panel-1" tabindex="0" aria-label="Step 1: Sign up and get your API key">
+                <span class="steps-accordion__marker">1</span>
+                <span class="steps-accordion__label">API key</span>
+              </button>
+              <div class="steps-accordion__body" id="steps-panel-1" role="tabpanel" aria-labelledby="steps-tab-1" data-step-panel="1" aria-hidden="false">
+                <h3 class="steps-accordion__title">Sign up and get your API key</h3>
+                <p class="steps-accordion__text">Create an account to access your API key. Every account includes 10 free hours with the full feature set — diarization, summaries, sentiment, and 100+ languages.</p>
+                <span class="steps-accordion__progress" aria-hidden="true"><span class="steps-accordion__progress-fill"></span></span>
+              </div>
+            </article>
+            <article class="steps-accordion__card" data-step="2">
+              <button type="button" class="steps-accordion__header" role="tab" id="steps-tab-2" aria-selected="false" aria-controls="steps-panel-2" tabindex="-1" aria-label="Step 2: Connect your call audio">
+                <span class="steps-accordion__marker">2</span>
+                <span class="steps-accordion__label">Call audio</span>
+              </button>
+              <div class="steps-accordion__body" id="steps-panel-2" role="tabpanel" aria-labelledby="steps-tab-2" data-step-panel="2" aria-hidden="true">
+                <h3 class="steps-accordion__title">Connect your call audio</h3>
+                <p class="steps-accordion__text">Open a WebSocket for real-time streaming or send phone call transcription requests for async processing — same output schema either way, whatever telephony or CCaaS stack you're already running.</p>
+                <span class="steps-accordion__progress" aria-hidden="true"><span class="steps-accordion__progress-fill"></span></span>
+              </div>
+            </article>
+            <article class="steps-accordion__card" data-step="3">
+              <button type="button" class="steps-accordion__header" role="tab" id="steps-tab-3" aria-selected="false" aria-controls="steps-panel-3" tabindex="-1" aria-label="Step 3: Receive structured output">
+                <span class="steps-accordion__marker">3</span>
+                <span class="steps-accordion__label">Output</span>
+              </button>
+              <div class="steps-accordion__body" id="steps-panel-3" role="tabpanel" aria-labelledby="steps-tab-3" data-step-panel="3" aria-hidden="true">
+                <h3 class="steps-accordion__title">Receive structured output</h3>
+                <p class="steps-accordion__text">Get speaker-labeled transcripts (agent vs. customer), sentiment scores, named entities, and compliance keyword flags — structured for your QA scorecard, CRM, or coaching workflow. No transcript cleanup required.</p>
+                <span class="steps-accordion__progress" aria-hidden="true"><span class="steps-accordion__progress-fill"></span></span>
+              </div>
+            </article>
+            <article class="steps-accordion__card" data-step="4">
+              <button type="button" class="steps-accordion__header" role="tab" id="steps-tab-4" aria-selected="false" aria-controls="steps-panel-4" tabindex="-1" aria-label="Step 4: Get dedicated support">
+                <span class="steps-accordion__marker">4</span>
+                <span class="steps-accordion__label">Support</span>
+              </button>
+              <div class="steps-accordion__body" id="steps-panel-4" role="tabpanel" aria-labelledby="steps-tab-4" data-step-panel="4" aria-hidden="true">
+                <h3 class="steps-accordion__title">Get dedicated support</h3>
+                <p class="steps-accordion__text">Volume discounts and enterprise SLA available as you scale. Dedicated support from people who know the API, not a ticket queue.</p>
+                <span class="steps-accordion__progress" aria-hidden="true"><span class="steps-accordion__progress-fill"></span></span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="steps-cta-bar reveal">
+        <div class="steps-cta-bar__key" aria-label="Example API key (redacted)" data-key-visible="gl_live_a8f2b91c" data-key-redacted="••••••••••••••••">
+          <span class="steps-cta-bar__key-value" aria-hidden="true">
+            <span class="steps-cta-bar__key-visible"></span><span class="steps-cta-bar__key-redacted"></span><span class="steps-cta-bar__key-cursor"></span>
+          </span>
+        </div>
+        <a href="/app/signup" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-md"><span class="btn-text-wrapper"><span class="btn-text">Get your API key</span><span class="btn-text-clone">Get your API key</span></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ══════════════════════════════════════════════ -->
+<section class="section testimonials-section reveal">
+  <div class="testimonials-bg" aria-hidden="true">
+    <div class="hero__atmosphere testimonials-bg__atmosphere">
+      <img
+        src="/illustrations/compliance/hero-bg.webp"
+        alt=""
+        class="hero__bg-image"
+        loading="lazy"
+        decoding="async"
+        width="2880"
+        height="2182">
+    </div>
+    <div class="testimonials-cursor-halo"></div>
+  </div>
+  <div class="container">
+    <div class="section-intro">
+      <div class="tag-label">
+        <span class="tag-indicator"></span>
+        <span class="tag-text">What builders say</span>
+      </div>
+      <h2 class="section-title">Trusted in production by enterprise teams</h2>
+    </div>
+
+        <div class="testimonials-grid testimonials-grid--ccaas">
+
+      <div class="testimonial-card" style="grid-area:a" tabindex="0">
+        <div class="testimonial-top">
+          <div class="testimonial-company"><img src="/logos/testimonials/Clients/SVG/White/Attention-logo.svg" alt="Attention"></div>
+          <span class="testimonial-badge">G2</span>
+        </div>
+        <blockquote class="testimonial-quote">
+          <p>Zenith's API performs very well with <span>noisy telephony audio and stereo files.</span></p>
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">An</div>
+          <div class="testimonial-meta">
+            <cite class="testimonial-name">Anis B.</cite>
+            <span class="testimonial-role">CEO at Attention</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card wide" style="grid-area:b" tabindex="0" data-case-study="/blog/how-aircall-cut-transcription-time-by-95-to-deliver-faster-ai-insights-with-zenith" data-case-study-label="Read the case study">
+        <div class="testimonial-top">
+          <div class="testimonial-company"><img src="/logos/testimonials/Clients/SVG/White/Aircall-logo.svg" alt="Aircall"></div>
+        </div>
+        <blockquote class="testimonial-quote">
+          <p>The speed and accuracy improvements were game-changers. We cut transcription time by 95% and the multilingual support is unmatched.</p>
+        </blockquote>
+        <div class="testimonial-author">
+          <img class="testimonial-avatar" src="/logos/testimonials/Clients/photos/farid-issabhai.png" alt="Farid Issabhaï" loading="lazy" width="48" height="48">
+          <div class="testimonial-meta">
+            <cite class="testimonial-name">Farid Issabhaï</cite>
+            <span class="testimonial-role">Staff Engineer at Aircall</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card photo-card mobile-as-text" style="grid-area:c" tabindex="0">
+        <div class="testimonial-photo">
+          <img src="/logos/testimonials/Clients/photos/amanda-zhu.png" alt="Amanda Zhu" loading="lazy" width="48" height="48">
+          <div class="testimonial-photo-logo">
+            <img src="/logos/testimonials/Clients/SVG/White/Recall-logo.svg" alt="Recall">
+          </div>
+          <div class="testimonial-photo-overlay">
+            <span class="testimonial-photo-name">Amanda Zhu</span>
+            <span class="testimonial-photo-role">Co-Founder at Recall</span>
+          </div>
+          <div class="testimonial-hover-quote">
+            <p>Zenith's <span>real-time code-switching</span> has been a real <span>'wow' factor!</span> Plus, the <span>accuracy of transcription</span> has been <span>excellent.</span></p>
+          </div>
+        </div>
+        <div class="testimonial-mobile-content">
+          <div class="testimonial-top">
+            <div class="testimonial-company"><img src="/logos/testimonials/Clients/SVG/White/Recall-logo.svg" alt="Recall"></div>
+          </div>
+          <blockquote class="testimonial-quote">
+            <p>Zenith's <span>real-time code-switching</span> has been a real <span>'wow' factor!</span> Plus, the <span>accuracy of transcription</span> has been <span>excellent.</span></p>
+          </blockquote>
+          <div class="testimonial-author">
+            <img class="testimonial-avatar" src="/logos/testimonials/Clients/photos/amanda-zhu.png" alt="Amanda Zhu" loading="lazy" width="48" height="48">
+            <div class="testimonial-meta">
+              <cite class="testimonial-name">Amanda Zhu</cite>
+              <span class="testimonial-role">Co-Founder at Recall</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card wide" style="grid-area:d" tabindex="0" data-case-study="/blog/how-selectra-is-automating-quality-monitoring-of-sales-calls-with-speech-to-text-ai" data-case-study-label="Read the case study">
+        <div class="testimonial-top">
+          <div class="testimonial-company"><img src="/logos/testimonials/Clients/SVG/White/Selectra-logo.svg" alt="Selectra"></div>
+        </div>
+        <blockquote class="testimonial-quote">
+          <p>Zenith's feature rollouts and performance with <span>noisy telephony and stereo audio</span> have genuinely <span>impressed our team.</span></p>
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AB</div>
+          <div class="testimonial-meta">
+            <cite class="testimonial-name">Alexandre Bouju</cite>
+            <span class="testimonial-role">CTO Deputy Manager at Selectra</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ CTA HALO ══════════════════════════════════════════════════ -->
+<section class="cta-section section reveal">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-card__text">
+        <h2 class="cta-title">Your contact center product, built on a better speech-to-text layer</h2>
+        <p class="cta-subtitle">Join 2,000+ enterprise teams building their products with reliable audio&nbsp;intelligence.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="/app/signup" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-md"><span class="btn-text-wrapper"><span class="btn-text">Start building</span><span class="btn-text-clone">Start building</span></span></a>
+        <a href="/demo-request" class="btn btn-secondary btn-md"><span class="btn-text-wrapper"><span class="btn-text">Talk to us</span><span class="btn-text-clone">Talk to us</span></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ═══════════════════════════════════════════════════════ -->
+<section class="section reveal" id="faq">
+  <div class="container">
+    <div class="section-intro">
+      <div class="tag-label">
+        <span class="tag-indicator"></span>
+        <span class="tag-text">Common questions</span>
+      </div>
+      <h2 class="section-title">Contact center speech-to-text, answered</h2>
+    </div>
+
+    <ul class="faq-list" id="faq-list">
+
+      <li class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-a1">
+          What is the most accurate speech-to-text model for contact center audio?
+          <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="faq-answer" id="faq-a1" role="region">
+          <div class="faq-answer-inner">
+            For real-world contact center and business audio, our most accurate model is Solaria-3. On real customer recordings in English and core European languages, it ranks first against AssemblyAI, ElevenLabs Scribe v2, Deepgram Nova-3, Mistral Voxtral, and Speechmatics: 6.4% WER on Earnings22 financial calls, the only model under 7%, and 33.9% on the conversational Switchboard set, the only model under 35%. That's a 26% WER improvement over Solaria-1 on real English audio. Solaria-3 is async, which is the workflow most contact center QA and reporting runs on. See the methodology at <a href="/solaria-3">zenith.io/solaria-3</a>.
+          </div>
+        </div>
+      </li>
+
+      <li class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-a2">
+          Can speech-to-text handle multilingual call centers and BPO audio?
+          <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="faq-answer" id="faq-a2" role="region">
+          <div class="faq-answer-inner">
+            Yes, and it's where most generic STT APIs break down. We support 100+ languages with Solaria-1, including 42 that no other API-level provider covers, such as Tagalog, Bengali, Punjabi, Tamil, Urdu, Persian, and Marathi, which matters for BPO operations across Southeast Asia and South Asia. We also handle true mid-conversation code-switching, so when a caller and agent switch languages the transcript stays intact rather than degrading. For European business audio, Solaria-3 is our most accurate model.
+          </div>
+        </div>
+      </li>
+
+      <li class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-a3">
+          How does call transcription accuracy affect contact center QA and coaching?
+          <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="faq-answer" id="faq-a3" role="region">
+          <div class="faq-answer-inner">
+            Transcription sets the ceiling for everything downstream. Every QA score, coaching note, and CRM entry is only as reliable as the words captured in the first layer, so a wrong name or a missed disclosure silently corrupts the report a supervisor builds on top of it. Accurate async transcription lets QA teams score every interaction instead of sampling a small share by hand. Selectra's QA team now validates AI findings rather than manually reviewing calls, and Aircall cut transcription time by 95% while processing more than 1M calls per week through our API.
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<div class="page-bottom-eclipse-clip" aria-hidden="true">
+  <div class="page-bottom-eclipse">
+    <div class="page-bottom-eclipse-halo"></div>
+    <div class="page-bottom-eclipse-core"></div>
+  </div>
+</div>
+
+<div class="video-lightbox" id="videoLightbox" aria-hidden="true">
+  <div class="video-lightbox__backdrop" data-video-lightbox-close></div>
+  <div class="video-lightbox__dialog" role="dialog" aria-modal="true" aria-label="Customer case study video">
+    <button type="button" class="video-lightbox__close" data-video-lightbox-close aria-label="Close video">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="video-lightbox__frame-wrap">
+      <iframe
+        id="videoLightboxFrame"
+        class="video-lightbox__frame"
+        title="Attention x Zenith case study"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+</main>
+
+  <footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <a href="/" class="footer-brand" aria-label="Zenith home"><svg viewBox="0 0 322 82" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:24px;width:auto;"><path d="M14 10H66C69.3137 10 72 12.6863 72 16C72 17.75 71.25 19.38 69.95 20.55L36.2 51H66C69.3137 51 72 53.6863 72 57V66C72 69.3137 69.3137 72 66 72H16C12.6863 72 10 69.3137 10 66C10 64.25 10.75 62.62 12.05 61.45L45.8 31H16C12.6863 31 10 28.3137 10 25V16C10 12.6863 12.6863 10 16 10H14Z" fill="white"/><text x="94" y="56" fill="white" font-family="'SuisseIntl', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="700" letter-spacing="-0.8px">Zenith</text></svg></a>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <span class="footer-column-title">Product</span>
+          <a href="/product/real-time">Real-time STT</a>
+          <a href="/product/async-transcription">Batch STT</a>
+          <a href="/product/audio-intelligence">Audio Intelligence</a>
+          <a href="/pricing">Pricing</a>
+        </div>
+        <div class="footer-column">
+          <span class="footer-column-title">Solutions</span>
+          <a href="/use-cases/meeting-assistants">Meeting assistants</a>
+          <a href="/use-cases/ccaas">CCaaS</a>
+          <a href="/use-cases/voice-agents">Voice agents</a>
+          <a href="/use-cases/media">Content &amp; media</a>
+        </div>
+        <div class="footer-column">
+          <span class="footer-column-title">Resources</span>
+          <a href="/blog">Blog</a>
+          <a href="/library">Library</a>
+          <a href="/content/ai-note-takers-guide">AI note-takers guide</a>
+          <a href="/content/ccaas-async-speech-ai-guide">CCaaS async speech AI guide</a>
+          <a href="/competitors/benchmarks">API benchmarks</a>
+          <a href="/build-vs-buy-whisper">Whisper TCO calculator</a>
+          <a href="/compliance-hub">Compliance hub</a>
+          <a href="/meeting-assistant-market-map">Meeting assistant map</a>
+          <a href="/competitors/zenith-vs-assemblyai">Zenith vs AssemblyAI</a>
+          <a href="/competitors/zenith-vs-deepgram">Zenith vs Deepgram</a>
+          <a href="/competitors/zenith-vs-elevenlabs">Zenith vs ElevenLabs</a>
+        </div>
+        <div class="footer-column">
+          <span class="footer-column-title">Developers</span>
+          <a href="/docs/" target="_blank" rel="noopener noreferrer">Documentation</a>
+          <a href="/app/" target="_blank" rel="noopener noreferrer">Playground</a>
+          <a href="/status/" target="_blank" rel="noopener noreferrer">Status</a>
+          <a href="https://discord.com/invite/UUd79ckzz9" target="_blank" rel="noopener noreferrer">Discord</a>
+        </div>
+        <div class="footer-column">
+          <span class="footer-column-title">Legal</span>
+          <a href="/privacy-notice">Privacy notice</a>
+          <a href="/legal-notice">Legal notice</a>
+          <a href="/data-process-agreement">Data processing agreement</a>
+          <a href="/general-terms-of-use-zenith-inc">Terms of use — Zenith Inc.</a>
+          <a href="/general-terms-of-use-zenith-sas">Terms of use — Zenith SAS</a>
+          <a href="/terms-conditions-zenith-inc">Terms &amp; conditions — Zenith Inc.</a>
+          <a href="/terms-conditions">Terms &amp; conditions - Zenith SAS</a>
+          <a href="/security">Security</a>
+          <a href="/bug-bounty">Bug bounty</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-certs" aria-label="Compliance certifications">
+      <a href="/compliance-hub" class="footer-cert">GDPR Compliant</a>
+      <a href="/compliance-hub" class="footer-cert">HIPAA Compliant</a>
+      <a href="/compliance-hub" class="footer-cert">AICPA SOC Type 2</a>
+      <a href="/compliance-hub" class="footer-cert">ISO&nbsp;27001&nbsp;Compliant</a>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-bottom-text">&copy; 2025 Zenith. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+<!-- Liquid Glass SVG defs — filters injected by /js/liquid-glass.js (kube.io method) -->
+<svg class="liquid-glass-svg" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;overflow:hidden;pointer-events:none">
+  <defs id="liquid-glass-defs"></defs>
+</svg>
+
+<script src="/js/liquid-glass.js" defer></script>
+<script src="/js/webflow-footer.js" defer></script>
+<script src="/js/evolution.js" defer></script>
+<script>
+/**
+ * Persist UTM params from URL and prefill HubSpot hidden fields.
+ */
+(function () {
+  if (window.__zenithUtmsLoaded) return;
+  window.__zenithUtmsLoaded = true;
+
+  var params = new URLSearchParams(window.location.search);
+  var utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+
+  var utms = {};
+  var hasUtms = false;
+
+  utmParams.forEach(function (param) {
+    var value = params.get(param);
+    if (value) {
+      utms[param] = value;
+      hasUtms = true;
+    }
+  });
+
+  if (hasUtms) {
+    var cookieValue = encodeURIComponent(JSON.stringify(utms));
+    var expiryDate = new Date();
+    expiryDate.setDate(expiryDate.getDate() + 30);
+
+    document.cookie =
+      'zenith_utms=' +
+      cookieValue +
+      '; path=/; expires=' +
+      expiryDate.toUTCString() +
+      '; SameSite=Lax; Secure';
+  }
+
+  function fillUtmFieldsFromCookie() {
+    var cookie = document.cookie.split('; ').find(function (row) {
+      return row.startsWith('zenith_utms=');
+    });
+    if (!cookie) return;
+
+    try {
+      var stored = JSON.parse(decodeURIComponent(cookie.split('=')[1]));
+      var map = {
+        utm_source: 'UTMSource',
+        utm_medium: 'UTMMedium',
+        utm_campaign: 'UTMCampaign',
+        utm_content: 'UTMContent',
+        utm_term: 'UTMTerm',
+      };
+
+      Object.keys(map).forEach(function (key) {
+        if (stored[key]) {
+          document.querySelectorAll('input[name="' + map[key] + '"]').forEach(function (el) {
+            el.value = stored[key];
+          });
+        }
+      });
+    } catch (e) {}
+  }
+
+  function initUtmFieldFill() {
+    fillUtmFieldsFromCookie();
+
+    if (!('MutationObserver' in window) || !document.body) return;
+
+    var fillTimer;
+    var observer = new MutationObserver(function () {
+      clearTimeout(fillTimer);
+      fillTimer = setTimeout(fillUtmFieldsFromCookie, 100);
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initUtmFieldFill);
+  } else {
+    initUtmFieldFill();
+  }
+})();
+</script>
+
+<!-- HubSpot — deferred until Axeptio consent -->
+<script>
+  void 0 === window._axcb && (window._axcb = []);
+  window._axcb.push(function(axeptio) {
+    axeptio.on("cookies:complete", function(choices) {
+      if (choices.hubspot) {
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.id = "hs-script-loader";
+        s.async = true;
+        s.defer = true;
+        s.src = "//js-eu1.hs-scripts.com/25856368.js";
+        document.body.appendChild(s);
+      }
+    });
+  });
+</script>
+
+
+
+<script src="/js/use-cases-steps-accordion.js"></script>
+<script>
+function copyCode(btn) {
+  const pre = btn.closest('.code-wrap').querySelector('pre');
+  navigator.clipboard.writeText(pre.innerText).then(() => {
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy', 2000);
+  });
+}
+
+// Scroll reveal
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const answer = document.getElementById(btn.getAttribute('aria-controls'));
+    const isOpen = item.classList.contains('is-open');
+
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('is-open');
+      i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      const a = i.querySelector('.faq-answer');
+      if (a) a.style.maxHeight = '0';
+    });
+
+    if (!isOpen) {
+      item.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  });
+});
+
+// API features — titles left, rolling detail right, auto-advance progress
+(function () {
+  const root = document.getElementById('apiFeatures');
+  if (!root) return;
+
+  const items = Array.from(root.querySelectorAll('[data-api-feature]'));
+  const panels = Array.from(root.querySelectorAll('[data-api-feature-panel]'));
+  const nav = root.querySelector('.api-features__nav');
+  const rollViewport = root.querySelector('.api-features__roll-viewport');
+  const rollTrack = root.querySelector('.api-features__roll-track');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const autoAdvance = !reducedMotion;
+  let inView = true;
+
+  function cloneRollSlide(slide) {
+    const clone = slide.cloneNode(true);
+    clone.classList.add('is-clone');
+    clone.removeAttribute('id');
+    clone.setAttribute('aria-hidden', 'true');
+    clone.classList.remove('is-active', 'is-adjacent', 'is-past', 'is-future');
+    return clone;
+  }
+
+  rollTrack.insertBefore(cloneRollSlide(panels[panels.length - 1]), panels[0]);
+  rollTrack.appendChild(cloneRollSlide(panels[0]));
+
+  function syncRollMetrics() {
+    panels.forEach((slide) => { slide.style.minHeight = ''; });
+    rollTrack.querySelectorAll('.is-clone').forEach((clone) => { clone.style.minHeight = ''; });
+
+    let maxHeight = 0;
+    panels.forEach((slide) => {
+      maxHeight = Math.max(maxHeight, slide.offsetHeight);
+    });
+
+    const slot = `${maxHeight}px`;
+    rollViewport.style.setProperty('--api-roll-slot', slot);
+    panels.forEach((slide) => { slide.style.minHeight = slot; });
+    rollTrack.querySelectorAll('.is-clone').forEach((clone) => { clone.style.minHeight = slot; });
+  }
+
+  function updateRoll(id) {
+    const index = items.findIndex((item) => item.dataset.apiFeature === id);
+    const activeSlide = panels[index];
+    if (!activeSlide) return;
+
+    panels.forEach((slide, i) => {
+      const isActive = i === index;
+      slide.classList.toggle('is-active', isActive);
+      slide.classList.toggle('is-adjacent', Math.abs(i - index) === 1);
+      slide.classList.toggle('is-past', i < index);
+      slide.classList.toggle('is-future', i > index);
+      slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+    });
+
+    const offset = activeSlide.offsetTop;
+    rollTrack.style.transform = `translate3d(0, ${-offset}px, 0)`;
+  }
+
+  items.forEach((item) => {
+    const track = document.createElement('span');
+    track.className = 'api-features__progress';
+    track.setAttribute('aria-hidden', 'true');
+    track.innerHTML = '<span class="api-features__progress-fill"></span>';
+    item.appendChild(track);
+  });
+
+  function restartProgress(item) {
+    const fill = item.querySelector('.api-features__progress-fill');
+    if (!fill) return;
+    fill.classList.remove('is-running');
+    void fill.offsetWidth;
+    if (autoAdvance && inView && !root.classList.contains('is-paused')) {
+      fill.classList.add('is-running');
+    }
+  }
+
+  function syncPauseState() {
+    const paused = nav.matches(':hover')
+      || rollViewport.matches(':hover')
+      || nav.contains(document.activeElement);
+    root.classList.toggle('is-paused', paused);
+    const active = items.find((item) => item.classList.contains('is-active'));
+    if (!active) return;
+    if (paused) {
+      const fill = active.querySelector('.api-features__progress-fill');
+      if (fill) fill.classList.remove('is-running');
+      return;
+    }
+    if (autoAdvance && inView) restartProgress(active);
+  }
+
+  function select(id) {
+    items.forEach((item) => {
+      const isActive = item.dataset.apiFeature === id;
+      item.classList.toggle('is-active', isActive);
+      item.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      item.tabIndex = isActive ? 0 : -1;
+      if (!isActive) {
+        const fill = item.querySelector('.api-features__progress-fill');
+        if (fill) fill.classList.remove('is-running');
+      }
+    });
+    updateRoll(id);
+    const active = items.find((item) => item.dataset.apiFeature === id);
+    if (active) restartProgress(active);
+  }
+
+  function advance() {
+    const index = items.findIndex((item) => item.classList.contains('is-active'));
+    const next = items[(index + 1) % items.length];
+    select(next.dataset.apiFeature);
+  }
+
+  nav.addEventListener('click', (e) => {
+    const item = e.target.closest('[data-api-feature]');
+    if (!item) return;
+    select(item.dataset.apiFeature);
+  });
+
+  rollViewport.addEventListener('click', (e) => {
+    const slide = e.target.closest('.api-features__roll-slide');
+    if (!slide || slide.classList.contains('is-active')) return;
+    if (!slide.classList.contains('is-adjacent') && !slide.classList.contains('is-clone')) return;
+    const id = slide.dataset.apiFeaturePanel;
+    if (!id) return;
+    select(id);
+    const navItem = items.find((item) => item.dataset.apiFeature === id);
+    if (navItem) navItem.focus({ preventScroll: true });
+  });
+
+  ['mouseenter', 'mouseleave'].forEach((eventName) => {
+    nav.addEventListener(eventName, syncPauseState);
+    rollViewport.addEventListener(eventName, syncPauseState);
+  });
+  nav.addEventListener('focusin', syncPauseState);
+  nav.addEventListener('focusout', syncPauseState);
+
+  nav.addEventListener('animationend', (e) => {
+    if (!autoAdvance || !inView || root.classList.contains('is-paused')) return;
+    if (!e.target.classList.contains('api-features__progress-fill')) return;
+    if (!e.target.classList.contains('is-running')) return;
+    advance();
+  });
+
+  items.forEach((item) => {
+    item.addEventListener('keydown', (e) => {
+      const index = items.indexOf(item);
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+        e.preventDefault();
+        const next = items[(index + 1) % items.length];
+        next.focus();
+        select(next.dataset.apiFeature);
+      } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        const prev = items[(index - 1 + items.length) % items.length];
+        prev.focus();
+        select(prev.dataset.apiFeature);
+      }
+    });
+  });
+
+  if ('IntersectionObserver' in window) {
+    const viewIo = new IntersectionObserver((entries) => {
+      inView = entries.some((entry) => entry.isIntersecting);
+      const active = items.find((item) => item.classList.contains('is-active'));
+      if (!active) return;
+      if (inView && autoAdvance && !root.classList.contains('is-paused')) {
+        restartProgress(active);
+      } else {
+        const fill = active.querySelector('.api-features__progress-fill');
+        if (fill) fill.classList.remove('is-running');
+      }
+    }, { threshold: 0.35 });
+    viewIo.observe(root);
+  }
+
+  window.addEventListener('resize', () => {
+    syncRollMetrics();
+    const active = items.find((item) => item.classList.contains('is-active'));
+    if (active) updateRoll(active.dataset.apiFeature);
+  });
+
+  syncRollMetrics();
+  const initial = items.find((item) => item.classList.contains('is-active')) || items[0];
+  select(initial.dataset.apiFeature);
+})();
+
+// Getting started — API key typing animation on scroll
+(function () {
+  const keyEl = document.querySelector('.steps-cta-bar__key');
+  if (!keyEl) return;
+
+  const visibleEl = keyEl.querySelector('.steps-cta-bar__key-visible');
+  const redactedEl = keyEl.querySelector('.steps-cta-bar__key-redacted');
+  const visibleText = keyEl.dataset.keyVisible || '';
+  const redactedText = keyEl.dataset.keyRedacted || '';
+  if (!visibleEl || !redactedEl) return;
+
+  function showFullKey() {
+    visibleEl.textContent = visibleText;
+    redactedEl.textContent = redactedText;
+    keyEl.classList.add('is-typed');
+  }
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    showFullKey();
+    return;
+  }
+
+  let started = false;
+  function typeKey() {
+    if (started) return;
+    started = true;
+
+    let i = 0;
+    function typeVisible() {
+      if (i < visibleText.length) {
+        visibleEl.textContent += visibleText[i++];
+        setTimeout(typeVisible, 42);
+      } else {
+        typeRedacted(0);
+      }
+    }
+
+    function typeRedacted(j) {
+      if (j < redactedText.length) {
+        redactedEl.textContent += redactedText[j++];
+        setTimeout(() => typeRedacted(j), 28);
+      } else {
+        keyEl.classList.add('is-typed');
+      }
+    }
+
+    typeVisible();
+  }
+
+  const target = keyEl.closest('.steps-cta-bar') || keyEl;
+  const keyIo = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        typeKey();
+        keyIo.disconnect();
+      }
+    });
+  }, { threshold: 0.45 });
+  keyIo.observe(target);
+})();
+
+// Testimonials — video lightbox (all viewports)
+(function () {
+  const videoLightbox = document.getElementById('videoLightbox');
+  const videoLightboxFrame = document.getElementById('videoLightboxFrame');
+  const grid = document.querySelector('.testimonials-grid');
+  if (!grid || !videoLightbox || !videoLightboxFrame) return;
+
+  function toYoutubeEmbed(url) {
+    if (!url) return '';
+    let id = '';
+    const short = url.match(/youtu\.be\/([^?&/]+)/i);
+    if (short && short[1]) id = short[1];
+    else {
+      const full = url.match(/[?&]v=([^?&]+)/i);
+      if (full && full[1]) id = full[1];
+    }
+    if (!id) return '';
+    const params = new URLSearchParams({
+      autoplay: '1',
+      rel: '0',
+      playsinline: '1',
+      enablejsapi: '1',
+      origin: window.location.origin,
+    });
+    return 'https://www.youtube.com/embed/' + id + '?' + params.toString();
+  }
+
+  function closeVideoLightbox() {
+    videoLightbox.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('is-video-lightbox-open');
+    videoLightboxFrame.removeAttribute('src');
+  }
+
+  function openVideoLightbox(url) {
+    const embed = toYoutubeEmbed(url);
+    if (!embed) return false;
+    videoLightbox.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('is-video-lightbox-open');
+    videoLightboxFrame.src = embed;
+    return true;
+  }
+
+  videoLightbox.addEventListener('click', e => {
+    if (e.target.closest('[data-video-lightbox-close]')) closeVideoLightbox();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && videoLightbox.getAttribute('aria-hidden') === 'false') closeVideoLightbox();
+  });
+
+  function handleCaseStudy(card, e) {
+    const url = card.getAttribute('data-case-study');
+    if (!url || url === '#') return;
+    if (card.getAttribute('data-case-study-type') === 'youtube' && openVideoLightbox(url)) {
+      if (e) e.preventDefault();
+      return;
+    }
+    window.open(url, '_blank', 'noopener');
+  }
+
+  grid.addEventListener('click', e => {
+    const card = e.target.closest('.testimonial-card[data-case-study]');
+    if (!card) return;
+    handleCaseStudy(card, e);
+  });
+
+  grid.addEventListener('keydown', e => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const card = e.target.closest('.testimonial-card[data-case-study]');
+    if (!card || card !== e.target) return;
+    e.preventDefault();
+    handleCaseStudy(card, e);
+  });
+})();
+
+// Testimonials — custom cursor (desktop)
+(function () {
+  if (window.matchMedia('(max-width: 768px)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const grid = document.querySelector('.testimonials-grid');
+  if (!grid) return;
+
+  const section = document.querySelector('.testimonials-section');
+  const halo = section ? section.querySelector('.testimonials-cursor-halo') : null;
+
+  const cursor = document.createElement('div');
+  cursor.className = 'testimonials-cursor';
+  cursor.setAttribute('aria-hidden', 'true');
+  cursor.innerHTML =
+    '<div class="testimonials-cursor-avatar"></div>' +
+    '<svg class="testimonials-cursor-heart" viewBox="0 0 24 24" aria-hidden="true">' +
+      '<path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>' +
+    '</svg>' +
+    '<div class="testimonials-cursor-cta">' +
+      '<span class="testimonials-cursor-cta-label">Read the case study</span>' +
+      '<svg class="testimonials-cursor-cta-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>' +
+    '</div>' +
+    '<div class="testimonials-cursor-meta">' +
+      '<span class="testimonials-cursor-name"></span>' +
+      '<span class="testimonials-cursor-role"></span>' +
+    '</div>';
+  document.body.appendChild(cursor);
+
+  const avatarEl = cursor.querySelector('.testimonials-cursor-avatar');
+  const ctaLabelEl = cursor.querySelector('.testimonials-cursor-cta-label');
+
+  let raf = 0;
+  let px = 0, py = 0, hx = 0, hy = 0;
+  let currentCard = null;
+
+  function renderPosition() {
+    cursor.style.transform = 'translate3d(' + px + 'px, ' + py + 'px, 0) translate(-50%, -50%)';
+    if (halo) halo.style.transform = 'translate3d(' + hx + 'px, ' + hy + 'px, 0) translate(-50%, -50%)';
+    raf = 0;
+  }
+
+  function haloForCard(card) {
+    if (!card) return 'violet';
+    const style = card.getAttribute('style') || '';
+    if (style.indexOf('grid-area:b') !== -1) return 'magenta';
+    if (style.indexOf('grid-area:d') !== -1) return 'rose';
+    return 'violet';
+  }
+
+  function populate(card) {
+    if (!card || card === currentCard) return;
+    currentCard = card;
+
+    let src = '';
+    let initials = '';
+    let isLogo = false;
+
+    if (card.classList.contains('photo-card')) {
+      const photo = card.querySelector('.testimonial-photo > img');
+      if (photo) src = photo.getAttribute('src');
+    } else {
+      const avatar = card.querySelector('.testimonial-avatar');
+      if (avatar && avatar.tagName === 'IMG') {
+        src = avatar.getAttribute('src');
+      } else if (avatar) {
+        initials = avatar.textContent.trim();
+      }
+      if (!src && !initials) {
+        const companyImg = card.querySelector('.testimonial-company img');
+        if (companyImg) { src = companyImg.getAttribute('src'); isLogo = true; }
+      }
+    }
+
+    avatarEl.classList.toggle('is-logo', isLogo);
+    if (src) {
+      avatarEl.innerHTML = '';
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = name || '';
+      avatarEl.appendChild(img);
+    } else if (initials) {
+      avatarEl.textContent = initials;
+    } else {
+      avatarEl.textContent = '';
+    }
+
+    const caseStudy = card.getAttribute('data-case-study');
+    if (caseStudy) {
+      ctaLabelEl.textContent = card.getAttribute('data-case-study-label') || 'Read the case study';
+      cursor.classList.add('has-cta');
+    } else {
+      cursor.classList.remove('has-cta');
+    }
+  }
+
+  grid.addEventListener('pointerenter', () => grid.classList.add('is-cursor-active'));
+  grid.addEventListener('pointerleave', () => {
+    grid.classList.remove('is-cursor-active');
+    cursor.classList.remove('is-active', 'has-cta');
+    currentCard = null;
+  });
+
+  grid.addEventListener('pointermove', e => {
+    px = e.clientX;
+    py = e.clientY;
+    const card = e.target.closest('.testimonial-card');
+    if (card) {
+      populate(card);
+      if (!cursor.classList.contains('is-active')) cursor.classList.add('is-active');
+    } else {
+      cursor.classList.remove('is-active');
+      currentCard = null;
+    }
+  });
+
+  if (section && halo) {
+    section.addEventListener('pointerenter', () => section.classList.add('is-halo-active'));
+    section.addEventListener('pointerleave', () => {
+      section.classList.remove('is-halo-active');
+      section.removeAttribute('data-halo');
+    });
+    const haloParent = halo.parentElement || section;
+    section.addEventListener('pointermove', e => {
+      const rect = haloParent.getBoundingClientRect();
+      hx = e.clientX - rect.left;
+      hy = e.clientY - rect.top;
+      if (!raf) raf = requestAnimationFrame(renderPosition);
+      const card = e.target.closest('.testimonial-card');
+      if (card) section.setAttribute('data-halo', haloForCard(card));
+      else section.removeAttribute('data-halo');
+    });
+  }
+})();
+</script>
+</body>
+</html>

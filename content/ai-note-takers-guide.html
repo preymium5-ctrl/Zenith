@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+
+  
+
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-11135522798');</script>
+
+
+
+  <meta charset="UTF-8">
+  <meta name="zenith-page" content="AI Note-Takers Guide">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Zenith | How to Build AI Note-Takers: API Guide, Tutorials &amp; Use Cases</title>
+  <meta name="description" content="Complete guide to building AI meeting assistants with speaker diarization, real-time transcription, and LLM summarization for EdTech, Healthcare, and Sales.">
+  <link rel="canonical" href="/content/ai-note-takers-guide">
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Zenith | How to Build AI Note-Takers: API Guide, Tutorials &amp; Use Cases">
+  <meta property="og:description" content="The complete guide to building AI meeting assistants. Learn how to implement speaker diarization, real-time transcription, and LLM summarization for EdTech, Healthcare, and Sales.">
+  <meta property="og:url" content="/content/ai-note-takers-guide">
+  <meta property="og:site_name" content="Zenith">
+  <meta property="og:image" content="/og-ai-note-takers.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="How to Build AI Note-Takers — Zenith guide cover">
+  <meta property="article:published_time" content="2026-02-10T00:00:00Z">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zenith | How to Build AI Note-Takers: API Guide, Tutorials &amp; Use Cases">
+  <meta name="twitter:description" content="The complete guide to building AI meeting assistants. Learn how to implement speaker diarization, real-time transcription, and LLM summarization.">
+  <meta name="twitter:image" content="/og-ai-note-takers.png">
+  <meta name="twitter:image:alt" content="How to Build AI Note-Takers — Zenith guide cover">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"The Ultimate Guide to Building AI Note-Takers and Meeting Assistants","description":"The complete guide to building AI meeting assistants. Learn how to implement speaker diarization, real-time transcription, and LLM summarization for EdTech, Healthcare, and Sales.","datePublished":"2026-02-10","dateModified":"2026-02-10","author":{"@type":"Organization","name":"Zenith","url":"https://zenith.io"},"publisher":{"@type":"Organization","name":"Zenith","url":"https://zenith.io","logo":{"@type":"ImageObject","url":"/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"/content/ai-note-takers-guide"},"image":"/og-ai-note-takers.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between speaker diarization and speaker identification?","acceptedAnswer":{"@type":"Answer","text":"Speaker Diarization answers the question 'Who spoke when?' by labeling speakers as Speaker A, Speaker B, etc. It does not know their real names. Speaker Identification goes a step further by matching the voice to a specific identity (e.g., Morgan Freeman) based on a pre-recorded voice sample."}},{"@type":"Question","name":"How does AI summarization handle long meetings?","acceptedAnswer":{"@type":"Answer","text":"Standard LLMs have a token limit (context window). To handle hour-long meetings, we use chunking, which breaks the transcript into overlapping segments. This ensures the model doesn't forget the beginning of the meeting when processing the end, preventing catastrophic forgetting."}},{"@type":"Question","name":"Is AI transcription HIPAA compliant?","acceptedAnswer":{"@type":"Answer","text":"It depends on the provider. Zenith offers HIPAA and GDPR compliance, along with SOC Type 2 certification."}},{"@type":"Question","name":"Can the AI handle multiple languages in one meeting?","acceptedAnswer":{"@type":"Answer","text":"Yes. This is called Code-Switching. Zenith's Solaria model is designed to detect and transcribe multiple languages within a single audio stream automatically. This is essential for international recruitment, global all-hands meetings, and bilingual customer support."}},{"@type":"Question","name":"Why are my timestamps not aligning with the audio?","acceptedAnswer":{"@type":"Answer","text":"This is often a result of poor word-level timestamp accuracy. If the ASR model drifts even by a few seconds, the speaker labels will be misaligned. Ensure you are using an API that provides high-fidelity timestamping to ensure the text syncs perfectly with the mechanical diarization from platforms like Zoom."}}]}]}</script>
+  <style>
+    html { scroll-behavior: smooth; }
+
+    /* Prototyper vs Preview mode visibility */
+    [data-prototyper-only] {
+      display: none !important;
+    }
+
+    body.prototyper-mode [data-preview-only] {
+      display: none !important;
+    }
+
+    body.prototyper-mode [data-prototyper-only] {
+      display: block !important;
+    }
+    /* ==================== Adaptive Navbar for Dark Hero ==================== */
+    .site-nav-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+
+    .site-nav-wrapper .navbar {
+      background: transparent;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .site-nav-wrapper.scrolled .navbar {
+      background: var(--color-neutral-0);
+      border-bottom: 1px solid var(--border-primary);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .site-nav-wrapper .navbar a,
+    .site-nav-wrapper .navbar button:not(.btn) {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .site-nav-wrapper.scrolled .navbar a,
+    .site-nav-wrapper.scrolled .navbar button:not(.btn) {
+      color: var(--text-primary);
+    }
+
+    .site-nav-wrapper .navbar .btn {
+      transition: all 0.3s ease;
+    }
+
+    .site-nav-wrapper .navbar .btn-secondary {
+      background: transparent;
+      color: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .site-nav-wrapper .navbar .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .site-nav-wrapper.scrolled .navbar .btn-secondary {
+      background: var(--color-neutral-0);
+      color: var(--text-primary);
+      border-color: var(--border-primary);
+    }
+
+    .site-nav-wrapper.scrolled .navbar .btn-primary {
+      background: var(--color-neutral-1000);
+      color: var(--color-neutral-0);
+    }
+
+    .site-nav-wrapper.scrolled .navbar .btn-secondary:hover {
+      background: var(--color-neutral-50);
+    }
+
+    .site-nav-wrapper.scrolled .navbar .btn-primary:hover {
+      background: var(--color-neutral-900);
+    }
+
+    .site-nav-wrapper .navbar-logo svg path {
+      fill: white;
+      transition: fill 0.3s ease;
+    }
+
+    .site-nav-wrapper.scrolled .navbar-logo svg path {
+      fill: var(--color-neutral-1000);
+    }
+
+    /* ==================== Remotion Placeholder Animation ==================== */
+    .rp {
+      width: 100%;
+      height: auto;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 24px;
+      gap: 16px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.5);
+      box-sizing: border-box;
+    }
+
+    /* Header row */
+    .rp-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .rp-rec {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255, 255, 255, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .rp-rec-dot {
+      width: 7px;
+      height: 7px;
+      background: #ef4444;
+      border-radius: 50%;
+      animation: rp-pulse 1.4s ease-in-out infinite;
+    }
+
+    @keyframes rp-pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.25; }
+    }
+
+    .rp-duration {
+      font-variant-numeric: tabular-nums;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Transcript turns */
+    .rp-transcript {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      overflow: hidden;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .rp-turn {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .rp-turn.is-active {
+      opacity: 1;
+      transform: none;
+    }
+
+    .rp-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .rp-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .rp-bubble {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .rp-label {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.55);
+      letter-spacing: 0.04em;
+    }
+
+    .rp-text {
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.92);
+      margin: 0;
+    }
+
+    .rp-cursor {
+      display: inline-block;
+      width: 1px;
+      height: 14px;
+      background: rgba(139, 92, 246, 0.8);
+      vertical-align: middle;
+      margin-left: 2px;
+      animation: rp-blink 1s step-end infinite;
+    }
+
+    @keyframes rp-blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+
+    /* Entities row — always visible, tags build up as keywords are spoken */
+    .rp-entities {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      flex-shrink: 0;
+    }
+
+    .rp-entities-label {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.3);
+      white-space: nowrap;
+    }
+
+    .rp-entity-tags {
+      display: flex;
+      gap: 4px;
+      flex-wrap: nowrap;
+    }
+
+    .rp-entity {
+      padding: 2px 8px;
+      background: rgba(139, 92, 246, 0.1);
+      border: 1px solid rgba(139, 92, 246, 0.25);
+      border-radius: 20px;
+      font-size: 10px;
+      color: #C4B5FD;
+      letter-spacing: var(--letter-spacing-wide);
+      text-transform: uppercase;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateY(3px) scale(0.92);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .rp-entity.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Entity word highlight inside transcript */
+    .rp-word-entity {
+      color: #A78BFA;
+      font-weight: 500;
+    }
+
+    /* ==================== TOC CTA Card ==================== */
+    .article-toc-cta {
+      margin-top: var(--space-10);
+      padding: var(--space-8);
+      background: linear-gradient(160deg, #110e1f 0%, #0c0a14 100%);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      border-radius: var(--radius-3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: var(--space-8);
+    }
+
+    .article-toc-cta-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(139, 92, 246, 0.12);
+      border: 1px solid rgba(139, 92, 246, 0.25);
+      border-radius: var(--radius-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #A78BFA;
+      flex-shrink: 0;
+    }
+
+    .article-toc-cta-heading {
+      font-size: var(--font-size-14);
+      font-weight: var(--font-weight-medium);
+      color: var(--color-neutral-0);
+      line-height: var(--line-height-snug);
+      white-space: nowrap;
+      margin: 0;
+    }
+
+    .article-toc-cta .btn {
+      width: 100%;
+      justify-content: center;
+      background: #8B5CF6;
+      color: #fff;
+      border: none;
+    }
+
+    .article-toc-cta .btn:hover {
+      background: #7C3AED;
+    }
+
+    /* Hide CTA on mobile (TOC is collapsed) */
+    @media (max-width: 1024px) {
+      .article-toc-cta {
+        display: none;
+      }
+    }
+  </style>
+  <link rel="stylesheet" crossorigin href="/assets/shared-W4vupvwH.css">
+</head>
+<body class="light-mode">
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5M3X2DX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <!-- =====================================================
+     NAVBAR — Figma 5242-201
+     ===================================================== -->
+<nav class="nb-bar">
+  <div class="nb-inner">
+
+    <!-- Logo -->
+    <a href="/" class="nb-logo" aria-label="Zenith">
+      <svg viewBox="0 0 322 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M125.497 14.5989C128.431 14.5989 131.174 15.0301 133.728 15.8928C136.299 16.7383 138.594 17.9461 140.613 19.5168C142.632 21.0867 144.289 22.9511 145.583 25.1077C146.894 27.2642 147.748 29.6455 148.146 32.2512H138.362C137.965 30.8536 137.378 29.5935 136.602 28.4719C135.825 27.3506 134.884 26.4014 133.78 25.6252C132.676 24.8317 131.433 24.2364 130.053 23.8391C128.69 23.4246 127.214 23.218 125.626 23.218C122.762 23.2181 120.2 23.9343 117.94 25.3665C115.679 26.7987 113.892 28.904 112.581 31.6819C111.287 34.4426 110.64 37.8078 110.64 41.7766C110.64 45.7798 111.27 49.1706 112.529 51.9485C113.807 54.7264 115.567 56.8416 117.81 58.2903C120.053 59.7225 122.65 60.4387 125.601 60.4387C128.361 60.4387 130.752 59.8958 132.771 58.8088C134.79 57.721 136.343 56.211 137.43 54.2786C138.462 52.4728 139.012 50.4109 139.079 48.092H126.559V40.5862H148.533V68.3333H141.649L140.949 62.1213H140.665C138.801 64.3472 136.653 66.0645 134.22 67.2717C131.787 68.4625 128.896 69.0588 125.549 69.0588C120.683 69.0588 116.403 67.9629 112.71 65.7717C109.035 63.5624 106.163 60.4304 104.092 56.3752C102.021 52.3026 100.986 47.4707 100.986 41.8801C100.986 37.6006 101.607 33.7781 102.849 30.4133C104.092 27.0489 105.825 24.1928 108.051 21.8459C110.278 19.4826 112.875 17.6876 115.843 16.4622C118.81 15.2203 122.029 14.5989 125.497 14.5989ZM191.687 28.0588C194.016 28.0588 195.931 28.4548 197.433 29.2483C198.934 30.0255 200.126 30.9663 201.006 32.0706C201.885 33.1573 202.567 34.1841 203.05 35.1506H203.439V28.5764H212.834V68.3333H203.619V62.0696H203.05C202.567 63.0362 201.868 64.0628 200.953 65.1497C200.039 66.2192 198.831 67.1339 197.329 67.8928C195.829 68.6527 193.939 69.0325 191.661 69.0325C188.538 69.0325 185.743 68.2305 183.275 66.6252C180.807 65.0208 178.857 62.691 177.425 59.637C175.993 56.5821 175.277 52.872 175.277 48.5071C175.277 44.0891 176.001 40.3612 177.45 37.3245C178.917 34.2704 180.894 31.9659 183.378 30.4133C185.863 28.8426 188.633 28.0588 191.687 28.0588ZM258.017 68.3333H248.802V62.0696H248.233C247.749 63.0361 247.05 64.0629 246.136 65.1497C245.222 66.2193 244.013 67.1339 242.512 67.8928C241.01 68.6527 239.122 69.0325 236.844 69.0325C233.72 69.0324 230.924 68.2306 228.457 66.6252C225.99 65.0208 224.039 62.691 222.608 59.637C221.175 56.5821 220.459 52.872 220.459 48.5071C220.459 44.0892 221.183 40.3612 222.633 37.3245C224.1 34.2705 226.075 31.9659 228.561 30.4133C231.045 28.8426 233.815 28.0589 236.869 28.0588C239.199 28.0588 241.115 28.4547 242.616 29.2483C244.117 30.0254 245.308 30.9664 246.188 32.0706C247.068 33.1573 247.749 34.1841 248.233 35.1506H248.621V15.3235H258.017V68.3333ZM300.328 28.0588C302.658 28.0588 304.573 28.4549 306.074 29.2483C307.575 30.0255 308.767 30.9663 309.647 32.0706C310.527 33.1573 311.208 34.1841 311.692 35.1506H312.08V28.5764H321.476V68.3333H312.261V62.0696H311.692C311.208 63.0361 310.509 64.0629 309.595 65.1497C308.681 66.2193 307.472 67.1339 305.971 67.8928C304.469 68.6527 302.581 69.0325 300.303 69.0325C297.179 69.0325 294.383 68.2306 291.916 66.6252C289.449 65.0208 287.498 62.691 286.067 59.637C284.634 56.5821 283.918 52.872 283.918 48.5071C283.918 44.0891 284.642 40.3612 286.092 37.3245C287.559 34.2704 289.534 31.9659 292.02 30.4133C294.504 28.8426 297.274 28.0589 300.328 28.0588ZM166.079 56.9446C166.079 58.4287 166.303 59.4904 166.752 60.1282C167.2 60.7668 167.994 61.069 169.133 61.0344C169.754 61.0171 170.22 60.9828 170.53 60.9309C170.858 60.8617 171.153 60.7931 171.411 60.7239L172.964 67.8157C172.412 67.9878 171.722 68.1521 170.894 68.3079C170.083 68.4628 169.081 68.5574 167.891 68.592C164.094 68.6958 161.282 67.9021 159.452 66.2112C157.624 64.5202 156.709 61.9402 156.709 58.4719V15.3235H166.079V56.9446ZM276.643 68.3333H267.273V28.5764H276.643V68.3333ZM194.276 35.7454C192.188 35.7454 190.445 36.2893 189.047 37.3762C187.649 38.4632 186.596 39.965 185.889 41.8801C185.181 43.7952 184.828 45.9873 184.828 48.4543C184.828 50.9389 185.181 53.157 185.889 55.1067C186.613 57.0391 187.675 58.5662 189.072 59.6887C190.487 60.793 192.222 61.345 194.276 61.345C196.26 61.3449 197.95 60.8099 199.348 59.7395C200.745 58.6525 201.807 57.1427 202.532 55.2102C203.257 53.2778 203.619 51.0254 203.619 48.4543C203.619 45.8835 203.257 43.6489 202.532 41.7512C201.824 39.8534 200.772 38.3768 199.374 37.3245C197.994 36.2724 196.294 35.7454 194.276 35.7454ZM239.458 35.7454C237.37 35.7454 235.626 36.2893 234.229 37.3762C232.831 38.4632 231.779 39.9651 231.071 41.8801C230.364 43.7952 230.011 45.9872 230.011 48.4543C230.011 50.9389 230.364 53.1569 231.071 55.1067C231.797 57.0391 232.858 58.5662 234.256 59.6887C235.671 60.7928 237.405 61.345 239.458 61.345C241.443 61.3449 243.134 60.81 244.531 59.7395C245.929 58.6526 246.99 57.1425 247.714 55.2102C248.439 53.2778 248.802 51.0254 248.802 48.4543C248.802 45.8835 248.439 43.6489 247.714 41.7512C247.007 39.8534 245.955 38.3768 244.557 37.3245C243.177 36.2722 241.477 35.7454 239.458 35.7454ZM302.917 35.7454C300.829 35.7454 299.085 36.2893 297.688 37.3762C296.29 38.4632 295.238 39.9651 294.53 41.8801C293.823 43.7952 293.47 45.9872 293.47 48.4543C293.47 50.9389 293.823 53.1569 294.53 55.1067C295.256 57.039 296.317 58.5663 297.714 59.6887C299.129 60.793 300.864 61.345 302.917 61.345C304.901 61.3449 306.593 60.81 307.99 59.7395C309.388 58.6526 310.449 57.1425 311.173 55.2102C311.898 53.2778 312.261 51.0254 312.261 48.4543C312.261 45.8835 311.898 43.6489 311.173 41.7512C310.466 39.8534 309.414 38.3768 308.016 37.3245C306.636 36.2722 304.936 35.7454 302.917 35.7454ZM271.983 12.761C273.484 12.761 274.762 13.2616 275.815 14.2629C276.884 15.2459 277.418 16.4449 277.418 17.8596C277.418 19.258 276.884 20.457 275.815 21.4573C274.762 22.4413 273.484 22.9338 271.983 22.9338C270.499 22.9338 269.222 22.4412 268.153 21.4573C267.083 20.4569 266.548 19.2581 266.548 17.8596C266.548 16.4448 267.083 15.246 268.153 14.2629C269.222 13.2617 270.499 12.7611 271.983 12.761Z" fill="white"/>
+        <path d="M42.8783 53.1389C48.1056 53.139 53.1197 55.2166 56.8177 58.9143L71.1429 75.5637H62.7972C60.6349 75.5636 58.5758 74.6324 57.1468 73.0061L45.2816 59.4934V82.0002H37.3314V59.9797L25.8949 73.0032C24.4689 74.6263 22.41 75.5598 20.2445 75.5598H11.8929L26.2279 58.9104C29.9259 55.2129 34.9401 53.135 40.1673 53.135H42.8783V53.1389ZM23.6126 25.7092C27.3105 29.407 29.388 34.4208 29.388 39.6477V42.3586C29.388 47.5855 27.3105 52.5994 23.6126 56.2971L6.96127 70.6213V62.2766L6.95834 62.2737C6.95834 60.1115 7.89247 58.0523 9.51889 56.6233L23.0326 44.759H0.52475V36.8088H22.5472L9.52182 25.3733C7.89561 23.9475 6.96136 21.889 6.96127 19.7239V11.3723L23.6126 25.7092ZM76.0843 19.717C76.0843 21.8793 75.1532 23.9385 73.5267 25.3674L60.013 37.2317H82.5247V45.1819H60.5023L73.5267 56.6165C75.1501 58.0423 76.0843 60.1015 76.0843 62.2668V70.6184L59.4339 56.2844C55.7359 52.5866 53.6576 47.573 53.6576 42.3459V39.635C53.6576 34.408 55.7359 29.3943 59.4339 25.6965L76.0843 11.3723V19.717ZM45.7083 22.0139L57.1439 8.99048C58.5698 7.36731 60.6288 6.43385 62.7943 6.43384H71.1458L56.8119 23.0833C53.1138 26.781 48.0989 28.8586 42.8714 28.8586H40.1605L40.1576 28.8616C34.9303 28.8615 29.9161 26.7839 26.2181 23.0862L11.8929 6.43677H20.2386C22.401 6.43682 24.46 7.37096 25.889 8.99731L37.7572 22.5061V0.000244141H45.7083V22.0139Z" fill="white"/>
+      </svg>
+    </a>
+
+    <!-- Nav links -->
+    <div class="nb-links">
+      <button data-menu="product">Product</button>
+      <button data-menu="solutions">Solutions</button>
+      <a href="/pricing">Pricing</a>
+      <button data-menu="developers">Developers</button>
+      <button data-menu="resources">Resources</button>
+      <button data-menu="company">Company</button>
+    </div>
+
+    <!-- CTA -->
+    <div class="nb-actions">
+      <a href="/demo-request" class="nb-cta-demo">Request a demo</a>
+      <a href="/app/signup" target="_blank" rel="noopener noreferrer" class="nb-cta-signup">Sign up</a>
+    </div>
+
+  </div>
+</nav>
+
+<!-- =====================================================
+     DROPDOWN — 5 panels
+     ===================================================== -->
+<div class="nb-dropdown" id="nbDropdown">
+
+  <!-- ── PRODUCT ── -->
+  <div class="nb-panel" data-panel="product">
+    <div class="nb-panel-left">
+      <div class="nb-section">
+        <span class="nb-section-label">APIs</span>
+        <a href="/product/real-time" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/Weather/IconLightning.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Real-time STT</span>
+            <span class="nb-item-desc">First fully multilingual real-time transcription engine with &lt;300ms latency</span>
+          </div>
+        </a>
+        <a href="/product/async-transcription" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/Folders & Files/IconFiles.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Batch STT</span>
+            <span class="nb-item-desc">Asynchronous transcription and add-ons with no hallucinations</span>
+          </div>
+        </a>
+      </div>
+      <div class="nb-section">
+        <span class="nb-section-label">Models</span>
+        <a data-noclick="1" aria-disabled="true" style="cursor:default;pointer-events:none" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/AI & Magic/IconSparkle.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Solaria-3</span>
+            <span class="nb-item-desc">Built for real production audio — noisy, fast-paced, and conversational</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="nb-panel-right">
+      <!-- Replace with /images/nav-featured-product.jpg -->
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,#1a0533 0%,#2d0a5e 40%,#0d0d0d 100%);"></div>
+      <div class="nb-featured">
+        <a href="/product/real-time#partials" class="nb-callout">
+          <span class="nb-callout-tag">New</span>
+          <p class="nb-callout-title">Feature: Partials</p>
+          <p class="nb-callout-desc">Achieve faster, smoother real-time conversations with partial transcripts in &lt;100 ms.</p>
+          <div class="nb-callout-footer">
+            <span class="nb-callout-cta">
+              Learn more
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SOLUTIONS ── Figma 5257-27 -->
+  <div class="nb-panel" data-panel="solutions">
+    <div class="nb-panel-left">
+      <div class="nb-section">
+        <span class="nb-section-label">Use Case</span>
+        <a href="/use-cases/customer-experience" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/Sound & Music/IconHeadphones.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Customer experience</span>
+            <span class="nb-item-desc">Real-time AI to boost productivity of contact center agents</span>
+          </div>
+        </a>
+        <a href="/use-cases/sales-intelligence" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/Shopping & Payment/IconShoppingBag1.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Sales intelligence</span>
+            <span class="nb-item-desc">AI transcription and insights to supercharge sales calls</span>
+          </div>
+        </a>
+        <a href="/use-cases/meeting-assistants" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/Folders & Files/IconNotepad.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Meeting assistants</span>
+            <span class="nb-item-desc">Flawless transcription for LLM-based AI assistants with note-taking capabilities</span>
+          </div>
+        </a>
+        <a href="/use-cases/media" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/Photography & Video/IconClosedCaptioning.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Media</span>
+            <span class="nb-item-desc">Streamlined editing and subtitles with time-stamped transcription</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="nb-panel-right nb-panel-right--list">
+      <div class="nb-section">
+        <span class="nb-section-label">Industry</span>
+        <a href="/use-cases/voice-agents" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/AI & Magic/IconRobot.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Voice agents</span>
+            <span class="nb-item-desc">AI-powered productivity for voice-based customer interactions</span>
+          </div>
+        </a>
+        <a href="/use-cases/ccaas" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/Sound & Music/IconHeadphones.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Contact center as a service (CCaaS)</span>
+            <span class="nb-item-desc">Flexible AI transcription for scalable contact center solutions</span>
+          </div>
+        </a>
+        <a href="/use-cases/business-process-outsourcing" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/Building/IconBuildings.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Business process outsourcing (BPO)</span>
+            <span class="nb-item-desc">Smart transcription tools for efficient outsourced operations</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DEVELOPERS ── -->
+  <div class="nb-panel" data-panel="developers">
+    <div class="nb-panel-left">
+      <div class="nb-section">
+        <a href="#" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/Code/IconSandbox.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Playground</span>
+            <span class="nb-item-desc">Explore our APIs with a dedicated playground app</span>
+          </div>
+        </a>
+        <a data-noclick="1" aria-disabled="true" style="cursor:default;pointer-events:none" class="nb-item"><div class="nb-item-icon"><img src="/icons/Communication/IconBook.svg" alt=""></div><div class="nb-item-text"><span class="nb-item-title">Documentation</span>
+            <span class="nb-item-desc">All you need to know to get started with Zenith</span>
+          </div>
+        </a>
+        <a href="javascript:void(0)" onclick="event.preventDefault();" style="cursor:default;" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/Social Media & Brands/IconDiscord.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Discord</span>
+            <span class="nb-item-desc">Where our community lives</span>
+          </div>
+        </a>
+        <a href="/status/" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/Interface General/IconBell.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Status</span>
+            <span class="nb-item-desc">Real-time updates on the status and performance of our services</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="nb-panel-right">
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0a1520 0%,#0d2030 50%,#0d0d0d 100%);"></div>
+      <div class="nb-featured">
+        <a href="/app/signup" target="_blank" rel="noopener noreferrer" class="nb-callout">
+          <span class="nb-callout-tag">Free tier</span>
+          <p class="nb-callout-title">Test Zenith in action</p>
+          <p class="nb-callout-desc">Take a tour of our playground and explore core API features — no credit card required.</p>
+          <div class="nb-callout-footer">
+            <span class="nb-callout-cta">
+              Try for free
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── RESOURCES ── -->
+  <div class="nb-panel" data-panel="resources">
+    <div class="nb-panel-left">
+      <div class="nb-section">
+        <a href="/content/ai-note-takers-guide" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/Communication/IconNewspaper.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Blog</span>
+            <span class="nb-item-desc">Read our latest articles about speech-to-text, LLMs and more</span>
+          </div>
+        </a>
+        <a href="#" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/Communication/IconBook.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Library</span>
+            <span class="nb-item-desc">Discover our ebooks, webinars, guides, and more</span>
+          </div>
+        </a>
+        <a href="#" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/Interface General/IconMagnifyingGlass.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Whisper TCO Calculator</span>
+            <span class="nb-item-desc">Calculate the cost of ownership of hosting open-source Whisper ASR</span>
+          </div>
+        </a>
+        <a data-noclick="1" aria-disabled="true" style="cursor:default;pointer-events:none" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/Statistics & Charts/IconChart1.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Real-time API benchmarks</span>
+            <span class="nb-item-desc">Comparing Zenith's performance against pure players</span>
+          </div>
+        </a>
+        <a href="/changelog" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/Time & Date/IconCalendarClock.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Changelog</span>
+            <span class="nb-item-desc">Product updates, improvements, and new releases</span>
+          </div>
+        </a>
+        <a href="#" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/Interface General/IconShield.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Compliance Hub</span>
+            <span class="nb-item-desc">See how Zenith protects and manages your data</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="nb-panel-right">
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,#1a0d33 0%,#2d1a5e 40%,#0d0d0d 100%);"></div>
+      <div class="nb-featured">
+        <a href="#" class="nb-callout">
+          <span class="nb-callout-tag">Featured</span>
+          <p class="nb-callout-title">STT Voice agent buyer's guide</p>
+          <p class="nb-callout-desc">A clear framework for technical leaders evaluating STT vendors — all essential criteria in one guide.</p>
+          <div class="nb-callout-footer">
+            <span class="nb-callout-cta">
+              Get the copy
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── COMPANY ── -->
+  <div class="nb-panel" data-panel="company">
+    <div class="nb-panel-left">
+      <div class="nb-section">
+        <a href="#" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/Building/IconBuildings.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">About us</span>
+            <span class="nb-item-desc">Our team and company story</span>
+          </div>
+        </a>
+        <a href="https://www.welcometothejungle.com/en/companies/zenith" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/Shopping & Payment/IconShoppingBag1.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Careers</span>
+            <span class="nb-item-desc">For current job openings</span>
+          </div>
+        </a>
+        <a href="#" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/Sound & Music/IconMegaphone.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Press</span>
+            <span class="nb-item-desc">Our latest press features, media kit and boilerplate</span>
+          </div>
+        </a>
+        <a href="#" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/Hands/IconHandshake.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Partners</span>
+            <span class="nb-item-desc">Join our ecosystem of partners</span>
+          </div>
+        </a>
+        <a href="#" class="nb-item">
+          <div class="nb-item-icon">
+            <img src="/icons/Communication/IconBook.svg" alt="">
+          </div>
+          <div class="nb-item-text">
+            <span class="nb-item-title">Testimonials</span>
+            <span class="nb-item-desc">Hear the voices that shape our story</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="nb-panel-right">
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,#200a0a 0%,#3d1515 30%,#1a0a33 70%,#0d0d0d 100%);"></div>
+      <div class="nb-featured">
+        <a href="#" class="nb-callout">
+          <span class="nb-callout-tag">Series A</span>
+          <p class="nb-callout-title">Our road to real-time audio AI</p>
+          <p class="nb-callout-desc">$16M in series A funding — speed, accuracy, and insight, finally delivered at scale.</p>
+          <div class="nb-callout-footer">
+            <span class="nb-callout-cta">
+              Learn more
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  var dropdown = document.getElementById('nbDropdown');
+  if (!dropdown) return;
+  var panels = dropdown.querySelectorAll('.nb-panel');
+  var buttons = document.querySelectorAll('.nb-links [data-menu]');
+  var hideTimeout;
+
+  function showPanel(name) {
+    clearTimeout(hideTimeout);
+    panels.forEach(function (p) {
+      p.classList.toggle('is-active', p.dataset.panel === name);
+    });
+    dropdown.classList.add('is-open');
+  }
+
+  function startHide() {
+    hideTimeout = setTimeout(function () {
+      dropdown.classList.remove('is-open');
+      panels.forEach(function (p) { p.classList.remove('is-active'); });
+    }, 120);
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('mouseenter', function () { showPanel(btn.dataset.menu); });
+    btn.addEventListener('mouseleave', startHide);
+  });
+
+  dropdown.addEventListener('mouseenter', function () { clearTimeout(hideTimeout); });
+  dropdown.addEventListener('mouseleave', startHide);
+})();
+</script>
+<!-- Production: swap nb-bar for Webflow nav via Shadow DOM (loads DOMPurify on demand) -->
+<script src="/js/webflow-nav.js" defer></script>
+
+
+  <!-- ==================== ARTICLE HERO ==================== -->
+  <section class="hero hero--split hero--dark hero--article">
+    <div class="hero-inner">
+    <!-- Left: Text + CTA -->
+    <div class="hero-content">
+      <span class="badge badge-sm badge-brand">GUIDE</span>
+      <h1>Building AI note-takers and meeting assistants with speech-to-text and beyond</h1>
+      <p class="hero-subtitle">Learn how to implement speaker diarization, real-time transcription, and LLM summarization for EdTech, Healthcare, and Sales.</p>
+      <div class="hero-meta">
+        <span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <time datetime="2026-02-10">Feb 10, 2026</time>
+        </span>
+        <span>&middot;</span>
+        <span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          18 min read
+        </span>
+      </div>
+      <a href="/demo-request" class="btn btn-primary btn-sm">
+        <span class="btn-text-wrapper">
+          <span class="btn-text">Talk to an expert</span>
+          <span class="btn-text-clone">Talk to an expert</span>
+        </span>
+      </a>
+    </div>
+    <!-- Right: Remotion Animation -->
+    <div class="hero-image">
+      <div class="article-hero-illustration">
+        <!-- Replace with: <video autoplay loop muted playsinline src="ai-note-takers.mp4"></video> once exported from Remotion -->
+        <div class="rp">
+          <div class="rp-header">
+            <div class="rp-rec">
+              <span class="rp-rec-dot"></span>
+              Live Transcription
+            </div>
+            <span class="rp-duration">04:23</span>
+          </div>
+
+          <div class="rp-transcript">
+            <div class="rp-turn" id="rp-turn-0">
+              <span class="rp-avatar rp-avatar--a"><img src="/avatars/speaker-a.jpg" alt="Speaker A"></span>
+              <div class="rp-bubble">
+                <span class="rp-label">Speaker 1 · 00:04</span>
+                <p class="rp-text" id="rp-text-0"></p>
+              </div>
+            </div>
+            <div class="rp-turn" id="rp-turn-1">
+              <span class="rp-avatar rp-avatar--b"><img src="/avatars/speaker-b.jpg" alt="Speaker B"></span>
+              <div class="rp-bubble">
+                <span class="rp-label">Speaker 2 · 00:12</span>
+                <p class="rp-text" id="rp-text-1"></p>
+              </div>
+            </div>
+            <div class="rp-turn" id="rp-turn-2">
+              <span class="rp-avatar rp-avatar--a"><img src="/avatars/speaker-a.jpg" alt="Speaker A"></span>
+              <div class="rp-bubble">
+                <span class="rp-label">Speaker 1 · 00:41</span>
+                <p class="rp-text" id="rp-text-2"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rp-entities">
+            <span class="rp-entities-label">Entities</span>
+            <div class="rp-entity-tags">
+              <span class="rp-entity" id="rp-entity-q4">Q4 Roadmap</span>
+              <span class="rp-entity" id="rp-entity-api">API</span>
+              <span class="rp-entity" id="rp-entity-wer">WER 4.8%</span>
+              <span class="rp-entity" id="rp-entity-diar">Diarization</span>
+              <span class="rp-entity" id="rp-entity-sprint">Sprint</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ==================== ARTICLE LAYOUT ==================== -->
+  <main>
+  <div class="article-layout">
+
+    <!-- Left: Sticky TOC -->
+    <aside class="article-toc">
+      <button class="article-toc-toggle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        On this page
+      </button>
+      <span class="article-toc-label">On this page</span>
+      <nav class="article-toc-nav">
+        <a href="#introduction" class="article-toc-link is-active">Introduction</a>
+        <a href="#core-technologies" class="article-toc-link">Core Technologies</a>
+        <a href="#technical-tutorials" class="article-toc-link">Technical Tutorials</a>
+        <a href="#industry-solutions" class="article-toc-link">Industry Solutions</a>
+        <a href="#best-practices" class="article-toc-link">Best Practices</a>
+        <a href="#faq" class="article-toc-link">FAQ</a>
+        <a href="#conclusion" class="article-toc-link">Conclusion</a>
+      </nav>
+
+      <div class="article-toc-cta">
+        <p class="article-toc-cta-heading">Adding STT to your app?</p>
+        <a href="/demo-request" class="btn btn-primary btn-sm">
+          <span class="btn-text-wrapper">
+            <span class="btn-text">Talk to an expert</span>
+            <span class="btn-text-clone">Talk to an expert</span>
+          </span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Right: Article body -->
+    <article class="article-body">
+      <div class="article-content">
+
+        <!-- ==================== Introduction ==================== -->
+        <section id="introduction">
+          <h2>The high cost of low fidelity</h2>
+          <p>Your meeting assistant is only as good as the data that powers it. If your transcription engine struggles with accents, crosstalk, or code-switching, your LLM will inevitably generate hallucinated summaries and misattributed action items. In a market where 76% of product failures stem from faulty speech-to-text, information fidelity is not just a technical metric&mdash;it's your primary retention strategy.</p>
+          <p>For developers and product leaders, building a competitive note-taker requires more than just a speech-to-text engine. It requires a sophisticated stack of <strong>Audio AI</strong> technologies, including speaker diarization, code-switching, and LLMs, capable of extracting actionable insights and triggering downstream automation in your users' existing tools.</p>
+          <p>This comprehensive guide covers the end-to-end architecture of modern meeting assistants, offering technical tutorials, industry-specific best practices, and real-world case studies to help you build the next generation of audio intelligence.</p>
+          <hr class="article-divider">
+        </section>
+
+        <!-- ==================== Core Technologies ==================== -->
+        <section id="core-technologies">
+          <h2>Core technologies: The anatomy of an AI note-taker</h2>
+          <p>To build a production-grade meeting note-taker, you need to get three layers of audio intelligence right: <strong>accurate transcription</strong>, <strong>speaker recognition</strong>, and <strong>generative summarization</strong>.</p>
+
+          <h3>Multilingual transcription &amp; code-switching</h3>
+          <p>Online conversations today rarely happen in a single language. A project manager might switch between English and French in the same sentence. A recruiter might interview a candidate in Dutch, then recap in English. Traditional Automatic Speech Recognition (ASR) models often break in these conditions, producing partial or incorrect transcripts when languages mix.</p>
+          <p><strong>Solution: Code-switching transcription</strong></p>
+          <p>Code-switching enables the API to detect and transcribe multiple languages within a single audio stream, without requiring manual language configuration. This is a prerequisite for note-takers that operate across regions or in global teams.</p>
+          <p><strong>Best practice:</strong></p>
+          <ul>
+            <li>For mostly single-language meetings with occasional foreign terms (e.g., names, product terms), a single-language <a href="/blog/automatic-speech-recognition-asr-how-speech-to-text-models-work--and-which-one-to-use">ASR mode</a> is often sufficient and can improve stability.</li>
+            <li>For truly multilingual conversations, <a href="javascript:void(0)"  rel="noopener noreferrer" onclick="event.preventDefault();" style="cursor:default;">enable code-switching</a> to preserve meaning and avoid silent failures when speakers switch languages.</li>
+          </ul>
+
+          <h3>Speaker diarization: The "who said what" engine</h3>
+          <p>A transcript without speaker labels is a wall of text. For a note-taker to power downstream workflows&mdash;like assigning tasks, attributing decisions, or tracking objections&mdash;it needs to reliably <a href="/blog/what-is-diarization">distinguish between speakers</a>. This is especially critical in sales calls, interviews, and multi-party meetings.</p>
+          <p>At Zenith, diarization is powered by a proprietary engine built on top of <a href="/blog/zenith-x-pyannoteai-speaker-diarization-and-the-future-of-voice-ai">pyannoteAI</a>, the industry standard for cutting-edge speaker diarization. pyannoteAI consistently ranks among the best in published diarization benchmarks (e.g., across DIHARD, CALLHOME, VoxConverse and other datasets), achieving industry-leading diarization error rates compared with other open-source and commercial systems.</p>
+          <p><strong>The dual-model pipeline</strong></p>
+          <p>Modern diarization goes beyond simple acoustic segmentation. It relies on a multi-stage architecture designed to handle overlapping speech, interruptions, and variable numbers of speakers:</p>
+          <ul>
+            <li><strong>Segmentation (Speech Activity Detection):</strong> The engine scans audio in short, overlapping windows to detect "local" speakers and separate speech from silence. This step is critical for handling interruptions and crosstalk.</li>
+            <li><strong>Embedding extraction:</strong> For each detected speech segment, the model generates a vector representation (a "voice embedding") that captures speaker-specific characteristics such as pitch, tone, and vocal patterns.</li>
+            <li><strong>Clustering:</strong> Embeddings are grouped to identify global speakers across the conversation, allowing the system to infer how many distinct speakers are present without requiring manual configuration.</li>
+          </ul>
+          <p><strong>Mechanical vs. audio-based diarization</strong></p>
+          <p><strong>Mechanical diarization:</strong> Some platforms provide separate audio streams per participant (e.g., meeting tools with per-speaker tracks). This is the most reliable setup, but it's rarely available for uploaded files, call recordings, or VoIP streams. In certain meeting-bot architectures, per-participant audio is passed directly from the meeting platform, so speaker identity is preserved upstream and additional signal-based diarization is not required.</p>
+          <p><strong>Audio-based diarization:</strong> For single-channel audio, diarization relies entirely on the audio signal. Zenith's integration of pyannoteAI's Precision-2 model improves speaker boundary detection and reduces confusion during overlaps, even in mono recordings. This approach is essential whenever speaker-separated tracks are unavailable&mdash;such as with uploaded media, telephony audio, historical recordings, or third-party VoIP streams.</p>
+          <p>Accurate diarization is a prerequisite for reliable LLM outputs. If a quote is attributed to the wrong speaker, action items, summaries, and follow-ups become factually wrong. High-fidelity diarization prevents context collapse, ensuring your summary reflects the reality of the conversation.</p>
+
+          <h3>Generative AI &amp; summarization</h3>
+          <p>Raw transcripts don't scale for human review. A single hour of audio can produce tens of thousands of tokens, making it impractical to extract decisions, next steps, or risks manually. Modern AI meeting note-takers use large language models (LLMs) to structure, summarize, and analyze conversations so teams can act on them.</p>
+          <p><strong>The technical challenges</strong></p>
+          <ul>
+            <li><strong>Context window limits:</strong> Most LLMs have a maximum limit on the amount of text they can process at once. Exceeding this limit leads to "catastrophic forgetting" or the "lost in the middle" phenomenon, where the model ignores content in the middle of a long transcript while focusing only on the beginning and end.</li>
+            <li><strong><a href="/blog/keeping-llms-accurate-your-guide-to-reducing-hallucinations">Hallucinations</a>:</strong> LLMs can generate fluent but incorrect statements. This risk increases when the input transcript contains recognition errors or missing context. High-fidelity speech-to-text is a prerequisite for reliable summarization.</li>
+          </ul>
+          <p><strong>Architecture best practices</strong></p>
+          <p>Production note-takers mitigate these risks with a combination of architectural patterns:</p>
+          <ul>
+            <li><strong>Chunking:</strong> Split full transcripts into smaller, overlapping segments (for example, sliding windows over 3&ndash;5 minute blocks). This keeps each LLM call within token limits while preserving conversational continuity.</li>
+            <li><strong>RAG (Retrieval-Augmented Generation):</strong> Instead of relying solely on the model's training data, <a href="/blog/rag-for-voice-platforms-combining-the-power-of-llms-with-real-time-knowledge">RAG</a> retrieves relevant context from external sources (like a user's previous meeting content or CRM data) to improve accuracy.</li>
+            <li><strong>Prompt engineering:</strong> Advanced techniques like few-shot prompting (providing examples) and chain-of-thought (asking the model to reason step-by-step) significantly reduce hallucinations compared to simple instructions.</li>
+          </ul>
+          <p><strong>Output types</strong></p>
+          <ul>
+            <li><strong>Abstractive summaries:</strong> High-level rephrasing of decisions and outcomes (e.g., "The team agreed to target a Q3 launch.").</li>
+            <li><strong>Extractive summaries:</strong> Key quotes, entities, or decisions pulled directly from the transcript.</li>
+            <li><strong>Action items:</strong> Structured task lists with owners and deadlines inferred from the conversation.</li>
+          </ul>
+
+          <div class="article-callout">
+            <strong>💡 Pro tip:</strong> Use a multi-model approach. Don't route every task through a single LLM. A common production pattern is to use smaller, lower-latency models for extraction and classification, and reserve larger models for reasoning-heavy steps like final summarization. This improves both cost efficiency and end-to-end latency without sacrificing output quality. For a deeper walkthrough of LLM orchestration patterns in voice workflows, see our <a href="/content/the-ultimate-guide-to-using-llms-with-speech-recognition-to-build-voice-apps">Ultimate guide to using LLMs with speech recognition to build voice apps</a>.
+          </div>
+
+          <a href="/blog/what-is-summarization" target="_blank" rel="noopener noreferrer" class="article-preview article-preview--balanced">
+            <div class="article-preview-image">
+              <img src="https://cdn.prod.website-files.com/645a730e85c9b4dfd57de5a1/69fc710d32a182ab16826fb4_Summurization%20-%20banner%20(1).png" alt="What is Summarization" loading="lazy">
+            </div>
+            <div class="article-preview-content">
+              <div class="article-preview-meta">
+                <span class="article-preview-tag">Deep Dive</span>
+                <span>8 min read</span>
+              </div>
+              <h4>What is summarization?</h4>
+              <p>Deep-dive into LLM-powered summarization with actionable tips on leveraging the feature with Zenith's transcription and audio intelligence API to build robust voice-based assistants and apps and enhance UX.</p>
+              <div class="article-preview-cta">
+                Read article
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          <h3>Integrations &amp; ecosystems</h3>
+          <p>A modern AI note-taker isn't an endpoint; it's a bridge between conversations and operational workflows. Once you've transcribed speech, identified speakers, and generated structured meeting summaries, the next step is connecting insights with the systems your business runs on.</p>
+          <p>Whether you're syncing conversation data into a CRM or deploying bots to capture meetings automatically, integrations enable your note-taking to become a real driver of productivity and visibility.</p>
+          <p><strong>CRM sync and enrichment</strong></p>
+          <p><a href="/blog/maximizing-crm-enrichment-with-ai-audio-transcription">Transcripts enriched with speaker labels and timestamps</a> are high-value business assets. When these assets flow into your CRM, they can:</p>
+          <ul>
+            <li>Log activities automatically (meetings, calls, demos)</li>
+            <li>Populate or update contact and opportunity records</li>
+            <li>Capture decisions, next steps, and objections as structured fields</li>
+            <li>Trigger follow-ups, tasks, and workflows based on what was actually said</li>
+          </ul>
+          <p>This creates a richer interaction history without manual data entry, improves pipeline visibility, and ensures that no insights are lost after the meeting ends. Reliable integrations often use middleware patterns, event-driven sync, and smart caching to deliver responsive, scalable data flows while respecting <a href="/blog/integrating-ai-with-legacy-crms">external system limits</a>.</p>
+          <p><strong>Meeting bots: automated capture at scale</strong></p>
+          <p>Manual recording and transcription don't scale across hybrid teams and distributed workflows. Meeting bots&mdash;automated agents that join virtual meetings (Zoom, Google Meet, Teams), record audio, and feed it directly into your transcription pipeline&mdash;handle:</p>
+          <ul>
+            <li>Session entry and authentication</li>
+            <li>Audio capture in real time or post-meeting</li>
+            <li>Metadata tagging (meeting link, participants, timestamps)</li>
+            <li>Seamless handoff into speaker identification and summarization</li>
+          </ul>
+          <p>By abstracting the mechanics of capture, meeting bots ensure your note-taker works consistently across platforms and formats without relying on users to start recordings or export audio files.</p>
+          <p><strong>Workflow automation and triggers</strong></p>
+          <p>Beyond CRM, conversation insights can power a broad set of automated workflows:</p>
+          <ul>
+            <li>Notifications sent to team channels when key decisions are detected</li>
+            <li>Follow-up emails auto-generated based on action items</li>
+            <li>Customer success alerts triggered by risk phrases</li>
+            <li>Analytics pipelines enriched with structured interaction data</li>
+          </ul>
+          <p>Workflow automation tools and webhook frameworks can ingest meeting transcript outputs and map them to business logic without custom code, extending the reach of your note-taking system throughout the organization.</p>
+          <hr class="article-divider">
+        </section>
+
+        <!-- ==================== Technical Tutorials ==================== -->
+        <section id="technical-tutorials">
+          <h2>Step-by-step tutorials: Technical implementation of AI note-takers</h2>
+          <p>Below are high-level overviews of our technical guides. Each tutorial links to a full walkthrough with runnable examples and implementation details.</p>
+
+          <h3>Tutorial A: Building a Google Meet bot</h3>
+          <p>Native APIs for platforms like Google Meet offer limited access to raw audio and metadata. In practice, teams often rely on a headless meeting bot to join calls, automatically capture audio, and stream it into a transcription pipeline in real time.</p>
+          <p><strong>The 3 Main Challenges:</strong></p>
+          <ul>
+            <li><strong>Bot Detection:</strong> Google uses pixel trackers to flag bots. You must use an undetected Chrome driver with Selenium to mimic human behavior.</li>
+            <li><strong>No Sound Card:</strong> Servers (like AWS EC2) don't have physical sound cards. You must use <strong>PulseAudio</strong> to create a virtual sink that captures audio output.</li>
+            <li><strong>Video Capture:</strong> Using X-Screen and XVFB allows you to create a virtual screen for the headless browser to "project" the video onto for recording.</li>
+          </ul>
+          <p><strong>Implementation Steps:</strong></p>
+          <ul>
+            <li><strong>Dockerize:</strong> Build a container with FFMPEG and PulseAudio pre-installed.</li>
+            <li><strong>Authentication:</strong> Script the Google Login flow using Selenium (handle 2FA carefully).</li>
+            <li><strong>Capture:</strong> Use FFMPEG to grab the stream from the virtual PulseAudio sink.</li>
+            <li><strong>Transcribe:</strong> Send the audio stream to Zenith's API for asynchronous processing.</li>
+          </ul>
+
+          <a href="/blog/how-to-build-a-google-meet-bot-for-recording-and-video-transcription" target="_blank" rel="noopener noreferrer" class="article-preview article-preview--balanced">
+            <div class="article-preview-image">
+              <img src="https://cdn.prod.website-files.com/645a730e85c9b4dfd57de5a1/657b21f42250f8328e9649b4_Tech%20tutorials%20%E2%80%94%20google%20meet%20bot.png" alt="How to Build a Google Meet Bot for Recording and Video Transcription" loading="lazy">
+            </div>
+            <div class="article-preview-content">
+              <div class="article-preview-meta">
+                <span class="article-preview-tag">Tutorial</span>
+                <span>12 min read</span>
+              </div>
+              <h4>How to build a Google Meet bot for recording and video transcription</h4>
+              <p>A step-by-step guide to creating a Google Meet bot using Zenith.io that records and transcribes meetings, even in environments without a sound card.</p>
+              <div class="article-preview-cta">
+                Get the code
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          <h3>Tutorial B: Creating a speaker identification system</h3>
+          <p>Standard diarization tells you who spoke when. <strong>Speaker identification</strong> goes one step further: it resolves anonymous labels (e.g., "Speaker 1") to known identities (e.g., "Steve Jobs"). This unlocks workflows like CRM attribution, speaker-level analytics, and personalized follow-ups.</p>
+          <p><strong>The architecture:</strong></p>
+          <ul>
+            <li><strong>Segmentation:</strong> Use pyannote.audio to break the meeting into segments where only one person is speaking.</li>
+            <li><strong>Embedding Extraction:</strong> Use SpeechBrain to create a "voice fingerprint" (embedding) for each segment.</li>
+            <li><strong>Cosine Similarity:</strong> Compare these new embeddings against a database of known speaker embeddings (e.g., a pre-recorded sample of your CEO). If the mathematical "distance" is close enough (e.g., &gt;0.8 similarity), label the speaker.</li>
+          </ul>
+
+          <a href="/blog/build-a-speaker-identification-system-for-online-meetings" target="_blank" rel="noopener noreferrer" class="article-preview article-preview--balanced">
+            <div class="article-preview-image">
+              <img src="https://cdn.prod.website-files.com/645a730e85c9b4dfd57de5a1/667d747bb50f4a146d266b56_Tech%20tutorials%20%E2%80%94%20how%20to%20identify%20speakers.png" alt="How to Build a Speaker Identification System for Recorded Online Meetings" loading="lazy">
+            </div>
+            <div class="article-preview-content">
+              <div class="article-preview-meta">
+                <span class="article-preview-tag">Tutorial</span>
+                <span>10 min read</span>
+              </div>
+              <h4>How to build a speaker identification system for recorded online meetings</h4>
+              <p>Learn how to build an AI speaker identification system for recorded video meetings using speaker embeddings, Pyannote diarization techniques, and practical Python code snippets.</p>
+              <div class="article-preview-cta">
+                Get the code
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+          <hr class="article-divider">
+        </section>
+
+        <!-- ==================== Industry Solutions ==================== -->
+        <section id="industry-solutions">
+          <h2>Industry solutions: Real-world case studies</h2>
+          <p>Generic note-takers don't map cleanly to real workflows. Teams in education, sales, and customer support need domain-specific assistants that reflect how conversations actually happen in their industry. Here's how teams are applying audio intelligence in production.</p>
+
+          <h3>Sales enablement: Powering smarter AI sales workflows</h3>
+          <p><strong>Client:</strong> <a href="https://www.attention.com/">Attention</a>, an AI platform for sales teams.</p>
+          <p><strong>Challenge:</strong> Attention needed an enterprise-grade transcription layer capable of capturing exact keywords, separating speakers cleanly, and scaling for tens of thousands of concurrent users. They found that self-hosting heavyweight open-source models like Whisper introduced too much operational overhead and was difficult to scale.</p>
+          <p><strong>Solution:</strong> Attention utilizes Zenith's API-first speech-to-text layer for its speed, accuracy, and scalability. Zenith provides clean speaker diarization and dynamic language detection, seamlessly handling international calls where users code-switch between languages like English, French, and Spanish.</p>
+          <p><strong>Result:</strong> Zenith's reliable transcription gives Attention immediate credibility in proof-of-concept pilots, directly driving higher win rates, better long-term client retention, and cleaner workflow signals for RevOps and managers.</p>
+
+          <a href="/blog/attention-powering-ai-sales-analytics-workflows-at-scale" target="_blank" rel="noopener noreferrer" class="article-preview article-preview--balanced">
+            <div class="article-preview-image">
+              <img src="https://cdn.prod.website-files.com/645a730e85c9b4dfd57de5a1/68d54d1cb0fa418096f6981b_Attention%20case%20study%20-%20thumbnail.png" alt="How Attention closes more deals and powers smarter AI sales workflows with Zenith" loading="lazy">
+            </div>
+            <div class="article-preview-content">
+              <div class="article-preview-meta">
+                <span class="article-preview-tag">Case Study</span>
+                <span>5 min read</span>
+              </div>
+              <h4>How Attention closes more deals and powers smarter AI sales workflows with Zenith</h4>
+              <p>How Attention leverages Zenith's transcription API to deliver enterprise-grade accuracy, scale to tens of thousands of concurrent users, and drive higher win rates for sales teams.</p>
+              <div class="article-preview-cta">
+                Read full case study
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          <h3>EdTech: The AI study buddy</h3>
+          <p><strong>Client:</strong> <a href="https://www.coconote.app/">Coconote</a>, an AI note-taking app for students.</p>
+          <p><strong>Challenge:</strong> Students need to stay engaged during lectures while capturing accurate notes. In practice, large lecture halls introduce noise, reverb, and variable audio quality, which makes manual note-taking and post-lecture review unreliable.</p>
+          <p><strong>Solution:</strong> Coconote uses Zenith to transcribe lectures and generate structured study artifacts, including <strong>summaries, flashcards, and quizzes</strong>. This allows students to focus on listening in real time, then review and practice with structured outputs after class.</p>
+          <p><strong>Result:</strong> Coconote reached over <strong>400,000+ downloads</strong> in under six months, expanding access to structured study materials for students across different learning environments.</p>
+
+          <a href="/blog/transforming-note-taking-for-students-with-ai-transcription" target="_blank" rel="noopener noreferrer" class="article-preview article-preview--balanced">
+            <div class="article-preview-image">
+              <img src="https://cdn.prod.website-files.com/645a730e85c9b4dfd57de5a1/6728eb4de09c03662b243ca9_blog-thumbnail.png" alt="Transforming Note-Taking for Students with AI Transcription" loading="lazy">
+            </div>
+            <div class="article-preview-content">
+              <div class="article-preview-meta">
+                <span class="article-preview-tag">Case Study</span>
+                <span>6 min read</span>
+              </div>
+              <h4>Transforming note-taking for students with AI transcription</h4>
+              <p>Here's how Coconote is transforming note-taking in lectures with the help of Zenith's advanced multilingual speech-to-text API.</p>
+              <div class="article-preview-cta">
+                Read full case study
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          <h3>Recruitment: Automating the interview</h3>
+          <p><strong>Client:</strong> <a href="https://www.carv.com/">Carv</a>, an AI for recruiters.</p>
+          <p><strong>Challenge:</strong> Recruiters spend hours turning interviews into structured candidate profiles and job descriptions. Interviews often include mixed-language conversations (for example, Dutch and English), which reduces transcription accuracy and makes downstream extraction unreliable.</p>
+          <p><strong>Solution:</strong> Carv uses <strong>multilingual</strong> transcription with <strong>code-switching</strong> to capture interviews accurately, even when speakers shift languages mid-sentence. LLMs then extract candidate skills and key attributes to auto-fill profiles and draft role descriptions.</p>
+          <p><strong>Result:</strong> Recruiters moved from manual data entry to higher-value work, focusing on candidate evaluation and relationship-building rather than documentation.</p>
+
+          <a href="/blog/multilingual-audio-to-text-api-for-recruiters" target="_blank" rel="noopener noreferrer" class="article-preview article-preview--balanced">
+            <div class="article-preview-image">
+              <img src="https://cdn.prod.website-files.com/645a730e85c9b4dfd57de5a1/6780183ec10c3c3a19321860_carv%20-%20thumbnail.webp" alt="How Zenith's Multilingual Audio-to-Text API Supercharges Carv's AI for Recruiters" loading="lazy">
+            </div>
+            <div class="article-preview-content">
+              <div class="article-preview-meta">
+                <span class="article-preview-tag">Case Study</span>
+                <span>5 min read</span>
+              </div>
+              <h4>How Zenith's multilingual audio-to-text API supercharges Carv's AI for recruiters</h4>
+              <p>A real-life use case of audio-to-text API supporting 99 languages for a video recording and note-taking platform tailored to recruiters.</p>
+              <div class="article-preview-cta">
+                Read full case study
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          <h3>Healthcare: HIPAA-compliant dictation</h3>
+          <p><strong>Client:</strong> A fast-growing healthcare generative AI startup.</p>
+          <p><strong>Challenge:</strong> Doctors spend 60% of their time on documentation rather than patient care. Medical dictation systems need to handle domain-specific terminology (for example, drug names and clinical entities) while meeting strict data protection and compliance requirements, including HIPAA and GDPR.</p>
+          <p><strong>Solution:</strong> High-accuracy transcription (90&ndash;96% WAR in English) with near real-time batch processing. Custom vocabulary improves recognition of medical terms. The setup meets HIPAA and GDPR requirements, with fast onboarding and dedicated engineering support.</p>
+          <p><strong>Result:</strong> Transcription speed improved by <strong>120%</strong>, allowing doctors to generate notes immediately after consultations and reduce time on post-visit documentation.</p>
+
+          <a href="/blog/ai-healthcare-assistant-enhances-medical-transcription-with-zenith" target="_blank" rel="noopener noreferrer" class="article-preview article-preview--balanced">
+            <div class="article-preview-image">
+              <img src="https://cdn.prod.website-files.com/645a730e85c9b4dfd57de5a1/67c198a84f40ee7a8f408b24_blog-thumbnail.png" alt="AI-Powered Healthcare Assistant Enhances Medical Transcription by 120% with Zenith" loading="lazy">
+            </div>
+            <div class="article-preview-content">
+              <div class="article-preview-meta">
+                <span class="article-preview-tag">Case Study</span>
+                <span>6 min read</span>
+              </div>
+              <h4>AI-powered healthcare assistant enhances medical transcription by 120% with Zenith</h4>
+              <p>Here's how a startup building an AI assistant for physicians leverages plug-and-play speech-to-text to drive product performance across the pipeline.</p>
+              <div class="article-preview-cta">
+                Read full case study
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          <h3>Virtual meetings: Video intelligence</h3>
+          <p><strong>Client:</strong> Claap, an all-in-one video workspace.</p>
+          <p><strong>Challenge:</strong> Remote teams need a way to make video searchable and actionable. Long recordings are hard to scan, which limits reuse of meeting knowledge and slows collaboration.</p>
+          <p><strong>Solution:</strong> Claap implemented <strong>speaker detection</strong> and <strong>synced playback</strong>, enabling users to click any sentence in the meeting transcript and jump to the corresponding moment in the video.</p>
+          <p><strong>Result:</strong> Transcribing 1 hour of video files in under 60 seconds allowed for instant collaboration without waiting for manual post-processing.</p>
+
+          <a href="/blog/powering-virtual-meetings-with-speech-ai-claaps-success-story-with-zeniths-speech-to-text" target="_blank" rel="noopener noreferrer" class="article-preview article-preview--balanced">
+            <div class="article-preview-image">
+              <img src="https://cdn.prod.website-files.com/645a730e85c9b4dfd57de5a1/67801877ecd14d96925a332f_claap%20-%20thumbnail.webp" alt="Powering Virtual Meetings with Speech to Text AI: Claap's Success Story with Zenith" loading="lazy">
+            </div>
+            <div class="article-preview-content">
+              <div class="article-preview-meta">
+                <span class="article-preview-tag">Case Study</span>
+                <span>5 min read</span>
+              </div>
+              <h4>Powering virtual meetings with speech-to-text AI: Claap's success story with Zenith</h4>
+              <p>A case study showcasing the benefits of Zenith's AI transcription API for Claap, an all-in-one SaaS video workspace that implemented our solution to provide its international users with advanced video transcription capabilities.</p>
+              <div class="article-preview-cta">
+                Read full case study
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+          <hr class="article-divider">
+        </section>
+
+        <!-- ==================== Best Practices ==================== -->
+        <section id="best-practices">
+          <h2>Best practices for optimization</h2>
+          <p>To move from a prototype to a production-grade product, follow these optimization strategies.</p>
+
+          <h3>Real-time vs. asynchronous: What to choose?</h3>
+          <ul>
+            <li><strong>Real-Time (WebSocket):</strong> Use this for in-call experiences such as agent assist, live coaching, or real-time note suggestions. Latency is the primary constraint here and should stay below ~300 ms to remain useful in conversational flows.</li>
+            <li><strong>Asynchronous (Batch):</strong> Use this for post-call workflows such as meeting minutes, summaries, and CRM enrichment. Batch processing is typically more cost-efficient and can yield higher accuracy, as models can analyze the full audio context and perform more robust speaker separation.</li>
+          </ul>
+
+          <h3>Prompt engineering for summaries</h3>
+          <p>The quality of generated summaries depends heavily on prompt design and evaluation.</p>
+          <ul>
+            <li><strong>Identify the goal:</strong> be explicit about what the summary should optimize for (for example, meeting minutes, decisions and action items, or sales objections).</li>
+            <li><strong>Iterate and evaluate:</strong> prompts rarely work well on the first pass. Test variations against real conversations and evaluate outputs on edge cases (interruptions, topic shifts, mixed speakers).</li>
+            <li><strong>Customize:</strong> different users want different outputs. A concise executive summary, a bulleted task list, and a verbatim recap require different prompt structures and constraints.</li>
+          </ul>
+
+          <a href="/blog/best-prompts-for-summarizing-online-meetings-with-large-language-models" target="_blank" rel="noopener noreferrer" class="article-preview article-preview--balanced">
+            <div class="article-preview-image">
+              <img src="https://cdn.prod.website-files.com/645a730e85c9b4dfd57de5a1/658427a59186928d00155941_Tech%20tutorials%20%E2%80%94%20Summarizing%20online%20meetings%20v3.webp" alt="Best Prompts for Summarizing Online Meetings with Large Language Models" loading="lazy">
+            </div>
+            <div class="article-preview-content">
+              <div class="article-preview-meta">
+                <span class="article-preview-tag">Guide</span>
+                <span>9 min read</span>
+              </div>
+              <h4>Best prompts for summarizing online meetings with large language models</h4>
+              <p>Best prompts for summarizing online meetings with large language models, including ChatGPT, GPT-3, GPT-3.5, GPT-4, Bard, and LLaMA.</p>
+              <div class="article-preview-cta">
+                Read guide
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+          <hr class="article-divider">
+        </section>
+
+        <!-- ==================== FAQ ==================== -->
+        <section id="faq">
+          <h2>Frequently Asked Questions (FAQ)</h2>
+
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question">
+                What is the difference between speaker diarization and speaker identification?
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner"><strong>Speaker Diarization</strong> answers the question "Who spoke when?" by labeling speakers as <em>Speaker A, Speaker B, etc.</em> It does not know their real names. <strong>Speaker Identification</strong> goes a step further by matching the voice to a specific identity (e.g., <em>Morgan Freeman</em>) based on a pre-recorded voice sample.</div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                How does AI summarization handle long meetings?
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Standard LLMs have a token limit (context window). To handle hour-long meetings, we use <strong>chunking</strong>, which breaks the transcript into overlapping segments. This ensures the model doesn't "forget" the beginning of the meeting when processing the end, preventing catastrophic forgetting.</div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                Is AI transcription HIPAA compliant?
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">It depends on the provider. Zenith offers <strong>HIPAA and GDPR compliance</strong>, along with <strong>SOC Type 2</strong> certification.</div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                Can the AI handle multiple languages in one meeting?
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Yes. This is called <strong>Code-Switching</strong>. Zenith's Solaria model is designed to detect and transcribe multiple languages within a single audio stream automatically. This is essential for international recruitment, global all-hands meetings, bilingual customer support, and more.</div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                Why are my timestamps not aligning with the audio?
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">This is often a result of poor <strong>word-level timestamp accuracy</strong>. If the ASR model drifts even by a few seconds, the speaker labels will be misaligned. Ensure you are using an API that provides high-fidelity timestamping to ensure the text syncs perfectly with the "mechanical diarization" from platforms like Zoom.</div>
+              </div>
+            </div>
+          </div>
+          <hr class="article-divider">
+        </section>
+
+        <!-- ==================== Conclusion ==================== -->
+        <section id="conclusion">
+          <h2>Conclusion: From audio to knowledge</h2>
+          <p>Moving from raw recordings to intelligent note-taking changes how teams capture and use conversation or meeting data. Whether you're building for students, clinicians, recruiters, or sales teams, the underlying stack stays the same: <strong>reliable speech-to-text, accurate speaker diarization, and structured summarization.</strong></p>
+          <p>When these layers work together, conversations become searchable, actionable data. Teams don't just save time&mdash;they gain visibility into decisions, risks, and next steps across every interaction.</p>
+
+          <p><strong>Ready to build?</strong></p>
+          <div class="article-cta">
+            <a href="/app/signup" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              <span class="btn-text-wrapper">
+                <span class="btn-text">Get Your Free API Key</span>
+                <span class="btn-text-clone">Get Your Free API Key</span>
+              </span>
+            </a>
+            <a data-noclick="1" aria-disabled="true" style="cursor:default;pointer-events:none" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              <span class="btn-text-wrapper">
+                <span class="btn-text">View the Documentation</span>
+                <span class="btn-text-clone">View the Documentation</span>
+              </span>
+            </a>
+            <a href="/demo-request" class="btn btn-primary btn-sm">
+              <span class="btn-text-wrapper">
+                <span class="btn-text">Book a Demo</span>
+                <span class="btn-text-clone">Book a Demo</span>
+              </span>
+            </a>
+          </div>
+        </section>
+
+      </div>
+    </article>
+  </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <svg viewBox="0 0 322 82" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:24px;width:auto;">
+          <path d="M125.497 14.5989C128.431 14.5989 131.174 15.0301 133.728 15.8928C136.299 16.7383 138.594 17.9461 140.613 19.5168C142.632 21.0867 144.289 22.9511 145.583 25.1077C146.894 27.2642 147.748 29.6455 148.146 32.2512H138.362C137.965 30.8536 137.378 29.5935 136.602 28.4719C135.825 27.3506 134.884 26.4014 133.78 25.6252C132.676 24.8317 131.433 24.2364 130.053 23.8391C128.69 23.4246 127.214 23.218 125.626 23.218C122.762 23.2181 120.2 23.9343 117.94 25.3665C115.679 26.7987 113.892 28.904 112.581 31.6819C111.287 34.4426 110.64 37.8078 110.64 41.7766C110.64 45.7798 111.27 49.1706 112.529 51.9485C113.807 54.7264 115.567 56.8416 117.81 58.2903C120.053 59.7225 122.65 60.4387 125.601 60.4387C128.361 60.4387 130.752 59.8958 132.771 58.8088C134.79 57.721 136.343 56.211 137.43 54.2786C138.462 52.4728 139.012 50.4109 139.079 48.092H126.559V40.5862H148.533V68.3333H141.649L140.949 62.1213H140.665C138.801 64.3472 136.653 66.0645 134.22 67.2717C131.787 68.4625 128.896 69.0588 125.549 69.0588C120.683 69.0588 116.403 67.9629 112.71 65.7717C109.035 63.5624 106.163 60.4304 104.092 56.3752C102.021 52.3026 100.986 47.4707 100.986 41.8801C100.986 37.6006 101.607 33.7781 102.849 30.4133C104.092 27.0489 105.825 24.1928 108.051 21.8459C110.278 19.4826 112.875 17.6876 115.843 16.4622C118.81 15.2203 122.029 14.5989 125.497 14.5989ZM191.687 28.0588C194.016 28.0588 195.931 28.4548 197.433 29.2483C198.934 30.0255 200.126 30.9663 201.006 32.0706C201.885 33.1573 202.567 34.1841 203.05 35.1506H203.439V28.5764H212.834V68.3333H203.619V62.0696H203.05C202.567 63.0362 201.868 64.0628 200.953 65.1497C200.039 66.2192 198.831 67.1339 197.329 67.8928C195.829 68.6527 193.939 69.0325 191.661 69.0325C188.538 69.0325 185.743 68.2305 183.275 66.6252C180.807 65.0208 178.857 62.691 177.425 59.637C175.993 56.5821 175.277 52.872 175.277 48.5071C175.277 44.0891 176.001 40.3612 177.45 37.3245C178.917 34.2704 180.894 31.9659 183.378 30.4133C185.863 28.8426 188.633 28.0588 191.687 28.0588ZM258.017 68.3333H248.802V62.0696H248.233C247.749 63.0361 247.05 64.0629 246.136 65.1497C245.222 66.2193 244.013 67.1339 242.512 67.8928C241.01 68.6527 239.122 69.0325 236.844 69.0325C233.72 69.0324 230.924 68.2306 228.457 66.6252C225.99 65.0208 224.039 62.691 222.608 59.637C221.175 56.5821 220.459 52.872 220.459 48.5071C220.459 44.0892 221.183 40.3612 222.633 37.3245C224.1 34.2705 226.075 31.9659 228.561 30.4133C231.045 28.8426 233.815 28.0589 236.869 28.0588C239.199 28.0588 241.115 28.4547 242.616 29.2483C244.117 30.0254 245.308 30.9664 246.188 32.0706C247.068 33.1573 247.749 34.1841 248.233 35.1506H248.621V15.3235H258.017V68.3333ZM300.328 28.0588C302.658 28.0588 304.573 28.4549 306.074 29.2483C307.575 30.0255 308.767 30.9663 309.647 32.0706C310.527 33.1573 311.208 34.1841 311.692 35.1506H312.08V28.5764H321.476V68.3333H312.261V62.0696H311.692C311.208 63.0361 310.509 64.0629 309.595 65.1497C308.681 66.2193 307.472 67.1339 305.971 67.8928C304.469 68.6527 302.581 69.0325 300.303 69.0325C297.179 69.0325 294.383 68.2306 291.916 66.6252C289.449 65.0208 287.498 62.691 286.067 59.637C284.634 56.5821 283.918 52.872 283.918 48.5071C283.918 44.0891 284.642 40.3612 286.092 37.3245C287.559 34.2704 289.534 31.9659 292.02 30.4133C294.504 28.8426 297.274 28.0589 300.328 28.0588ZM166.079 56.9446C166.079 58.4287 166.303 59.4904 166.752 60.1282C167.2 60.7668 167.994 61.069 169.133 61.0344C169.754 61.0171 170.22 60.9828 170.53 60.9309C170.858 60.8617 171.153 60.7931 171.411 60.7239L172.964 67.8157C172.412 67.9878 171.722 68.1521 170.894 68.3079C170.083 68.4628 169.081 68.5574 167.891 68.592C164.094 68.6958 161.282 67.9021 159.452 66.2112C157.624 64.5202 156.709 61.9402 156.709 58.4719V15.3235H166.079V56.9446ZM276.643 68.3333H267.273V28.5764H276.643V68.3333ZM194.276 35.7454C192.188 35.7454 190.445 36.2893 189.047 37.3762C187.649 38.4632 186.596 39.965 185.889 41.8801C185.181 43.7952 184.828 45.9873 184.828 48.4543C184.828 50.9389 185.181 53.157 185.889 55.1067C186.613 57.0391 187.675 58.5662 189.072 59.6887C190.487 60.793 192.222 61.345 194.276 61.345C196.26 61.3449 197.95 60.8099 199.348 59.7395C200.745 58.6525 201.807 57.1427 202.532 55.2102C203.257 53.2778 203.619 51.0254 203.619 48.4543C203.619 45.8835 203.257 43.6489 202.532 41.7512C201.824 39.8534 200.772 38.3768 199.374 37.3245C197.994 36.2724 196.294 35.7454 194.276 35.7454ZM239.458 35.7454C237.37 35.7454 235.626 36.2893 234.229 37.3762C232.831 38.4632 231.779 39.9651 231.071 41.8801C230.364 43.7952 230.011 45.9872 230.011 48.4543C230.011 50.9389 230.364 53.1569 231.071 55.1067C231.797 57.0391 232.858 58.5662 234.256 59.6887C235.671 60.7928 237.405 61.345 239.458 61.345C241.443 61.3449 243.134 60.81 244.531 59.7395C245.929 58.6526 246.99 57.1425 247.714 55.2102C248.439 53.2778 248.802 51.0254 248.802 48.4543C248.802 45.8835 248.439 43.6489 247.714 41.7512C247.007 39.8534 245.955 38.3768 244.557 37.3245C243.177 36.2722 241.477 35.7454 239.458 35.7454ZM302.917 35.7454C300.829 35.7454 299.085 36.2893 297.688 37.3762C296.29 38.4632 295.238 39.9651 294.53 41.8801C293.823 43.7952 293.47 45.9872 293.47 48.4543C293.47 50.9389 293.823 53.1569 294.53 55.1067C295.256 57.039 296.317 58.5663 297.714 59.6887C299.129 60.793 300.864 61.345 302.917 61.345C304.901 61.3449 306.593 60.81 307.99 59.7395C309.388 58.6526 310.449 57.1425 311.173 55.2102C311.898 53.2778 312.261 51.0254 312.261 48.4543C312.261 45.8835 311.898 43.6489 311.173 41.7512C310.466 39.8534 309.414 38.3768 308.016 37.3245C306.636 36.2722 304.936 35.7454 302.917 35.7454ZM271.983 12.761C273.484 12.761 274.762 13.2616 275.815 14.2629C276.884 15.2459 277.418 16.4449 277.418 17.8596C277.418 19.258 276.884 20.457 275.815 21.4573C274.762 22.4413 273.484 22.9338 271.983 22.9338C270.499 22.9338 269.222 22.4412 268.153 21.4573C267.083 20.4569 266.548 19.2581 266.548 17.8596C266.548 16.4448 267.083 15.246 268.153 14.2629C269.222 13.2617 270.499 12.7611 271.983 12.761Z" fill="white"/>
+          <path d="M42.8783 53.1389C48.1056 53.139 53.1197 55.2166 56.8177 58.9143L71.1429 75.5637H62.7972C60.6349 75.5636 58.5758 74.6324 57.1468 73.0061L45.2816 59.4934V82.0002H37.3314V59.9797L25.8949 73.0032C24.4689 74.6263 22.41 75.5598 20.2445 75.5598H11.8929L26.2279 58.9104C29.9259 55.2129 34.9401 53.135 40.1673 53.135H42.8783V53.1389ZM23.6126 25.7092C27.3105 29.407 29.388 34.4208 29.388 39.6477V42.3586C29.388 47.5855 27.3105 52.5994 23.6126 56.2971L6.96127 70.6213V62.2766L6.95834 62.2737C6.95834 60.1115 7.89247 58.0523 9.51889 56.6233L23.0326 44.759H0.52475V36.8088H22.5472L9.52182 25.3733C7.89561 23.9475 6.96136 21.889 6.96127 19.7239V11.3723L23.6126 25.7092ZM76.0843 19.717C76.0843 21.8793 75.1532 23.9385 73.5267 25.3674L60.013 37.2317H82.5247V45.1819H60.5023L73.5267 56.6165C75.1501 58.0423 76.0843 60.1015 76.0843 62.2668V70.6184L59.4339 56.2844C55.7359 52.5866 53.6576 47.573 53.6576 42.3459V39.635C53.6576 34.408 55.7359 29.3943 59.4339 25.6965L76.0843 11.3723V19.717ZM45.7083 22.0139L57.1439 8.99048C58.5698 7.36731 60.6288 6.43385 62.7943 6.43384H71.1458L56.8119 23.0833C53.1138 26.781 48.0989 28.8586 42.8714 28.8586H40.1605L40.1576 28.8616C34.9303 28.8615 29.9161 26.7839 26.2181 23.0862L11.8929 6.43677H20.2386C22.401 6.43682 24.46 7.37096 25.889 8.99731L37.7572 22.5061V0.000244141H45.7083V22.0139Z" fill="white"/>
+        </svg>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <span class="footer-column-title">Product</span>
+          <a href="#">Real-time STT</a>
+          <a href="#">Batch STT</a>
+          <a href="/solaria-3">Solaria-3</a>
+          <a href="#">Pricing</a>
+        </div>
+        <div class="footer-column">
+          <span class="footer-column-title">Solutions</span>
+          <a href="#">Voice Agents</a>
+          <a href="#">Customer Experience</a>
+          <a href="#">Sales Intelligence</a>
+          <a href="#">Meeting Assistants</a>
+          <a href="#">Media</a>
+        </div>
+        <div class="footer-column">
+          <span class="footer-column-title">Developers</span>
+          <a data-noclick="1" aria-disabled="true" style="cursor:default;pointer-events:none">Documentation</a>
+          <a href="#">Playground</a>
+          <a href="#">Status</a>
+          <a href="#">Discord</a>
+        </div>
+        <div class="footer-column">
+          <span class="footer-column-title">Company</span>
+          <a href="#">About us</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+          <a href="#">Partners</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-bottom-text">&copy; 2025 Zenith. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="/js/webflow-footer.js" defer></script>
+<!-- UTM capture + HubSpot hidden field prefill -->
+<script src="/js/utms.js"></script>
+
+<!-- HubSpot — deferred until Axeptio consent -->
+<script>
+  void 0 === window._axcb && (window._axcb = []);
+  window._axcb.push(function(axeptio) {
+    axeptio.on("cookies:complete", function(choices) {
+      if (choices.hubspot) {
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.id = "hs-script-loader";
+        s.async = true;
+        s.defer = true;
+        s.src = "//js-eu1.hs-scripts.com/25856368.js";
+        document.body.appendChild(s);
+      }
+    });
+  });
+</script>
+
+
+
+  <!-- Detect Prototyper Mode -->
+
+  <!-- Adaptive Navbar - Transparent on dark hero, white on scroll -->
+
+  <!-- Scroll Spy for TOC -->
+
+
+  <script src="/js/article-page.js"></script>
+
+<script data-docs-interceptor="true">
+document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var text = (a.textContent || '').trim();
+    if (
+      text.indexOf('Documentation') !== -1 ||
+      text.indexOf('Integration') !== -1 ||
+      text.indexOf('Browse integrations') !== -1 ||
+      text.indexOf('View docs') !== -1 ||
+      text.indexOf('View API docs') !== -1 ||
+      text.indexOf('Get started with SDK') !== -1 ||
+      href.indexOf('/docs') !== -1 ||
+      href.indexOf('docs.zenith.io') !== -1 ||
+      href.indexOf('docs.gladia.io') !== -1
+    ) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }
+  }, true);
+});
+</script>
+</body>
+</html>

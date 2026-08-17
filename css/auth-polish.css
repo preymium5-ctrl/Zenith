@@ -1,0 +1,256 @@
+/* ==========================================================================
+   Zenith — auth pages (sign up / sign in) visual polish
+   Loaded after tailwind so it can refine the compiled utility styles.
+   Purely additive CSS: no DOM assumptions beyond the existing structure.
+   ========================================================================== */
+
+:root {
+  --z-brand: #6446db;
+  --z-brand-light: #9783e7;
+  --z-brand-deep: #4724b8;
+  --z-ring: rgb(100 70 219 / 18%);
+}
+
+/* --------------------------------------------------------------- canvas -- */
+
+main {
+  position: relative;
+  isolation: isolate;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-primary) transparent;
+}
+
+/* soft brand aura behind the form */
+main::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: -8rem;
+  width: min(44rem, 165%);
+  aspect-ratio: 1 / 0.78;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background: radial-gradient(
+    closest-side,
+    rgb(100 70 219 / 24%),
+    rgb(100 70 219 / 7%) 52%,
+    transparent 76%
+  );
+}
+
+/* ------------------------------------------------------------ brand mark -- */
+
+main form > div:first-child > a {
+  display: inline-flex;
+  width: fit-content;
+  border-radius: 0.375rem;
+}
+
+main form svg[aria-label="Zenith"] {
+  filter: drop-shadow(0 0 20px rgb(100 70 219 / 45%));
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+main form > div:first-child > a:hover svg[aria-label="Zenith"] {
+  filter: drop-shadow(0 0 26px rgb(100 70 219 / 68%));
+  transform: translateY(-1px);
+}
+
+main form > div:first-child > a:focus-visible {
+  outline: 2px solid var(--z-brand-light);
+  outline-offset: 4px;
+}
+
+/* ------------------------------------------------------------- headings -- */
+
+main form h1 {
+  letter-spacing: -0.028em;
+  text-wrap: balance;
+}
+
+.auth-subtitle {
+  margin-top: 0.125rem;
+  max-width: 32ch;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--color-text-tertiary);
+}
+
+/* --------------------------------------------------------------- fields -- */
+
+main form div[role="presentation"] {
+  border-radius: 0.625rem;
+  padding-block: 0.625rem;
+  transition: box-shadow 0.18s ease, background-color 0.18s ease,
+    --tw-inset-ring-color 0.18s ease;
+}
+
+main form div[role="presentation"]:has(input:hover) {
+  background-color: var(--color-bg-primary_hover);
+}
+
+main form div[role="presentation"]:has(input:focus),
+main form div[role="presentation"]:has(input:focus-visible) {
+  --tw-inset-ring-color: var(--z-brand-light);
+  box-shadow: 0 0 0 4px var(--z-ring);
+}
+
+main form input::placeholder {
+  opacity: 0.9;
+}
+
+main form label {
+  letter-spacing: -0.006em;
+}
+
+/* ------------------------------------------------------------ checkboxes -- */
+
+main form label[data-rac] > div {
+  border-radius: 0.25rem;
+  transition: background-color 0.15s ease, border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+main form label[data-rac]:has(input:checked) > div,
+main form label[data-rac][data-selected] > div {
+  background-color: var(--z-brand);
+  border-color: var(--z-brand);
+}
+
+main form label[data-rac]:has(input:focus-visible) > div {
+  box-shadow: 0 0 0 4px var(--z-ring);
+}
+
+/* --------------------------------------------------------------- buttons -- */
+
+main form button[value="signup"],
+main form button[value="signin"] {
+  border-radius: 0.625rem;
+  background-image: linear-gradient(180deg, var(--z-brand-light), var(--z-brand));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 16%),
+    0 10px 24px -10px rgb(100 70 219 / 75%);
+  transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+main form button[value="signup"]:hover,
+main form button[value="signin"]:hover {
+  filter: brightness(1.07);
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%),
+    0 14px 28px -10px rgb(100 70 219 / 85%);
+}
+
+main form button[value="signup"]:active,
+main form button[value="signin"]:active {
+  transform: translateY(0);
+  filter: brightness(0.98);
+}
+
+main form button[value="google"] {
+  border-radius: 0.625rem;
+  transition: background-color 0.18s ease, transform 0.15s ease;
+}
+
+main form button[value="google"]:hover {
+  background-color: var(--color-bg-primary_hover);
+  transform: translateY(-1px);
+}
+
+main form button:focus-visible {
+  outline: 2px solid var(--z-brand-light);
+  outline-offset: 2px;
+}
+
+/* "or" divider above the social button */
+main form .auth-social {
+  position: relative;
+  margin-top: 1.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--color-border-secondary);
+}
+
+main form .auth-social::before {
+  content: "or";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 0.75rem;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-quaternary);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ----------------------------------------------------------- footer link -- */
+
+main form > p:last-child a {
+  color: var(--z-brand-light);
+  text-decoration-color: rgb(151 131 231 / 45%);
+  transition: color 0.15s ease;
+}
+
+main form > p:last-child a:hover {
+  color: #b0a1ed;
+}
+
+/* --------------------------------------------------------- right visual -- */
+
+main + div {
+  position: relative;
+  background-color: #0b0812;
+  overflow: hidden;
+}
+
+/* brand-tinted vignette so the panel reads as Zenith, not stock art */
+main + div::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(70% 55% at 50% 108%, rgb(100 70 219 / 42%), transparent 70%),
+    linear-gradient(180deg, rgb(11 8 18 / 62%) 0%, rgb(11 8 18 / 0%) 38%),
+    linear-gradient(90deg, rgb(11 8 18 / 55%) 0%, rgb(11 8 18 / 0%) 30%);
+  pointer-events: none;
+}
+
+/* hairline between form and visual */
+main + div::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgb(255 255 255 / 10%) 22%,
+    rgb(255 255 255 / 10%) 78%,
+    transparent
+  );
+}
+
+/* ------------------------------------------------------------ responsive -- */
+
+@media (max-width: 1023px) {
+  main::before {
+    top: -6rem;
+    width: min(30rem, 190%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main *,
+  main::before {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+
+  main form > div:first-child > a:hover svg[aria-label="Zenith"],
+  main form button:hover {
+    transform: none;
+  }
+}

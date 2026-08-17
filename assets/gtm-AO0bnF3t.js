@@ -1,0 +1,1 @@
+import{l as e}from"./Alert-t37xpnr8.js";function r({event:t,params:n}){if(!(typeof window>"u")){if(!a(window)){e.warn({GtagEvent:t},"Gtag is not defined. Event not tracked:");return}window.gtag("event",t,n),e.debug({GtagParams:n},`GTM Event tracked: ${t}`)}}function a(t){return typeof t<"u"&&"gtag"in t&&typeof t.gtag=="function"}export{r as t};

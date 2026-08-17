@@ -1,0 +1,40 @@
+<svg width="800" height="420" viewBox="0 0 800 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="420" rx="16" fill="#0A0A0E"/>
+  <rect width="800" height="420" rx="16" fill="radial-gradient(circle at 100% 0%, #3b82f6 0%, transparent 60%)" fill-opacity="0.4"/>
+  <rect x="0.5" y="0.5" width="799" height="419" rx="15.5" stroke="rgba(255,255,255,0.1)"/>
+  
+  <!-- Subtle Grid lines -->
+  <path d="M0 70H800M0 140H800M0 210H800M0 280H800M0 350H800" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <path d="M160 0V420M320 0V420M480 0V420M640 0V420" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+
+  <!-- Glowing background orb -->
+  <circle cx="680" cy="120" r="180" fill="#60a5fa" fill-opacity="0.15" filter="blur(60px)"/>
+  
+  <!-- Zenith Watermark Logo Mark -->
+  <g transform="translate(560, 100) scale(2.2)" opacity="0.12">
+    <path d="M14 10H66C69.3137 10 72 12.6863 72 16C72 17.75 71.25 19.38 69.95 20.55L36.2 51H66C69.3137 51 72 53.6863 72 57V66C72 69.3137 69.3137 72 66 72H16C12.6863 72 10 69.3137 10 66C10 64.25 10.75 62.62 12.05 61.45L45.8 31H16C12.6863 31 10 28.3137 10 25V16C10 12.6863 12.6863 10 16 10H14Z" fill="#60a5fa"/>
+  </g>
+
+  <!-- Tag badge -->
+  <rect x="48" y="44" width="140" height="28" rx="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)"/>
+  <circle cx="62" cy="58" r="4" fill="#60a5fa"/>
+  <text x="74" y="63" fill="#E2E8F0" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="600" letter-spacing="1">SDK UPDATE</text>
+
+  <!-- Zenith Logo in header -->
+  <g transform="translate(48, 120)">
+    <g transform="scale(0.55)">
+      <path d="M14 10H66C69.3137 10 72 12.6863 72 16C72 17.75 71.25 19.38 69.95 20.55L36.2 51H66C69.3137 51 72 53.6863 72 57V66C72 69.3137 69.3137 72 66 72H16C12.6863 72 10 69.3137 10 66C10 64.25 10.75 62.62 12.05 61.45L45.8 31H16C12.6863 31 10 28.3137 10 25V16C10 12.6863 12.6863 10 16 10H14Z" fill="#FFFFFF"/>
+      <text x="94" y="56" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="44" font-weight="700">Zenith</text>
+    </g>
+  </g>
+
+  <!-- Main Headline Title -->
+  <text x="48" y="220" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="30" font-weight="700" letter-spacing="-0.5">Zenith SDK 1.0.7 Release</text>
+  
+  <!-- Subtitle -->
+  <text x="48" y="260" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="16" font-weight="400">Python & JavaScript SDKs with Safe Reconnection</text>
+
+  <!-- Bottom status pill -->
+  <rect x="48" y="340" width="220" height="34" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+  <text x="64" y="362" fill="#60a5fa" font-family="'Inter', sans-serif" font-size="13" font-weight="600">⚡ Zenith AI Platform</text>
+</svg>

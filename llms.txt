@@ -1,0 +1,20 @@
+# Gladia
+
+> Technical guides, product pages, and developer resources for v2.gladia.io — Gladia's speech-to-text and audio AI platform.
+
+- **Website**: https://v2.gladia.io
+- **Main site**: https://gladia.io
+- **Docs**: https://docs.gladia.io
+
+## Products & Features
+- [Real-Time Transcription](https://v2.gladia.io/product/real-time): Real-time speech-to-text API with ultra-low latency for live applications
+- [Async Transcription](https://v2.gladia.io/product/async-transcription): Batch audio transcription with speaker diarization and enrichment
+
+## Technical Guides & Content
+- [How to Build AI Note-Takers and Meeting Assistants](https://v2.gladia.io/content/ai-note-takers-guide): Complete guide to implementing speaker diarization, real-time transcription, and LLM summarization for EdTech, Healthcare, and Sales
+
+## Performance & Benchmarks
+- [ASR Benchmarks](https://v2.gladia.io/competitors/benchmarks): Speech-to-text accuracy and performance comparisons across providers
+
+## Complete Context
+- [Full documentation](https://gladia.io/llms.txt): Complete knowledge base for high-context LLMs.

@@ -1,0 +1,1 @@
+import{j as e}from"./jsx-runtime-D_zvdyIk.js";import{A as o}from"./Alert-t37xpnr8.js";function m({errors:r,className:i,...t}){return r?e.jsx(o,{variant:"error",iconName:"AlertCircle",...t,children:r}):null}export{m as F};

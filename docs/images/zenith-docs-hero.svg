@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="100%" height="auto">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0e17"/>
+      <stop offset="50%" stop-color="#121524"/>
+      <stop offset="100%" stop-color="#181432"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="zGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="340" rx="16" fill="url(#bgGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+  <circle cx="1000" cy="170" r="180" fill="url(#glowGrad)" filter="blur(40px)"/>
+  
+  <!-- Subtle grid lines -->
+  <g stroke="rgba(255,255,255,0.03)" stroke-width="1">
+    <line x1="0" y1="85" x2="1200" y2="85"/>
+    <line x1="0" y1="170" x2="1200" y2="170"/>
+    <line x1="0" y1="255" x2="1200" y2="255"/>
+    <line x1="300" y1="0" x2="300" y2="340"/>
+    <line x1="600" y1="0" x2="600" y2="340"/>
+    <line x1="900" y1="0" x2="900" y2="340"/>
+  </g>
+
+  <!-- Left Text Branding -->
+  <g transform="translate(60, 95)">
+    <rect width="140" height="28" rx="14" fill="rgba(99,102,241,0.15)" stroke="rgba(99,102,241,0.4)" stroke-width="1"/>
+    <text x="70" y="18" fill="#a5b4fc" font-family="'Inter', sans-serif" font-size="12" font-weight="600" text-anchor="middle" letter-spacing="0.05em">API DOCUMENTATION</text>
+    
+    <text x="0" y="70" fill="#ffffff" font-family="'Inter', sans-serif" font-size="34" font-weight="800" letter-spacing="-0.02em">Zenith Audio Intelligence</text>
+    <text x="0" y="105" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="16" font-weight="400">Next-generation speech-to-text, real-time transcription, and voice AI infrastructure.</text>
+  </g>
+
+  <!-- Right Geometric Emblem -->
+  <g transform="translate(940, 80) scale(2.2)">
+    <path d="M14 10H66C69.3137 10 72 12.6863 72 16C72 17.75 71.25 19.38 69.95 20.55L36.2 51H66C69.3137 51 72 53.6863 72 57V66C72 69.3137 69.3137 72 66 72H16C12.6863 72 10 69.3137 10 66C10 64.25 10.75 62.62 12.05 61.45L45.8 31H16C12.6863 31 10 28.3137 10 25V16C10 12.6863 12.6863 10 16 10H14Z" fill="url(#zGrad)" filter="drop-shadow(0 10px 20px rgba(99,102,241,0.5))"/>
+  </g>
+</svg>
