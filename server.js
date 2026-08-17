@@ -352,7 +352,10 @@ const server = http.createServer((req, res) => {
     targetPath = '/gladiaflow';
   }
 
-  if (reqPath === '' || reqPath === '/') {
+  if (reqPath.startsWith('/api/')) {
+    const sub = reqPath.replace(/^\/api\/?/, '');
+    localPath = path.join(WORKSPACE, 'api-data', sub);
+  } else if (reqPath === '' || reqPath === '/') {
     localPath = path.join(WORKSPACE, 'index.html');
     isHtmlPage = true;
   } else if (reqPath === '/compliance-hub') {

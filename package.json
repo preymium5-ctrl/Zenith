@@ -1,11 +1,10 @@
 {
-  "name": "zenith-clone",
+  "name": "zenith-web",
   "version": "1.0.0",
-  "description": "High-fidelity static clone of Zenith.io landing page",
-  "main": "index.html",
+  "private": true,
+  "description": "Zenith AI Audio Infrastructure Web Application",
   "scripts": {
+    "dev": "node server.js",
     "start": "node server.js"
-  },
-  "dependencies": {},
-  "devDependencies": {}
+  }
 }
