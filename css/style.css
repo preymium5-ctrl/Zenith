@@ -14,3 +14,34 @@ a[data-noclick], a[aria-disabled="true"] {
   pointer-events: none !important;
 }
 
+/* The homepage canvas has a dark eclipse background. Keep the foreground
+   content in its high-contrast palette instead of inheriting light-page ink. */
+.homepage-v3 .hero-section {
+  background: #09070f;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.76);
+  --text-tertiary: rgba(255, 255, 255, 0.56);
+}
+
+.homepage-v3 .hero-main {
+  z-index: 4;
+}
+
+.homepage-v3 .hero-headline {
+  color: #ffffff;
+}
+
+.homepage-v3 .hero-sub {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.homepage-v3 .hero-scroll-cue,
+.homepage-v3 .hero-scroll-cue:hover,
+.homepage-v3 .hero-scroll-cue:focus-visible {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.nb-bar {
+  color: #ffffff;
+  z-index: 1000;
+}
