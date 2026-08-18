@@ -3520,19 +3520,19 @@ button {
 }
 
 .homepage-v3 .wg-card--languages::after {
-  background-image: url('/images/Homepage/Why-Zenith_homepage-bento_1.png');
+  background-image: url('/images/Homepage/Why-Gladia_homepage-bento_1.png');
 }
 
 .homepage-v3 .wg-card--accuracy::after {
-  background-image: url('/images/Homepage/Why-Zenith_homepage-bento_2.png');
+  background-image: url('/images/Homepage/Why-Gladia_homepage-bento_2.png');
 }
 
 .homepage-v3 .wg-card--audio::after {
-  background-image: url('/images/Homepage/Why-Zenith_homepage-bento_3.png');
+  background-image: url('/images/Homepage/Why-Gladia_homepage-bento_3.png');
 }
 
 .homepage-v3 .wg-card--infra::after {
-  background-image: url('/images/Homepage/Why-Zenith_homepage-bento_4.png');
+  background-image: url('/images/Homepage/Why-Gladia_homepage-bento_4.png');
 }
 
 .homepage-v3 .wg-row--full {
@@ -3545,7 +3545,7 @@ button {
 }
 
 .homepage-v3 .wg-card--integrations::after {
-  background-image: url('/images/Homepage/Why-Zenith_homepage-bento_5.png');
+  background-image: url('/images/Homepage/Why-Gladia_homepage-bento_5.png');
 }
 
 .homepage-v3 .comparison-section {
