@@ -45,3 +45,21 @@ a[data-noclick], a[aria-disabled="true"] {
   color: #ffffff;
   z-index: 1000;
 }
+
+/* Progressive-enhancement fallback: content must remain readable when an
+   entrance animation or a deferred script is delayed by the browser. */
+html.js .homepage-v3 .hero-headline,
+html.js .homepage-v3 .hero-sub,
+.homepage-v3 .hero-headline .hero-line,
+.homepage-v3 .hero-sub .hero-line,
+.homepage-v3 .hero-actions,
+.homepage-v3 .hero-scroll-cue {
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+.nb-bar {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
