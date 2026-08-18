@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Zenith audio intelligence</title>
+  <desc id="desc">An abstract purple and blue audio waveform illustration.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#100a26"/>
+      <stop offset=".52" stop-color="#261455"/>
+      <stop offset="1" stop-color="#06182e"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0" x2="1">
+      <stop stop-color="#8b5cf6"/>
+      <stop offset=".5" stop-color="#d8b4fe"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-100%" width="200%" height="300%"><feGaussianBlur stdDeviation="18"/></filter>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <circle cx="945" cy="155" r="230" fill="#7c3aed" opacity=".28" filter="url(#glow)"/>
+  <circle cx="230" cy="680" r="260" fill="#0ea5e9" opacity=".18" filter="url(#glow)"/>
+  <g fill="none" stroke="url(#wave)" stroke-linecap="round">
+    <path d="M84 390h72l34-120 52 245 58-346 58 315 50-168 47 102h74l42-59 43 42h82l42-150 48 208 48-329 51 256 50-129 48 52h90" stroke-width="12"/>
+    <path d="M84 390h72l34-120 52 245 58-346 58 315 50-168 47 102h74l42-59 43 42h82l42-150 48 208 48-329 51 256 50-129 48 52h90" stroke="#a78bfa" stroke-width="38" opacity=".15" filter="url(#glow)"/>
+  </g>
+  <rect x="74" y="70" width="260" height="80" rx="40" fill="#ffffff" fill-opacity=".1" stroke="#fff" stroke-opacity=".2"/>
+  <path d="M112 110h34M129 93v34" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  <text x="170" y="120" fill="#fff" font-family="Arial, sans-serif" font-size="28" font-weight="700">ZENITH INSIGHTS</text>
+  <text x="78" y="625" fill="#fff" font-family="Arial, sans-serif" font-size="50" font-weight="700">Audio intelligence, explained.</text>
+</svg>

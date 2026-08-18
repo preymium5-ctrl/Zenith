@@ -11,6 +11,8 @@
     { "source": "/app/auth/signup", "destination": "/app/signup.html" },
     { "source": "/app/signin", "destination": "/app/signin.html" },
     { "source": "/app/signup", "destination": "/app/signup.html" },
+    { "source": "/signin", "destination": "/app/signin.html" },
+    { "source": "/signup", "destination": "/app/signup.html" },
     { "source": "/pricing-old", "destination": "/pricing.html" },
     { "source": "/solaria-old", "destination": "/solaria.html" },
     { "source": "/docs", "destination": "/docs/index.html" },
