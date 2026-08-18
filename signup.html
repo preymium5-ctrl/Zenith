@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Zenith | Sign up</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <style>
+    :root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #f8fafc; background: #09090b; }
+    * { box-sizing: border-box; }
+    body { min-height: 100vh; margin: 0; display: grid; place-items: center; padding: 24px; background: radial-gradient(circle at 88% 0%, #52259a 0, transparent 33%), #09090b; }
+    main { width: min(100%, 460px); padding: 42px; border: 1px solid rgba(255,255,255,.12); border-radius: 24px; background: rgba(18,18,23,.88); box-shadow: 0 28px 80px rgba(0,0,0,.38); }
+    .brand { display: inline-flex; align-items: center; gap: 9px; color: inherit; font-size: 18px; font-weight: 700; text-decoration: none; }
+    .brand-mark { display: grid; width: 29px; height: 29px; place-items: center; border-radius: 8px; background: #fff; color: #151019; font-weight: 900; font-style: italic; }
+    h1 { margin: 42px 0 8px; font-size: clamp(30px, 6vw, 38px); letter-spacing: -.05em; }
+    p { color: #a1a1aa; line-height: 1.55; }
+    form { display: grid; gap: 16px; margin-top: 30px; }
+    label { display: grid; gap: 7px; color: #e4e4e7; font-size: 14px; font-weight: 600; }
+    input { width: 100%; border: 1px solid #3f3f46; border-radius: 9px; padding: 13px 14px; color: #fff; background: #18181b; font: inherit; }
+    input:focus { outline: 2px solid #a78bfa; outline-offset: 2px; }
+    button { margin-top: 8px; border: 0; border-radius: 9px; padding: 14px; background: #fff; color: #111; font: 700 15px inherit; cursor: pointer; }
+    button:hover { background: #e4e4e7; }
+    #notice { min-height: 23px; margin: 4px 0 0; color: #c4b5fd; font-size: 14px; }
+    .signin { margin: 28px 0 0; text-align: center; font-size: 14px; }
+    .signin a { color: #ddd6fe; }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="brand" href="/"><span class="brand-mark">Z</span> Zenith</a>
+    <h1>Create an account</h1>
+    <p>Start building with Zenith in minutes — free to try, with no credit card required.</p>
+    <form id="signup-form">
+      <label>Work email <input type="email" name="email" autocomplete="email" required placeholder="you@company.com"></label>
+      <label>Password <input type="password" name="password" autocomplete="new-password" required minlength="8" placeholder="Create a password"></label>
+      <button type="submit">Sign up</button>
+      <p id="notice" role="status" aria-live="polite"></p>
+    </form>
+    <p class="signin">Already have an account? <a href="/signin">Sign in</a></p>
+  </main>
+  <script>
+    document.getElementById('signup-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      document.getElementById('notice').textContent = 'Signup is ready to connect to your authentication service.';
+    });
+  </script>
+</body>
+</html>
