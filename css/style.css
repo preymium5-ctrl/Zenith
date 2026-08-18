@@ -63,3 +63,29 @@ html.js .homepage-v3 .hero-sub,
   opacity: 1 !important;
   visibility: visible !important;
 }
+
+/* Fail-safe homepage hero. The canvas version can obscure every foreground
+   element on some Vercel/browser combinations, so keep a CSS-only version
+   that always renders the headline and calls to action. */
+.homepage-v3 .hero-section {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 72% 92%, rgba(124, 58, 237, 0.2), transparent 42%),
+    linear-gradient(145deg, #ffffff 0%, #f5f3ff 52%, #ede9fe 100%) !important;
+}
+
+.homepage-v3 .hero-section > .hero-bg,
+.homepage-v3 .hero-section::after {
+  display: none !important;
+}
+
+.homepage-v3 .hero-headline {
+  color: #111827 !important;
+}
+
+.homepage-v3 .hero-sub,
+.homepage-v3 .hero-scroll-cue,
+.homepage-v3 .hero-scroll-cue:hover,
+.homepage-v3 .hero-scroll-cue:focus-visible {
+  color: #374151 !important;
+}
